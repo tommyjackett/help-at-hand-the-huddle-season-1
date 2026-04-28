@@ -3,12 +3,12 @@
 
   "brand_understanding": {
     "client_name": "Help At Hand",
-    "what_they_do": "First-aid, health and child-safety education for parents and caregivers of little humans, founded by an Emergency Clinical Nurse Educator.",
-    "who_for": "New parents and caregivers — sleep-deprived, info-overwhelmed, googling at 2am, wanting practical confidence in moments that matter.",
-    "voice": "Warm, direct, practical, gently expert, anti-jargon, reassuring, slightly playful, never preachy.",
-    "north_star": "A member opens The Huddle with a specific worry, and finds the moment that calms it in under 10 seconds.",
-    "tone_dont": ["clinical", "preachy", "guilt-driven", "scary worst-case", "death by PowerPoint"],
-    "huddle_promise": "5 experts. Real stories. Real talk. The next best thing to a parenting manual."
+    "what_they_do": "First-aid, health and child-safety education for parents of little humans, founded by an Emergency Clinical Nurse Educator.",
+    "who_for_v2_audience": "Megan herself — this version is built so she can SEE what Season 1 contains, navigate her own content, and feel inspired about what to do with it next.",
+    "voice": "Warm, direct, practical, gently expert, anti-jargon, slightly playful, scrapbooky.",
+    "north_star": "Megan opens this and instantly sees the gold buried in each episode — every guest's lane, every line that landed, every question worth playing again.",
+    "tone_dont": ["clinical", "preachy", "guilt-driven", "scary worst-case"],
+    "huddle_promise": "5 experts. 5 lanes. Real questions Megan asked. The lines that landed."
   },
 
   "season": {
@@ -16,11 +16,11 @@
     "season_number": 1,
     "episode_count": 5,
     "total_duration_seconds": 8311,
-    "tagline": "Five conversations Megan had so you don't have to Google at 2am.",
+    "tagline": "Five experts. Five lanes. The gold from every conversation.",
     "host": {
       "name": "Megan Harvey",
-      "role": "Founder · Emergency Clinical Nurse Educator · Mum of two",
-      "bio_short": "Megan has spent over a decade in Melbourne hospitals teaching families face-to-face. The Huddle is the on-demand version of that — a non-judgemental space where parents can learn, refresh and feel a little less alone.",
+      "role": "Host · Founder · Emergency Clinical Nurse Educator · Mum of two",
+      "bio_short": "Megan spent 10+ years teaching families face-to-face in Melbourne hospitals. The Huddle is the on-demand version of that conversation — where she sits down with the experts she trusts and asks the things parents actually want to know.",
       "hero_image": "assets/heroes/megan.jpg"
     },
     "intro_promise": "Welcome to The Huddle, the place where parents come together to learn, laugh, and feel a little less alone in this wild ride called parenting. I'm Megan from Help at Hand Education.",
@@ -29,14 +29,17 @@
 
   "brand": {
     "primary_color": "#EA559E",
-    "surface_color": "#E0CBE1",
+    "primary_pink_deep": "#D03B85",
+    "surface_color": "#E8D6E8",
     "ink": "#2A1F2C",
+    "ink_soft": "#6E5F70",
     "cream": "#FBF7F4",
+    "cream_warm": "#F5EDE3",
     "secondary_red": "#E72731",
     "secondary_emerald": "#3FA590",
-    "secondary_lilac": "#D7C4E2",
+    "secondary_lilac": "#9D7FBE",
     "secondary_orange": "#E89241",
-    "secondary_yellow": "#F2D34F",
+    "secondary_yellow": "#D9B028",
     "fonts": {
       "headline": "GT Walsheim, 'Helvetica Neue', Arial, sans-serif",
       "body": "'Jost', 'Helvetica Neue', Arial, sans-serif",
@@ -49,47 +52,29 @@
     },
     "logo": {
       "symbol_src": "assets/brand/symbol-pink.png",
-      "wordmark_text": "the Huddle",
+      "wordmark_text": "The Huddle",
       "lockup_src": "assets/brand/lockup-red.png"
     },
     "stickers": [
-      { "id": "asterix-pink", "label": "*", "src": "assets/stickers/asterix-pink.png", "color_hint": "#EA559E" },
-      { "id": "asterix-emerald", "label": "*", "src": "assets/stickers/asterix-emerald.png", "color_hint": "#3FA590" },
-      { "id": "asterix-lilac", "label": "*", "src": "assets/stickers/asterix-lilac.png", "color_hint": "#D7C4E2" },
-      { "id": "asterix-orange", "label": "*", "src": "assets/stickers/asterix-orange.png", "color_hint": "#E89241" },
-      { "id": "asterix-yellow", "label": "*", "src": "assets/stickers/asterix-yellow.png", "color_hint": "#F2D34F" },
-      { "id": "heart-pink", "label": "♥", "src": "assets/stickers/heart-pink.png", "color_hint": "#EA559E" },
-      { "id": "bandaid-pink", "label": "bandaid", "src": "assets/stickers/bandaid-pink.png", "color_hint": "#EA559E" },
-      { "id": "flower-pale-pink", "label": "flower", "src": "assets/stickers/flower-pale-pink.png", "color_hint": "#F4D5DD" }
+      { "id": "asterix-pink",     "label": "*", "src": "assets/stickers/asterix-pink.png",     "color_hint": "#EA559E" },
+      { "id": "asterix-emerald",  "label": "*", "src": "assets/stickers/asterix-emerald.png",  "color_hint": "#3FA590" },
+      { "id": "asterix-lilac",    "label": "*", "src": "assets/stickers/asterix-lilac.png",    "color_hint": "#9D7FBE" },
+      { "id": "asterix-orange",   "label": "*", "src": "assets/stickers/asterix-orange.png",   "color_hint": "#E89241" },
+      { "id": "asterix-yellow",   "label": "*", "src": "assets/stickers/asterix-yellow.png",   "color_hint": "#D9B028" },
+      { "id": "heart-pink",       "label": "♥", "src": "assets/stickers/heart-pink.png",       "color_hint": "#EA559E" },
+      { "id": "bandaid-pink",     "label": "bandaid", "src": "assets/stickers/bandaid-pink.png", "color_hint": "#EA559E" },
+      { "id": "flower-pale-pink", "label": "flower",  "src": "assets/stickers/flower-pale-pink.png", "color_hint": "#F4D5DD" }
     ]
   },
 
   "topics": [
-    { "id": "pelvic-floor", "label": "Pelvic floor", "sticker_id": "heart-pink", "color": "#EA559E" },
-    { "id": "pregnancy-exercise", "label": "Exercise in pregnancy", "sticker_id": "asterix-pink", "color": "#EA559E" },
-    { "id": "support-wear", "label": "Support wear", "sticker_id": "bandaid-pink", "color": "#EA559E" },
-    { "id": "ab-separation", "label": "Ab separation", "sticker_id": "asterix-pink", "color": "#EA559E" },
-    { "id": "postnatal-recovery", "label": "Postnatal recovery", "sticker_id": "heart-pink", "color": "#EA559E" },
-    { "id": "newborn-sleep", "label": "Newborn sleep", "sticker_id": "asterix-lilac", "color": "#9D7FBE" },
-    { "id": "sleep-routines", "label": "Routines", "sticker_id": "asterix-lilac", "color": "#9D7FBE" },
-    { "id": "self-settling", "label": "Self-settling", "sticker_id": "asterix-lilac", "color": "#9D7FBE" },
-    { "id": "postnatal-depression", "label": "Postnatal depression", "sticker_id": "heart-pink", "color": "#EA559E" },
-    { "id": "sleep-misconceptions", "label": "Sleep myths", "sticker_id": "asterix-lilac", "color": "#9D7FBE" },
-    { "id": "kids-teeth", "label": "Kids' teeth", "sticker_id": "asterix-emerald", "color": "#3FA590" },
-    { "id": "first-dentist", "label": "First dentist visit", "sticker_id": "asterix-emerald", "color": "#3FA590" },
-    { "id": "fluoride", "label": "Fluoride & toothpaste", "sticker_id": "asterix-emerald", "color": "#3FA590" },
-    { "id": "thumb-sucking", "label": "Thumb sucking", "sticker_id": "asterix-emerald", "color": "#3FA590" },
-    { "id": "knocked-out-tooth", "label": "Knocked-out tooth", "sticker_id": "asterix-emerald", "color": "#3FA590" },
-    { "id": "intro-solids", "label": "Introducing solids", "sticker_id": "asterix-orange", "color": "#E89241" },
-    { "id": "fussy-eating", "label": "Fussy eating", "sticker_id": "asterix-orange", "color": "#E89241" },
-    { "id": "choking-vs-gagging", "label": "Choking vs gagging", "sticker_id": "asterix-orange", "color": "#E89241" },
-    { "id": "neurodiverse-eating", "label": "Neurodiverse eating", "sticker_id": "asterix-orange", "color": "#E89241" },
-    { "id": "allergens", "label": "Allergen introduction", "sticker_id": "asterix-orange", "color": "#E89241" },
-    { "id": "speech-milestones", "label": "Speech milestones", "sticker_id": "asterix-yellow", "color": "#D9B028" },
-    { "id": "stuttering", "label": "Stuttering", "sticker_id": "asterix-yellow", "color": "#D9B028" },
-    { "id": "language-strategies", "label": "Language strategies", "sticker_id": "asterix-yellow", "color": "#D9B028" },
-    { "id": "social-communication", "label": "Social communication", "sticker_id": "asterix-yellow", "color": "#D9B028" },
-    { "id": "swallowing", "label": "Swallowing", "sticker_id": "asterix-yellow", "color": "#D9B028" }
+    { "id": "body-recovery",  "label": "Body & recovery",          "sticker_id": "heart-pink",      "color": "#EA559E", "blurb": "Pelvic floor, exercise in pregnancy, support wear, abdominal separation, postnatal." },
+    { "id": "sleep",          "label": "Sleep & self-settling",    "sticker_id": "asterix-lilac",   "color": "#9D7FBE", "blurb": "Routines, the 4-month regression, sleeping through, gentle settling." },
+    { "id": "mental-load",    "label": "Mental load & PND",        "sticker_id": "heart-pink",      "color": "#EA559E", "blurb": "Postnatal depression, fill-your-cup, sharing the load with a partner." },
+    { "id": "teeth",          "label": "Kids' teeth",              "sticker_id": "asterix-emerald", "color": "#3FA590", "blurb": "First dentist visit, fluoride, thumb sucking, knocked-out teeth, brushing battles." },
+    { "id": "feeding",        "label": "Feeding little humans",    "sticker_id": "asterix-orange",  "color": "#E89241", "blurb": "Solids, fussy phase, choking vs gagging, neurodiverse eating, allergens." },
+    { "id": "speech",         "label": "Speech & communication",   "sticker_id": "asterix-yellow",  "color": "#D9B028", "blurb": "Late talkers, milestones, stuttering, the OWL strategy, social communication." },
+    { "id": "first-aid",      "label": "First aid & 000 moments",  "sticker_id": "bandaid-pink",    "color": "#E72731", "blurb": "When to call 000, choking, knocked-out teeth, the moments that matter most." }
   ],
 
   "episodes": [
@@ -98,50 +83,45 @@
       "number": 1,
       "guest": {
         "name": "Claire Maule",
-        "expertise": "Women's Health Physiotherapist · 17 years",
-        "business": "Bloom Physio (telehealth) · Epworth Freemasons maternity ward + outpatient pelvic health clinic",
-        "bio_paragraph": "Claire is a women's health physio of 17 years — she landed in the field on her last clinical placement and never left. Mum of three. Works on the maternity ward at Epworth Freemasons and runs Bloom Physio for telehealth consults. She's the person who walks into the maternity room and tells you bladder leakage isn't normal, vaginal heaviness isn't normal, and yes you can do something about it — proactively.",
-        "rawness_note": "Claire shares that she muddled through her first pregnancy despite knowing the science — felt tired, sick, juggling. She got better at it pregnancy by pregnancy. Honest about the 'I lived on toasties with my first' parent reality.",
+        "expertise": "Women's Health Physiotherapist",
+        "expertise_short": "17 years · Mum of three",
+        "business": "Bloom Physio + Epworth Freemasons",
+        "bio_paragraph": "Claire is a women's health physio of 17 years — she landed in the field on her last clinical placement and never left. Mum of three. Works on the maternity ward at Epworth Freemasons and runs Bloom Physio for telehealth.",
+        "rawness_note": "Honest about muddling through her first pregnancy despite knowing the science — felt tired, sick, juggling. Got better pregnancy by pregnancy. Real about the 'I lived on toasties with my first' parent reality.",
         "hero_image": "assets/heroes/claire.jpg",
         "find_them": [
-          { "label": "Bloom Physio", "url": "https://www.bloomphysio.com.au" },
+          { "label": "Bloom Physio",       "url": "https://www.bloomphysio.com.au" },
           { "label": "Epworth Freemasons", "url": "https://www.epworth.org.au/our-services/maternity" }
         ]
       },
-      "youtube": {
-        "full_id": "Qu-j-QxWDPI",
-        "snippet_id": "gnX6yYos30Q",
-        "duration_seconds": 1707
+      "youtube":         { "full_id": "Qu-j-QxWDPI", "snippet_id": "gnX6yYos30Q", "duration_seconds": 1707 },
+      "lane":            "Body & recovery",
+      "primary_topic_id":"body-recovery",
+      "topic_ids":       ["body-recovery", "mental-load"],
+      "journey": {
+        "opening_worry": "My maternal health nurse banged on about pelvic floor. Post-it notes on the car at every red light. Why?",
+        "the_turn":      "It's a hammock. It sags. Squeeze AND let it go. And the support wear that actually changes things — medical-grade, not activewear.",
+        "what_landed":   "Fill your cup up first — you're a better parent for it."
       },
-      "mission_line": "Pelvic floor and women's-health physio — for the mum who didn't know bladder leakage and pelvic heaviness aren't 'just normal'.",
-      "topic_ids": ["pelvic-floor", "pregnancy-exercise", "support-wear", "ab-separation", "postnatal-recovery"],
       "questions": [
-        { "id": "ep1-q1", "question_asked": "What's your background and how did you get into women's physiotherapy?", "answer_starts_at_seconds": 85, "answer_ends_at_seconds": 156, "answer_excerpt": "Physio of 17 years. Did her ACL in netball at 17, loved the rehab, went into physio thinking sports or paediatrics. Last clinical placement was at a women's health practice in East Melbourne — basically never left.", "topic_ids": ["pelvic-floor"] },
-        { "id": "ep1-q2", "question_asked": "What did you notice once you became pregnant yourself?", "answer_starts_at_seconds": 169, "answer_ends_at_seconds": 240, "answer_excerpt": "Did 10 years of women's health physio before having her own kids. Thought she was prepared, then was really sick with her first and 'muddled through.' Got better with each pregnancy. Realised the importance of eating well and exercising.", "topic_ids": ["pregnancy-exercise"] },
-        { "id": "ep1-q3", "question_asked": "What are the exercise recommendations through pregnancy?", "answer_starts_at_seconds": 286, "answer_ends_at_seconds": 408, "answer_excerpt": "Most days of the week, ideally all. 30 to 60 minutes — mix of cardio, strength, core and stretching. Walking, swimming, Pilates, yoga, stationary bike are all great. Lowers gestational diabetes and preeclampsia risk and helps recovery.", "topic_ids": ["pregnancy-exercise"] },
-        { "id": "ep1-q4", "question_asked": "Why is the pelvic floor so important — even before babies?", "answer_starts_at_seconds": 429, "answer_ends_at_seconds": 580, "answer_excerpt": "It's a sling of muscle — a hammock at the base of the pelvis — controlling continence and supporting pelvic organs. Pregnancy hormones plus the weight of the baby make the hammock sag. Quality matters more than quantity — feel the squeeze AND the let-go.", "topic_ids": ["pelvic-floor"] },
-        { "id": "ep1-q5", "question_asked": "What's the main concern pregnant women come to see you about?", "answer_starts_at_seconds": 642, "answer_ends_at_seconds": 762, "answer_excerpt": "A lot of pelvic-floor-related: bladder leakage with cough/sneeze/laugh, urgency, frequency. Bowel issues. Vaginal heaviness — often mistaken for prolapse. Pelvic girdle pain (often masking as low-back pain). Birth preparation including perineal massage.", "topic_ids": ["pelvic-floor", "postnatal-recovery"] },
-        { "id": "ep1-q6", "question_asked": "What support wear should you actually buy — is more expensive better?", "answer_starts_at_seconds": 851, "answer_ends_at_seconds": 1015, "answer_excerpt": "Two categories. Medical-grade compression (the more expensive ones — bike shorts, leggings, support underwear with perineal gusset) and activewear-grade. If pregnancy is comfortable, activewear is fine. If there's pain, heaviness, vulval varicosities or muscle separation — medical-grade is worth the money, especially in the first 6 weeks postnatal.", "topic_ids": ["support-wear"] },
-        { "id": "ep1-q7", "question_asked": "When should people book in to see you during pregnancy?", "answer_starts_at_seconds": 1018, "answer_ends_at_seconds": 1140, "answer_excerpt": "Three appointments ideally. One around 12–13 weeks for screening, exercise check, pelvic floor check. Mid-pregnancy when aches and pelvic pain often start. End-of-pregnancy for perineal massage, recovery advice, birth prep, support-wear planning.", "topic_ids": ["pelvic-floor", "postnatal-recovery"] },
-        { "id": "ep1-q8", "question_asked": "What about abdominal separation — should everyone get checked?", "answer_starts_at_seconds": 1146, "answer_ends_at_seconds": 1260, "answer_excerpt": "Don't worry about measurement during pregnancy — all tummy muscles stretch. Most hospitals have a physio that comes around. Otherwise check at 4–6 weeks postnatal. Some separation is normal; the question is whether you need specific recovery work.", "topic_ids": ["ab-separation", "postnatal-recovery"] },
-        { "id": "ep1-q9", "question_asked": "Where can people find you and book in?", "answer_starts_at_seconds": 1264, "answer_ends_at_seconds": 1335, "answer_excerpt": "Maternity ward at Epworth Freemasons. Outpatient pelvic health clinic there. Bloom Physio for telehealth — handy when you've got a new baby on your chest and want to check in from home.", "topic_ids": ["pelvic-floor"] },
-        { "id": "ep1-q10", "question_asked": "As a parent yourself, what advice would you give new parents?", "answer_starts_at_seconds": 1344, "answer_ends_at_seconds": 1455, "answer_excerpt": "Two things. If you've got a partner, work as a team — sit down at the start of the week and divide it. And fill your cup up first. Both Tom and I prioritise each other's exercise. If you fill your cup up, you're a better parent.", "topic_ids": ["postnatal-recovery"] }
+        { "id": "ep1-q1",  "question_asked": "What's your background — how did you get into women's physiotherapy?",                "answer_starts_at_seconds": 85,   "answer_ends_at_seconds": 156,  "answer_excerpt": "Did her ACL in netball at 17. Loved the rehab. Last clinical placement was at a women's health practice in East Melbourne — never left.",                                                       "topic_ids": ["body-recovery"], "weight": 2 },
+        { "id": "ep1-q2",  "question_asked": "What did you notice once you became pregnant yourself?",                                  "answer_starts_at_seconds": 169,  "answer_ends_at_seconds": 240,  "answer_excerpt": "Did 10 years of women's-health physio before her own kids. 'Muddled through' the first pregnancy despite knowing it all. Got better with each one.",                                              "topic_ids": ["body-recovery", "mental-load"], "weight": 2 },
+        { "id": "ep1-q3",  "question_asked": "What are the exercise recommendations through pregnancy?",                                "answer_starts_at_seconds": 286,  "answer_ends_at_seconds": 408,  "answer_excerpt": "Most days, ideally all. 30–60 min. Cardio + strength + core + stretching. Walking, swimming, Pilates, yoga. Cuts gestational diabetes and preeclampsia risk.",                              "topic_ids": ["body-recovery"], "weight": 3 },
+        { "id": "ep1-q4",  "question_asked": "Why is the pelvic floor so important — even before babies?",                            "answer_starts_at_seconds": 429,  "answer_ends_at_seconds": 580,  "answer_excerpt": "It's a sling — a hammock at the base of the pelvis. Pregnancy hormones plus the weight of the baby make it sag. Quality matters more than quantity — squeeze AND let go.",       "topic_ids": ["body-recovery"], "weight": 4 },
+        { "id": "ep1-q5",  "question_asked": "What's the main concern pregnant women come to see you about?",                            "answer_starts_at_seconds": 642,  "answer_ends_at_seconds": 762,  "answer_excerpt": "Bladder leakage with cough/sneeze/laugh. Urgency. Vaginal heaviness — often mistaken for prolapse. Pelvic girdle pain masking as low-back pain.",                                       "topic_ids": ["body-recovery"], "weight": 3 },
+        { "id": "ep1-q6",  "question_asked": "What support wear should you actually buy — is more expensive better?",                  "answer_starts_at_seconds": 851,  "answer_ends_at_seconds": 1015, "answer_excerpt": "Two categories: medical-grade compression vs activewear-grade. If pregnancy is comfortable, activewear is fine. If there's pain or vulval varicosities, medical-grade is worth the money.",       "topic_ids": ["body-recovery"], "weight": 3 },
+        { "id": "ep1-q7",  "question_asked": "When should you book in to see a women's-health physio?",                                  "answer_starts_at_seconds": 1018, "answer_ends_at_seconds": 1140, "answer_excerpt": "Three appointments ideally. Around 12–13 weeks for screening. Mid-pregnancy when aches start. End-of-pregnancy for perineal massage and birth prep.",                                          "topic_ids": ["body-recovery"], "weight": 2 },
+        { "id": "ep1-q8",  "question_asked": "What about abdominal separation — should everyone get checked?",                         "answer_starts_at_seconds": 1146, "answer_ends_at_seconds": 1260, "answer_excerpt": "Don't worry about the measurement during pregnancy — all tummy muscles stretch. Most hospitals have a physio that comes around. Otherwise check at 4–6 weeks postnatal.",            "topic_ids": ["body-recovery"], "weight": 2 },
+        { "id": "ep1-q10", "question_asked": "As a parent yourself, what's your biggest piece of advice for new parents?",               "answer_starts_at_seconds": 1344, "answer_ends_at_seconds": 1455, "answer_excerpt": "Two things. If you've got a partner, work as a team — sit down weekly and divide it. And fill your cup up. If you fill your cup up, you're a better parent.",                                  "topic_ids": ["mental-load"], "weight": 4 }
       ],
       "quotes": [
-        { "id": "ep1-quote1", "text": "I didn't realize that bladder leakage wasn't normal, or I've actually got a little bit of pelvic heaviness.", "attribution": "Claire Maule · what new mums often realise too late", "starts_at_seconds": 612, "ends_at_seconds": 626, "topic_ids": ["pelvic-floor"] },
-        { "id": "ep1-quote2", "text": "If you fill your cup up first, you're a better parent.", "attribution": "Claire Maule · final advice", "starts_at_seconds": 1396, "ends_at_seconds": 1408, "topic_ids": ["postnatal-recovery"] },
-        { "id": "ep1-quote3", "text": "The hammock starts to sag a little bit as your pregnancy progresses. So if the muscle isn't strong, that's when bladder leakage can happen.", "attribution": "Claire Maule · on the pelvic floor", "starts_at_seconds": 469, "ends_at_seconds": 488, "topic_ids": ["pelvic-floor"] }
+        { "id": "ep1-quote1", "text": "I didn't realize that bladder leakage wasn't normal, or I've actually got a little bit of pelvic heaviness.", "attribution": "Claire Maule · what mums often realise too late",  "starts_at_seconds": 612,  "ends_at_seconds": 626,  "topic_ids": ["body-recovery"] },
+        { "id": "ep1-quote2", "text": "If you fill your cup up first, you're a better parent.",                                                "attribution": "Claire Maule · final advice",                       "starts_at_seconds": 1396, "ends_at_seconds": 1408, "topic_ids": ["mental-load"]   },
+        { "id": "ep1-quote3", "text": "The hammock starts to sag a little bit as your pregnancy progresses. So if the muscle isn't strong, that's when bladder leakage can happen.", "attribution": "Claire Maule · on the pelvic floor", "starts_at_seconds": 469, "ends_at_seconds": 488, "topic_ids": ["body-recovery"] }
       ],
       "bts_images": [
-        "assets/bts/claire/01.jpg",
-        "assets/bts/claire/02.jpg",
-        "assets/bts/claire/03.jpg",
-        "assets/bts/claire/04.jpg",
-        "assets/bts/claire/05.jpg",
-        "assets/bts/claire/06.jpg",
-        "assets/bts/claire/07.jpg",
-        "assets/bts/claire/08.jpg",
-        "assets/bts/claire/09.jpg"
+        "assets/bts/claire/01.jpg","assets/bts/claire/02.jpg","assets/bts/claire/03.jpg",
+        "assets/bts/claire/04.jpg","assets/bts/claire/05.jpg","assets/bts/claire/06.jpg"
       ]
     },
 
@@ -150,50 +130,43 @@
       "number": 2,
       "guest": {
         "name": "Bianca Burge",
-        "expertise": "Sleep Consultant · Midwife · 13 years",
-        "business": "Plan B Sleep Consulting · planb.com.au",
-        "bio_paragraph": "Bianca's a midwife of 13 years turned sleep consultant — Plan B was born out of her own two boys being shocking sleepers and the realisation that she could help families through what she'd been through. Mum to Oscar (8) and Hugo (6). Grounded in science. Brave on the mic — opens up about her postnatal depression journey honestly enough that anyone listening who's struggling will feel less alone.",
-        "rawness_note": "Bianca shares her postnatal depression openly — the 'overwhelming darkness in the evenings' after Oscar's birth, breastfeeding PTSD, getting it again with Hugo and recognising the signs faster the second time. She lost her own mum at 17, before her last year of school. The candour is the gift of this episode.",
+        "expertise": "Sleep Consultant + Midwife",
+        "expertise_short": "13 years · Mum of two",
+        "business": "Plan B Sleep Consulting",
+        "bio_paragraph": "Bianca's a midwife of 13 years turned sleep consultant. Plan B was born out of her own two boys being shocking sleepers and the realisation that she could help families through what she'd been through. Mum to Oscar (8) and Hugo (6).",
+        "rawness_note": "Opens up about her postnatal depression — the 'overwhelming darkness in the evenings' after Oscar's birth, breastfeeding PTSD, recognising the signs faster the second time. Lost her own mum at 17. The candour is the gift of this episode.",
         "hero_image": "assets/heroes/bianca.jpg",
         "find_them": [
           { "label": "Plan B Sleep Consulting", "url": "https://www.planb.com.au" },
           { "label": "Instagram · @planbsleepconsulting", "url": "https://www.instagram.com/planbsleepconsulting" }
         ]
       },
-      "youtube": {
-        "full_id": "ctf0Pk1hSnY",
-        "snippet_id": "AIjg80SysUU",
-        "duration_seconds": 1320
+      "youtube":         { "full_id": "ctf0Pk1hSnY", "snippet_id": "AIjg80SysUU", "duration_seconds": 1320 },
+      "lane":            "Sleep & self-settling",
+      "primary_topic_id":"sleep",
+      "topic_ids":       ["sleep", "mental-load"],
+      "journey": {
+        "opening_worry": "Instagram is full of noise about how my baby 'should' sleep. What's actually true?",
+        "the_turn":      "Babies cry to communicate. Sleep training can be as gentle as you need. And the truth no one talks about — postnatal depression is real, survivable, and not a failure.",
+        "what_landed":   "It's actually more detrimental for them not to sleep properly than to short-term sleep train."
       },
-      "mission_line": "Sleep, routines and self-settling — for the parent drowning in 2am Instagram noise about how their baby 'should' sleep.",
-      "topic_ids": ["newborn-sleep", "sleep-routines", "self-settling", "postnatal-depression", "sleep-misconceptions"],
       "questions": [
-        { "id": "ep2-q1", "question_asked": "Tell us about yourself and how you got into midwifery and sleep consulting.", "answer_starts_at_seconds": 75, "answer_ends_at_seconds": 117, "answer_excerpt": "Two boys — Oscar 8, Hugo 6. Started midwifery 13 years ago. Did grad year in Deniliquin NSW, moved back to Ocean Grove for the boys. Started sleep consulting off the back of having both boys and them being shocking sleepers.", "topic_ids": ["newborn-sleep"] },
-        { "id": "ep2-q2", "question_asked": "What were your challenges as a parent with sleep?", "answer_starts_at_seconds": 119, "answer_ends_at_seconds": 165, "answer_excerpt": "Being a midwife, everyone expected sleep to come naturally. Put a lot of pressure on herself that everything had to be perfect. The pressures of being a midwife AND being a mum.", "topic_ids": ["newborn-sleep"] },
-        { "id": "ep2-q3", "question_asked": "What tips would you have for blocking out the noise and judgment at the start?", "answer_starts_at_seconds": 165, "answer_ends_at_seconds": 245, "answer_excerpt": "Don't put pressure on yourself. So much noise on Instagram and influencers setting expectations sky-high. The first 3 months babies are still in their fourth trimester — really enjoy that time and try to block out the noise. Everyone does it differently and it falls into place.", "topic_ids": ["newborn-sleep"] },
-        { "id": "ep2-q4", "question_asked": "Are routines essential? When should you start?", "answer_starts_at_seconds": 245, "answer_ends_at_seconds": 320, "answer_excerpt": "From around 4 months, routine starts to come into play because of the 4-month sleep regression — the progression to adult-like sleep. You'll start to see the wheels go creaky around 6–12 weeks when their melatonin kicks in.", "topic_ids": ["sleep-routines"] },
-        { "id": "ep2-q5", "question_asked": "What actually IS 'sleeping through the night'?", "answer_starts_at_seconds": 320, "answer_ends_at_seconds": 415, "answer_excerpt": "Genuinely sleeping through — like 6:30 to 6:30 or 7am, no feed in between. Newborns can't be expected to. Around 8–9 months you can start asking 'is this habit, or do they need more solids/calories?' Adults wake every 2–4 hours too — we just self-settle without realising.", "topic_ids": ["self-settling", "sleep-misconceptions"] },
-        { "id": "ep2-q6", "question_asked": "What's the most common question you get from parents?", "answer_starts_at_seconds": 415, "answer_ends_at_seconds": 462, "answer_excerpt": "How do I get my baby to self-settle and resettle. It's complex — age, weight, routine, settling technique. Like a puzzle: if all the pieces aren't right, you'll be chasing your tail.", "topic_ids": ["self-settling"] },
-        { "id": "ep2-q7", "question_asked": "What age should parents reach out for sleep support?", "answer_starts_at_seconds": 467, "answer_ends_at_seconds": 510, "answer_excerpt": "Bianca takes babies from 3 weeks for support — that's when colicky/refluxy stages can start and the newborn bubble wears off. For sleep training specifically, 4 months is when adult-like sleep cycles start and predictable routines work.", "topic_ids": ["newborn-sleep", "sleep-routines"] },
-        { "id": "ep2-q8", "question_asked": "Can you share your postnatal depression journey?", "answer_starts_at_seconds": 510, "answer_ends_at_seconds": 670, "answer_excerpt": "Always had some anxiety. Lost her mum at 17. Pressure on herself as a midwife — should be able to feed Oscar, couldn't. Sitting on the couch one evening: 'this isn't normal, this isn't baby blues, this is something else.' Got it again with Hugo, recognised the signs faster. Breastfeeding now gives her PTSD. The PND carved the way for Plan B.", "topic_ids": ["postnatal-depression"] },
-        { "id": "ep2-q9", "question_asked": "What are the biggest sleep-training misconceptions?", "answer_starts_at_seconds": 718, "answer_ends_at_seconds": 800, "answer_excerpt": "That you leave your baby crying with no response. Babies cry to communicate — it doesn't always mean something is wrong. Sleep training can be as gentle as you need. It's nothing like the taboo it's been painted as.", "topic_ids": ["sleep-misconceptions"] },
-        { "id": "ep2-q10", "question_asked": "Where can people find your services?", "answer_starts_at_seconds": 803, "answer_ends_at_seconds": 875, "answer_excerpt": "planb.com.au and Instagram @planbsleepconsulting. Weekly Q&As. Online packages, 1-week and 2-week packages with daily app support, in-home day or evening consults.", "topic_ids": ["self-settling"] },
-        { "id": "ep2-q11", "question_asked": "Final advice for new parents?", "answer_starts_at_seconds": 887, "answer_ends_at_seconds": 940, "answer_excerpt": "Don't put so much pressure on yourself. Enjoy the cuddles and newborn snuggles. The grass is always greener — I wish I could go back to my first and tell myself it's going to be okay.", "topic_ids": ["newborn-sleep"] }
+        { "id": "ep2-q1",  "question_asked": "How did you get into midwifery and sleep consulting?",                                 "answer_starts_at_seconds": 75,  "answer_ends_at_seconds": 117, "answer_excerpt": "13 years a midwife. Plan B started after her boys (Oscar 8, Hugo 6) turned out to be shocking sleepers — she realised she could help.",                                  "topic_ids": ["sleep"], "weight": 2 },
+        { "id": "ep2-q3",  "question_asked": "How do you block out the social-media noise about sleep?",                              "answer_starts_at_seconds": 165, "answer_ends_at_seconds": 245, "answer_excerpt": "First 3 months babies are still in the fourth trimester. Don't put pressure on yourself. Influencers set unrealistic expectations.",                                       "topic_ids": ["sleep", "mental-load"], "weight": 3 },
+        { "id": "ep2-q4",  "question_asked": "Are routines essential? When should you start?",                                       "answer_starts_at_seconds": 245, "answer_ends_at_seconds": 320, "answer_excerpt": "From around 4 months. The 4-month regression is babies developing adult-like sleep cycles. You'll see the wheels go creaky around 6–12 weeks when melatonin kicks in.", "topic_ids": ["sleep"], "weight": 4 },
+        { "id": "ep2-q5",  "question_asked": "What actually IS 'sleeping through the night'?",                                       "answer_starts_at_seconds": 320, "answer_ends_at_seconds": 415, "answer_excerpt": "6:30 to 6:30 with no feed in between. Newborns can't be expected to. Adults wake every 2–4 hours too — we just self-settle without realising.",                       "topic_ids": ["sleep"], "weight": 3 },
+        { "id": "ep2-q8",  "question_asked": "Can you share your postnatal depression journey?",                                     "answer_starts_at_seconds": 510, "answer_ends_at_seconds": 670, "answer_excerpt": "Always had some anxiety. Lost her mum at 17. 'This isn't normal, this isn't baby blues, this is something else.' Got it again with Hugo, recognised the signs faster.",         "topic_ids": ["mental-load"], "weight": 5 },
+        { "id": "ep2-q9",  "question_asked": "What are the biggest sleep-training misconceptions?",                                  "answer_starts_at_seconds": 718, "answer_ends_at_seconds": 800, "answer_excerpt": "That you leave your baby crying with no response. Sleep training can be as gentle as you need. It's nothing like the taboo it's been painted as.",                            "topic_ids": ["sleep"], "weight": 4 },
+        { "id": "ep2-q11", "question_asked": "Final advice for new parents?",                                                        "answer_starts_at_seconds": 887, "answer_ends_at_seconds": 940, "answer_excerpt": "Don't put so much pressure on yourself. Enjoy the cuddles and newborn snuggles. The grass is always greener.",                                                                  "topic_ids": ["mental-load"], "weight": 3 }
       ],
       "quotes": [
-        { "id": "ep2-quote1", "text": "It's actually more detrimental to a baby's development for them not to sleep properly than what it is to short-term sleep train.", "attribution": "Bianca Burge · the line that settles a lot of families", "starts_at_seconds": 0, "ends_at_seconds": 19, "topic_ids": ["sleep-misconceptions"] },
-        { "id": "ep2-quote2", "text": "I had this overwhelming kind of darkness that kind of came over me always in the evenings.", "attribution": "Bianca Burge · on postnatal depression", "starts_at_seconds": 540, "ends_at_seconds": 552, "topic_ids": ["postnatal-depression"] },
-        { "id": "ep2-quote3", "text": "Whatever works for you at the end of the day. As long as they're healthy and you're loving them, it really doesn't matter.", "attribution": "Bianca Burge · breast vs bottle", "starts_at_seconds": 660, "ends_at_seconds": 690, "topic_ids": ["newborn-sleep"] }
+        { "id": "ep2-quote1", "text": "It's actually more detrimental to a baby's development for them not to sleep properly than what it is to short-term sleep train.", "attribution": "Bianca Burge · the line that settles families", "starts_at_seconds": 0,   "ends_at_seconds": 19,  "topic_ids": ["sleep"] },
+        { "id": "ep2-quote2", "text": "I had this overwhelming kind of darkness that kind of came over me always in the evenings.", "attribution": "Bianca Burge · on postnatal depression",                                                          "starts_at_seconds": 540, "ends_at_seconds": 552, "topic_ids": ["mental-load"] },
+        { "id": "ep2-quote3", "text": "Whatever works for you at the end of the day. As long as they're healthy and you're loving them, it really doesn't matter.", "attribution": "Bianca Burge · breast vs bottle",                                                          "starts_at_seconds": 660, "ends_at_seconds": 690, "topic_ids": ["sleep"] }
       ],
       "bts_images": [
-        "assets/bts/bianca/01.jpg",
-        "assets/bts/bianca/02.jpg",
-        "assets/bts/bianca/03.jpg",
-        "assets/bts/bianca/04.jpg",
-        "assets/bts/bianca/05.jpg",
-        "assets/bts/bianca/06.jpg",
-        "assets/bts/bianca/07.jpg",
-        "assets/bts/bianca/08.jpg"
+        "assets/bts/bianca/01.jpg","assets/bts/bianca/02.jpg","assets/bts/bianca/03.jpg",
+        "assets/bts/bianca/04.jpg","assets/bts/bianca/05.jpg","assets/bts/bianca/06.jpg"
       ]
     },
 
@@ -201,57 +174,44 @@
       "id": "ep3-isabelle",
       "number": 3,
       "guest": {
-        "name": "Isabelle 'Belle' Sayers",
-        "expertise": "Oral Health Therapist · 12 years · paediatric and adult",
-        "business": "brushing.with.belle (Instagram) · public + private practice across Melbourne",
-        "bio_paragraph": "Belle was meant to do commerce-law. A friend pointed her at the Bachelor of Oral Health at Melbourne Uni and she never looked back. 12 years in. Mum of two — Charlotte and Harry. Charlotte loved having teeth brushed from day one; Harry screamed and hated it. So Belle's been on both ends as a parent — and that's exactly why parents trust her when they say 'I think I'm hurting them, am I doing the right thing?'.",
-        "rawness_note": "Belle's honest about the screaming-toothbrush phase she lived through with Harry — gives parents permission to keep going even when their kid hates it. Now Harry pulls out lengths of floss before she even asks.",
+        "name": "Isabelle Sayers",
+        "expertise": "Oral Health Therapist",
+        "expertise_short": "12 years · Mum of two",
+        "business": "Brushing with Belle",
+        "bio_paragraph": "Belle was meant to do commerce-law. A friend pointed her at the Bachelor of Oral Health at Melbourne Uni and she never looked back. 12 years in, mum of Charlotte and Harry. Charlotte loved having teeth brushed; Harry hated it. So Belle's been on both ends as a parent.",
+        "rawness_note": "Honest about the screaming-toothbrush phase she lived through with Harry — gives parents permission to keep going even when their kid hates it. Now Harry pulls out lengths of floss before she even asks.",
         "hero_image": "assets/heroes/isabelle.jpg",
         "find_them": [
           { "label": "Instagram · @brushing.with.belle", "url": "https://www.instagram.com/brushing.with.belle" }
         ]
       },
-      "youtube": {
-        "full_id": "0cgFeRBZyYc",
-        "snippet_id": "2xT2Fp9_Qpg",
-        "duration_seconds": 1542
+      "youtube":         { "full_id": "0cgFeRBZyYc", "snippet_id": "2xT2Fp9_Qpg", "duration_seconds": 1542 },
+      "lane":            "Kids' teeth",
+      "primary_topic_id":"teeth",
+      "topic_ids":       ["teeth", "first-aid"],
+      "journey": {
+        "opening_worry": "I think I was a bit late on first dentist visit. And the wriggly toothbrush battle is killing me.",
+        "the_turn":      "First visit at age 1. Cavities are real even in baby teeth. Position matters more than struggle. And the punchy verdict if life gets in the way.",
+        "what_landed":   "If you can only do one, do it at night."
       },
-      "mission_line": "Kids' teeth — first tooth to first dentist visit — and how to win the wriggly toothbrush battle.",
-      "topic_ids": ["kids-teeth", "first-dentist", "fluoride", "thumb-sucking", "knocked-out-tooth"],
       "questions": [
-        { "id": "ep3-q1", "question_asked": "How did you get into oral health therapy?", "answer_starts_at_seconds": 145, "answer_ends_at_seconds": 200, "answer_excerpt": "Was meant to study commerce-law straight out of school. A friend mentioned the Bachelor of Oral Health at Melbourne Uni. Three years, then 7 years working, then back to do extended scope of practice for adults. Hasn't looked back.", "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-q2", "question_asked": "What's the best time to first take your child to the dentist?", "answer_starts_at_seconds": 233, "answer_ends_at_seconds": 305, "answer_excerpt": "Around the age of 1. First teeth come through at about 6 months. By age 1 you'll have all the incisors and possibly first molars. Plenty for us to look at — we also check soft tissues. Even without all the teeth we still want to see them.", "topic_ids": ["first-dentist"] },
-        { "id": "ep3-q3", "question_asked": "Can kids really get cavities and decay?", "answer_starts_at_seconds": 332, "answer_ends_at_seconds": 410, "answer_excerpt": "Yes. So many people don't think it can happen to baby teeth — and if it does, that they don't matter because they'll fall out. Decay is very common in kids' teeth. The stats are staggering. Important to understand the why so you can prevent or reduce it.", "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-q4", "question_asked": "What about natural toothpaste — is it safe for kids?", "answer_starts_at_seconds": 412, "answer_ends_at_seconds": 470, "answer_excerpt": "Natural toothpastes don't contain fluoride. Fluoride is a really, really proven protective force for preventing decay. Without it there really isn't much point using the toothpaste. Use a fluoridated, age-appropriate toothpaste — check the packaging.", "topic_ids": ["fluoride"] },
-        { "id": "ep3-q5", "question_asked": "What about flossing for kids?", "answer_starts_at_seconds": 470, "answer_ends_at_seconds": 530, "answer_excerpt": "If their teeth touch, you should floss. A toothbrush can never get between touching teeth. Lots of flossing aids make it easier. If adults don't floss for themselves they often won't for their kids — but it's a matter of asking us how to use them.", "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-q6", "question_asked": "Thumb sucking — when should you address it?", "answer_starts_at_seconds": 530, "answer_ends_at_seconds": 660, "answer_excerpt": "Stop the behaviour by age 4. The first adult teeth come at 5–6 — if it's stopped by 4 there shouldn't be impact on the adult teeth. Tips: gentle reminders, distractions, the yucky-tasting nail polish (paint all fingers, not just the thumb!), socks at bedtime if they suck themselves to sleep.", "topic_ids": ["thumb-sucking"] },
-        { "id": "ep3-q7", "question_asked": "What do you do if a child knocks out a tooth?", "answer_starts_at_seconds": 600, "answer_ends_at_seconds": 760, "answer_excerpt": "Baby tooth knocked out completely — leave it out, see a dentist. Adult tooth — only touch the crown (not the root), rinse if dirty, pop it back in if you can. If not comfortable, keep it moist in saliva, water or milk and get to a dentist immediately. Time is critical for the long-term success.", "topic_ids": ["knocked-out-tooth"] },
-        { "id": "ep3-q8", "question_asked": "What's the biggest myth in kids' dental health?", "answer_starts_at_seconds": 765, "answer_ends_at_seconds": 845, "answer_excerpt": "That a hole in a baby tooth doesn't matter. Baby teeth stay in the mouth up to 12 years. Decay at 2 will not still be okay at 12 — it'll get to the nerve, kids end up in pain, infection. Baby teeth need fixing.", "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-q9", "question_asked": "Strategies for parents whose kids resist brushing?", "answer_starts_at_seconds": 825, "answer_ends_at_seconds": 970, "answer_excerpt": "Introduce something in their mouth as soon as teeth appear — wet cloth, toothbrush — so they get used to oral sensations. Position matters: cradle for babies, child-on-toilet hugged into you for older kids, child-between-your-legs on the floor for wrigglers. Same time every day, after breakfast and before sleep.", "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-q10", "question_asked": "If you can only brush once a day, when should it be?", "answer_starts_at_seconds": 968, "answer_ends_at_seconds": 1010, "answer_excerpt": "Twice a day is hard. If you can only do one — do it at night. We eat, drink, breathe all day, our mouths are filthy by night. Asleep we don't produce as much saliva, and saliva protects teeth. Bacteria + less protection = trouble.", "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-q11", "question_asked": "Final advice for parents in the thick of it?", "answer_starts_at_seconds": 1043, "answer_ends_at_seconds": 1100, "answer_excerpt": "Parenting is hard. There are amazing parts and awful parts. Find the people you trust and listen to one — not all of them. There's too much noise. Once you find your people it makes it so much easier.", "topic_ids": ["kids-teeth"] }
+        { "id": "ep3-q2",  "question_asked": "When's the best time for the first dentist visit?",                                  "answer_starts_at_seconds": 233,  "answer_ends_at_seconds": 305,  "answer_excerpt": "Age 1. By then they have all the incisors and possibly first molars. We're also checking soft tissues. Even without all the teeth we want to see them.",                            "topic_ids": ["teeth"], "weight": 4 },
+        { "id": "ep3-q3",  "question_asked": "Can kids really get cavities and decay?",                                            "answer_starts_at_seconds": 332,  "answer_ends_at_seconds": 410,  "answer_excerpt": "Yes — the stats are staggering. Many parents don't think it can happen to baby teeth. Important to understand the why so you can prevent it.",                              "topic_ids": ["teeth"], "weight": 3 },
+        { "id": "ep3-q4",  "question_asked": "Is natural toothpaste safe for kids?",                                               "answer_starts_at_seconds": 412,  "answer_ends_at_seconds": 470,  "answer_excerpt": "Natural toothpastes don't contain fluoride. Fluoride is a proven protective force. Without it there isn't much point. Use a fluoridated, age-appropriate toothpaste.",                "topic_ids": ["teeth"], "weight": 3 },
+        { "id": "ep3-q6",  "question_asked": "Thumb sucking — when should you address it?",                                     "answer_starts_at_seconds": 530,  "answer_ends_at_seconds": 660,  "answer_excerpt": "Stop the behaviour by age 4 — first adult teeth come at 5–6. Tips: gentle reminders, distractions, yucky-tasting nail polish (paint all fingers!), socks at bedtime.",       "topic_ids": ["teeth"], "weight": 3 },
+        { "id": "ep3-q7",  "question_asked": "What if a child knocks a tooth out?",                                                "answer_starts_at_seconds": 600,  "answer_ends_at_seconds": 760,  "answer_excerpt": "Baby tooth — leave it out. Adult tooth — only touch the crown, rinse if dirty, pop it back in if you can. If not, keep it moist in saliva, water or milk. Time is critical.", "topic_ids": ["teeth", "first-aid"], "weight": 5 },
+        { "id": "ep3-q9",  "question_asked": "Strategies for parents whose kids resist brushing?",                                 "answer_starts_at_seconds": 825,  "answer_ends_at_seconds": 970,  "answer_excerpt": "Introduce something in their mouth as soon as teeth appear — wet cloth, toothbrush. Position matters: cradle for babies, child-on-toilet hugged into you for older kids.",         "topic_ids": ["teeth"], "weight": 4 },
+        { "id": "ep3-q10", "question_asked": "If you can only brush once a day, when should it be?",                               "answer_starts_at_seconds": 968,  "answer_ends_at_seconds": 1010, "answer_excerpt": "Twice a day is hard. If you can only do one — do it at night. Asleep we don't produce as much saliva, and saliva protects teeth.",                                                "topic_ids": ["teeth"], "weight": 5 },
+        { "id": "ep3-q11", "question_asked": "Final advice for parents in the thick of it?",                                       "answer_starts_at_seconds": 1043, "answer_ends_at_seconds": 1100, "answer_excerpt": "Find the people you trust and listen to ONE — not all of them. There's too much noise. Once you find your people it makes it so much easier.",                                  "topic_ids": ["mental-load"], "weight": 3 }
       ],
       "quotes": [
-        { "id": "ep3-quote1", "text": "If you can only do one, do it at night.", "attribution": "Belle Sayers · on brushing", "starts_at_seconds": 980, "ends_at_seconds": 985, "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-quote2", "text": "Find the people that I trusted, and then I just listened to one person.", "attribution": "Belle Sayers · final advice", "starts_at_seconds": 1063, "ends_at_seconds": 1075, "topic_ids": ["kids-teeth"] },
-        { "id": "ep3-quote3", "text": "I know what to do dental-wise. But you know your child.", "attribution": "Belle Sayers · on parents trusting themselves", "starts_at_seconds": 1027, "ends_at_seconds": 1035, "topic_ids": ["kids-teeth"] }
+        { "id": "ep3-quote1", "text": "If you can only do one, do it at night.",                       "attribution": "Belle Sayers · on brushing",                "starts_at_seconds": 980,  "ends_at_seconds": 985,  "topic_ids": ["teeth"] },
+        { "id": "ep3-quote2", "text": "I know what to do dental-wise. But you know your child.",        "attribution": "Belle Sayers · on parents trusting themselves", "starts_at_seconds": 1027, "ends_at_seconds": 1035, "topic_ids": ["teeth"] },
+        { "id": "ep3-quote3", "text": "Find the people that I trusted, and then I just listened to one person.", "attribution": "Belle Sayers · final advice",            "starts_at_seconds": 1063, "ends_at_seconds": 1075, "topic_ids": ["mental-load"] }
       ],
       "bts_images": [
-        "assets/bts/isabelle/01.jpg",
-        "assets/bts/isabelle/02.jpg",
-        "assets/bts/isabelle/03.jpg",
-        "assets/bts/isabelle/04.jpg",
-        "assets/bts/isabelle/05.jpg",
-        "assets/bts/isabelle/06.jpg",
-        "assets/bts/isabelle/07.jpg",
-        "assets/bts/isabelle/08.jpg",
-        "assets/bts/isabelle/09.jpg",
-        "assets/bts/isabelle/10.jpg",
-        "assets/bts/isabelle/11.jpg",
-        "assets/bts/isabelle/12.jpg",
-        "assets/bts/isabelle/13.jpg",
-        "assets/bts/isabelle/14.jpg",
-        "assets/bts/isabelle/15.jpg"
+        "assets/bts/isabelle/01.jpg","assets/bts/isabelle/02.jpg","assets/bts/isabelle/03.jpg",
+        "assets/bts/isabelle/04.jpg","assets/bts/isabelle/05.jpg","assets/bts/isabelle/06.jpg"
       ]
     },
 
@@ -260,46 +220,42 @@
       "number": 4,
       "guest": {
         "name": "Olivia McArthur",
-        "expertise": "Accredited Practising Dietitian · 12 years · paediatric specialist",
-        "business": "OM Dietitian · omdietitian.com (private practice + hospitals)",
-        "bio_paragraph": "Olivia's a paediatric dietitian with 12 years' experience, specialising in fussy eating and the neurodiversity space — and she's a mum of FIVE. Got into nutrition after rowing through high school, when an early brush with disordered eating turned into a careers-counsellor moment that pointed her at dietetics. Started her private practice in 2018. She's the reason your toddler doesn't have to eat cereal at breakfast.",
-        "rawness_note": "Olivia is honest about the disordered eating in her family growing up and how it shaped her work. Also raw about the gagging-not-choking moment with her firstborn — out of the high chair, crying, baby smiling.",
+        "expertise": "Paediatric Dietitian",
+        "expertise_short": "12 years · Mum of FIVE",
+        "business": "OM Dietitian",
+        "bio_paragraph": "Olivia's a paediatric dietitian with 12 years' experience, specialising in fussy eating and the neurodiversity space — and she's a mum of FIVE. Got into nutrition through rowing in high school after an early brush with disordered eating. Started her private practice in 2018.",
+        "rawness_note": "Honest about the disordered eating in her family growing up and how it shaped her work. Also raw about the gagging-not-choking moment with her firstborn — out of the high chair, crying, baby smiling.",
         "hero_image": "assets/heroes/olivia.jpg",
         "find_them": [
           { "label": "OM Dietitian", "url": "https://www.omdietitian.com" }
         ]
       },
-      "youtube": {
-        "full_id": "sWtBe48YCgM",
-        "snippet_id": "v9etvIOxSOA",
-        "duration_seconds": 2397
+      "youtube":         { "full_id": "sWtBe48YCgM", "snippet_id": "v9etvIOxSOA", "duration_seconds": 2397 },
+      "lane":            "Feeding little humans",
+      "primary_topic_id":"feeding",
+      "topic_ids":       ["feeding", "first-aid"],
+      "journey": {
+        "opening_worry": "I struggle big time with mealtime, and you have FIVE — how does that work at your dinner table?",
+        "the_turn":      "32 steps to eating. Posture before food. Choking is silent, gagging is loud. There's no rule that breakfast must be cereal — maximise their intake when their appetite is best.",
+        "what_landed":   "It actually takes a typically developing child 15 to 20 times of trying a new food to actually accept it."
       },
-      "mission_line": "Feeding little humans — solids, the fussy phase, choking vs gagging, and how to feed neurodiverse kids without losing your mind.",
-      "topic_ids": ["intro-solids", "fussy-eating", "choking-vs-gagging", "neurodiverse-eating", "allergens"],
       "questions": [
-        { "id": "ep4-q1", "question_asked": "I struggle with mealtime with 2 kids. You have 5 — how does that work at your dinner table?", "answer_starts_at_seconds": 106, "answer_ends_at_seconds": 175, "answer_excerpt": "The first child is by far the hardest because you're navigating it all new. By the fifth, I'm more relaxed. None of my five — and none of the kids I treat — has followed a book in terms of what they 'should' do at any exact point.", "topic_ids": ["fussy-eating"] },
-        { "id": "ep4-q2", "question_asked": "What's the biggest challenge with kids and food — what's the fussy phase?", "answer_starts_at_seconds": 167, "answer_ends_at_seconds": 295, "answer_excerpt": "The 12–24 month mark is so hard. They're doing huge developmental growth, learning to be themselves, asserting independence — and you're also teaching them how to eat. Foods they used to eat get rejected. Textures change. Siblings influence. Back yourself: it's a phase.", "topic_ids": ["fussy-eating"] },
-        { "id": "ep4-q3", "question_asked": "What's your tip for introducing solids and making it less stressful?", "answer_starts_at_seconds": 444, "answer_ends_at_seconds": 590, "answer_excerpt": "Around 6 months — definitely not before 4 (the gut isn't ready, allergy risk increases). Look for readiness signs: head control, the tongue-extrusion reflex receding, leaning forward looking for more. Milk is still the most important nutrition until 8 months — solids before then are for taste and texture exploration, not to fill them up.", "topic_ids": ["intro-solids"] },
-        { "id": "ep4-q4", "question_asked": "How do you actually make introducing solids fun?", "answer_starts_at_seconds": 590, "answer_ends_at_seconds": 700, "answer_excerpt": "Prepare for mess. There are 32 steps to eating — looking, smelling, touching, taste, then chew and swallow. The more you let them explore, the funner it is. Even if it doesn't go in their mouth they're getting sensory development.", "topic_ids": ["intro-solids"] },
-        { "id": "ep4-q5", "question_asked": "Why does the high chair and posture matter so much for solids?", "answer_starts_at_seconds": 690, "answer_ends_at_seconds": 800, "answer_excerpt": "Feet grounded, 90-90-90 position. If they're slouching or legs hanging they're using core to stay upright — that focus comes off the food. A high chair without foot support? Stack books or blocks. Comfort means they can focus on eating. Also a choking risk to be eating outside the high chair.", "topic_ids": ["intro-solids"] },
-        { "id": "ep4-q6", "question_asked": "What's the difference between choking and gagging — and what do you do?", "answer_starts_at_seconds": 925, "answer_ends_at_seconds": 1040, "answer_excerpt": "Choking is silent — they could go purpley-blue, straight out of the chair. Gagging is loud, face goes red, often follows with a vomit. Gagging is normal — it's their defence when texture progresses. You actually want them to gag because that's how they learn to chew (tongue lateralisation).", "topic_ids": ["choking-vs-gagging"] },
-        { "id": "ep4-q7", "question_asked": "How do you work with neurodivergent kids and food?", "answer_starts_at_seconds": 1130, "answer_ends_at_seconds": 1280, "answer_excerpt": "Sensory profiles change everything. Super smellers, super tasters. ADHD meds impact appetite hugely. Often kids eat well for 12–15 months then drop foods as their sensory profile kicks in. Fruit, veg and meat are the most fibrous foods — chewing-heavy, sensory-heavy, all-different — and they're often the first to be rejected.", "topic_ids": ["neurodiverse-eating", "fussy-eating"] },
-        { "id": "ep4-q8", "question_asked": "Should kids really have to eat 'breakfast food' at breakfast?", "answer_starts_at_seconds": 1320, "answer_ends_at_seconds": 1420, "answer_excerpt": "There's no rule. If you struggle to get a dinner meal in because they're tired, offer the dinner meal at breakfast — that's when they're most alert and hungry. Try going straight from kindy/daycare to early dinner instead of afternoon tea. Maximise their intake when their appetite is best.", "topic_ids": ["fussy-eating"] },
-        { "id": "ep4-q9", "question_asked": "What are the biggest misconceptions about feeding kids?", "answer_starts_at_seconds": 1422, "answer_ends_at_seconds": 1540, "answer_excerpt": "That you have to introduce vegetables first or every food separately. Iron is the key nutrient from 6 months (jumps from 0.7mg to 11mg). Allergens (cow's milk, eggs, fish, nuts, soy) should be introduced early and often — twice a week to maintain exposure. Most parents don't know that.", "topic_ids": ["allergens", "intro-solids"] },
-        { "id": "ep4-q10", "question_asked": "Final advice for new parents?", "answer_starts_at_seconds": 1572, "answer_ends_at_seconds": 1700, "answer_excerpt": "Don't get advice from too many people. Don't compare yourself. Educate yourself enough to feel in control. With fussy phases, you're in charge — they're looking to you for routine and structure. Limit choices: four options for a 2-year-old is overwhelming.", "topic_ids": ["fussy-eating"] }
+        { "id": "ep4-q2",  "question_asked": "What's the fussy phase — and when does it hit?",                                  "answer_starts_at_seconds": 167,  "answer_ends_at_seconds": 295,  "answer_excerpt": "12–24 months is brutal. Huge developmental growth, asserting independence, and you're teaching them to eat. Foods they ate get rejected. Back yourself — it's a phase.", "topic_ids": ["feeding"], "weight": 4 },
+        { "id": "ep4-q3",  "question_asked": "When and how should you introduce solids?",                                            "answer_starts_at_seconds": 444,  "answer_ends_at_seconds": 590,  "answer_excerpt": "Around 6 months — not before 4. Look for head control, the tongue-extrusion reflex receding, leaning forward. Milk is still the most important nutrition until 8 months.",      "topic_ids": ["feeding"], "weight": 4 },
+        { "id": "ep4-q5",  "question_asked": "Why does posture in the high chair matter so much?",                                   "answer_starts_at_seconds": 690,  "answer_ends_at_seconds": 800,  "answer_excerpt": "90-90-90 position. Feet grounded. If they're slouching they're using core to stay upright — focus comes off the food. Stack books or blocks if there's no foot support.",         "topic_ids": ["feeding", "first-aid"], "weight": 4 },
+        { "id": "ep4-q6",  "question_asked": "What's the difference between choking and gagging?",                                   "answer_starts_at_seconds": 925,  "answer_ends_at_seconds": 1040, "answer_excerpt": "Choking is silent — they could go purpley-blue, straight out of the chair. Gagging is loud, face goes red, often follows with a vomit. Gagging is normal and necessary.",        "topic_ids": ["feeding", "first-aid"], "weight": 5 },
+        { "id": "ep4-q7",  "question_asked": "How do you work with neurodivergent kids and food?",                                  "answer_starts_at_seconds": 1130, "answer_ends_at_seconds": 1280, "answer_excerpt": "Sensory profiles change everything. Super smellers, super tasters. ADHD meds impact appetite. Often kids eat well for 12–15 months then drop foods as their sensory profile kicks in.", "topic_ids": ["feeding"], "weight": 4 },
+        { "id": "ep4-q8",  "question_asked": "Should kids really have to eat 'breakfast food' at breakfast?",                        "answer_starts_at_seconds": 1320, "answer_ends_at_seconds": 1420, "answer_excerpt": "There's no rule. If you struggle to get a dinner meal in, offer it at breakfast — that's when they're most alert. Try going from kindy straight to early dinner.",                "topic_ids": ["feeding"], "weight": 3 },
+        { "id": "ep4-q9",  "question_asked": "What are the biggest misconceptions about feeding kids?",                              "answer_starts_at_seconds": 1422, "answer_ends_at_seconds": 1540, "answer_excerpt": "Iron jumps from 0.7mg to 11mg at 6 months. Allergens (cow's milk, eggs, fish, nuts, soy) should be introduced early and often — twice a week to maintain exposure.",                  "topic_ids": ["feeding"], "weight": 4 }
       ],
       "quotes": [
-        { "id": "ep4-quote1", "text": "It actually takes a typically developing child 15 to 20 times of trying a new food to actually accept it.", "attribution": "Olivia McArthur · the rule of thumb", "starts_at_seconds": 0, "ends_at_seconds": 14, "topic_ids": ["fussy-eating"] },
-        { "id": "ep4-quote2", "text": "Choking is silent. Gagging is loud — face goes red, often follows with a vomit.", "attribution": "Olivia McArthur · the line that saves panic", "starts_at_seconds": 935, "ends_at_seconds": 950, "topic_ids": ["choking-vs-gagging"] },
-        { "id": "ep4-quote3", "text": "There are actually 32 steps to eating, from looking at a food to swallowing it.", "attribution": "Olivia McArthur · why solids take patience", "starts_at_seconds": 612, "ends_at_seconds": 622, "topic_ids": ["intro-solids"] }
+        { "id": "ep4-quote1", "text": "It actually takes a typically developing child 15 to 20 times of trying a new food to actually accept it.", "attribution": "Olivia McArthur · the rule of thumb",          "starts_at_seconds": 0,    "ends_at_seconds": 14,   "topic_ids": ["feeding"] },
+        { "id": "ep4-quote2", "text": "Choking is silent. Gagging is loud — face goes red, often follows with a vomit.",                       "attribution": "Olivia McArthur · the line that saves panic",  "starts_at_seconds": 935,  "ends_at_seconds": 950,  "topic_ids": ["feeding", "first-aid"] },
+        { "id": "ep4-quote3", "text": "There are actually 32 steps to eating, from looking at a food to swallowing it.",                  "attribution": "Olivia McArthur · why solids take patience",  "starts_at_seconds": 612,  "ends_at_seconds": 622,  "topic_ids": ["feeding"] }
       ],
       "bts_images": [
-        "assets/bts/olivia/01.jpg",
-        "assets/bts/olivia/02.jpg",
-        "assets/bts/olivia/03.jpg",
-        "assets/bts/olivia/04.jpg",
-        "assets/bts/olivia/05.jpg",
-        "assets/bts/olivia/06.jpg"
+        "assets/bts/olivia/01.jpg","assets/bts/olivia/02.jpg","assets/bts/olivia/03.jpg",
+        "assets/bts/olivia/04.jpg","assets/bts/olivia/05.jpg","assets/bts/olivia/06.jpg"
       ]
     },
 
@@ -308,51 +264,42 @@
       "number": 5,
       "guest": {
         "name": "Felicity Conlan",
-        "expertise": "Speech Pathologist · Teacher · Author",
-        "business": "Speech for the Stars · speechforthestars.org",
-        "bio_paragraph": "Felicity wanted to work with children and foreign languages — finished her teaching degree and a French diploma, then a friend's brain aneurysm pulled her into speech pathology. Watching that friend rebuild speech after losing it shaped everything. She taught grade 5 for a year, then did the Master of Speech Pathology at La Trobe. Now author of 'The Light Was Always There', a children's book about hope written during the pandemic with her students giving feedback page by page.",
-        "rawness_note": "Felicity opens up about the brain-aneurysm moment that redirected her career — watching her friend rebuild speech after losing it. Also notes how often parents come into her office and the session becomes a 'psychology session' about their own speech challenges as kids.",
+        "expertise": "Speech Pathologist",
+        "expertise_short": "Teacher · Author",
+        "business": "Speech for the Stars",
+        "bio_paragraph": "Felicity wanted to work with kids and languages. A friend's brain aneurysm pulled her into speech pathology — watching that friend rebuild speech after losing it shaped everything. Master of Speech Pathology at La Trobe. Author of 'The Light Was Always There', a kids' book about hope written during the pandemic.",
+        "rawness_note": "Notes how often parents come into her office and the session becomes a 'psychology session' about their own speech challenges as kids — because back in the day this wasn't identified or diagnosed.",
         "hero_image": "assets/heroes/felicity.jpg",
         "find_them": [
-          { "label": "Speech for the Stars", "url": "https://speechforthestars.org" },
-          { "label": "Instagram · @speechforthestars", "url": "https://www.instagram.com/speechforthestars" },
-          { "label": "Book · 'The Light Was Always There'", "url": "https://speechforthestars.org" }
+          { "label": "Speech for the Stars",                  "url": "https://speechforthestars.org" },
+          { "label": "Instagram · @speechforthestars",     "url": "https://www.instagram.com/speechforthestars" }
         ]
       },
-      "youtube": {
-        "full_id": "ZJD_9gOcyLI",
-        "snippet_id": "cEVWgN8-jEA",
-        "duration_seconds": 1345
+      "youtube":         { "full_id": "ZJD_9gOcyLI", "snippet_id": "cEVWgN8-jEA", "duration_seconds": 1345 },
+      "lane":            "Speech & communication",
+      "primary_topic_id":"speech",
+      "topic_ids":       ["speech"],
+      "journey": {
+        "opening_worry": "How do parents know when to actually book a speech pathologist?",
+        "the_turn":      "Communication breakdown is the flag — not just stutters and lisps. Speech, language, fluency, voice, pragmatics, literacy, and swallowing. The OWL strategy at home. The iPad doesn't talk back.",
+        "what_landed":   "Make sure it's not you correcting your child all the time. Model — they say 'I go down the street', you say 'yes, you went down the street.'"
       },
-      "mission_line": "Speech and communication — when to seek help, what speech pathologists actually do, and the at-home OWL strategy.",
-      "topic_ids": ["speech-milestones", "stuttering", "language-strategies", "social-communication", "swallowing"],
       "questions": [
-        { "id": "ep5-q1", "question_asked": "How did you get into speech pathology?", "answer_starts_at_seconds": 85, "answer_ends_at_seconds": 165, "answer_excerpt": "Wanted to work with kids and languages. Started a Bachelor of Education and a Diploma in French. A friend had a brain aneurysm and lost her speech — watching her rebuild it pulled Felicity into speech pathology. Master of Speech Pathology at La Trobe.", "topic_ids": ["speech-milestones"] },
-        { "id": "ep5-q2", "question_asked": "How do parents know when to book a speech pathologist?", "answer_starts_at_seconds": 165, "answer_ends_at_seconds": 295, "answer_excerpt": "Communication breakdown is the flag. Speech pathologists don't just look at stutters and lisps — we cover speech, language (expressive and receptive), fluency, voice, pragmatics (social communication), literacy, and swallowing. Anywhere there's breakdown, book in.", "topic_ids": ["speech-milestones", "swallowing"] },
-        { "id": "ep5-q3", "question_asked": "What's the most common concern parents come to you with?", "answer_starts_at_seconds": 298, "answer_ends_at_seconds": 380, "answer_excerpt": "'I think my child doesn't have enough words' — late-talker referrals. And 'I'm not sure if they should be saying this sound — what are the milestones?'", "topic_ids": ["speech-milestones"] },
-        { "id": "ep5-q4", "question_asked": "What age should parents look at speech sound milestones?", "answer_starts_at_seconds": 345, "answer_ends_at_seconds": 480, "answer_excerpt": "Around 3 for sound milestones. F-for-TH ('thank' becomes 'fank') is the last sound to develop and shouldn't be intervened on until past 4. Stuttering has a strong genetic link — if it's in the family, see a speech path at age 2 or 3 because evidence is strongest with younger kids.", "topic_ids": ["speech-milestones", "stuttering"] },
-        { "id": "ep5-q5", "question_asked": "What area of speech pathology do you most prefer?", "answer_starts_at_seconds": 465, "answer_ends_at_seconds": 510, "answer_excerpt": "Social communication. Working in schools, helping kids with breakdowns in peer and adult socialising. If you don't have the tools to be social, life is very difficult.", "topic_ids": ["social-communication"] },
-        { "id": "ep5-q6", "question_asked": "What are the biggest misconceptions in your field?", "answer_starts_at_seconds": 518, "answer_ends_at_seconds": 600, "answer_excerpt": "TV stuttering looks one way — there are many ways to stutter. Speech-sound milestones: people Google American sources without realising the Australian accent is different. Use Speech Pathology Australia or ask a speech path directly.", "topic_ids": ["stuttering", "speech-milestones"] },
-        { "id": "ep5-q7", "question_asked": "What strategies can parents try at home?", "answer_starts_at_seconds": 600, "answer_ends_at_seconds": 700, "answer_excerpt": "Interaction is key. The iPad doesn't talk back. Use OWL: Observe, Wait, Listen. If your child is playing with a train, talk about the train — follow their lead, don't make them say a word that isn't what they're engaged with.", "topic_ids": ["language-strategies"] },
-        { "id": "ep5-q8", "question_asked": "How important is the parent's role in all this?", "answer_starts_at_seconds": 680, "answer_ends_at_seconds": 740, "answer_excerpt": "The most important. Be present in the speech therapy session — the speech path is the model for you. Communication development happens at home and in everyday life, not in the 30 minutes with us.", "topic_ids": ["language-strategies"] },
-        { "id": "ep5-q9", "question_asked": "Do parents come in and realise they had similar challenges?", "answer_starts_at_seconds": 745, "answer_ends_at_seconds": 805, "answer_excerpt": "Often. Sessions become more of a psychology session about them as children. Speech pathology intervention wasn't common 'back in the day' — many things have a strong genetic link and opening up about your own challenges helps the support we can provide.", "topic_ids": ["speech-milestones"] },
-        { "id": "ep5-q10", "question_asked": "What's your final advice for parents starting to navigate all this?", "answer_starts_at_seconds": 805, "answer_ends_at_seconds": 870, "answer_excerpt": "Communication is meant to be fun. Don't correct your child constantly — model. If they say 'I go down the street', you say 'yes, you went down the street'. Read books, sing songs. Have fun with it.", "topic_ids": ["language-strategies"] },
-        { "id": "ep5-q11", "question_asked": "Tell us about your book 'The Light Was Always There'.", "answer_starts_at_seconds": 855, "answer_ends_at_seconds": 905, "answer_excerpt": "Wrote it during COVID 2019, with her grade-5 students giving feedback on each page weekly. A picture story book about hope in the pandemic — wanted to give hope.", "topic_ids": ["language-strategies"] }
+        { "id": "ep5-q2",  "question_asked": "How do parents know when to book a speech pathologist?",                              "answer_starts_at_seconds": 165, "answer_ends_at_seconds": 295, "answer_excerpt": "Communication breakdown is the flag. Speech paths cover speech, expressive + receptive language, fluency, voice, pragmatics (social), literacy, and swallowing.",                       "topic_ids": ["speech"], "weight": 5 },
+        { "id": "ep5-q3",  "question_asked": "What's the most common concern parents bring you?",                                   "answer_starts_at_seconds": 298, "answer_ends_at_seconds": 380, "answer_excerpt": "'I think my child doesn't have enough words' — late-talker referrals. And 'I'm not sure if they should be saying this sound — what are the milestones?'",                "topic_ids": ["speech"], "weight": 3 },
+        { "id": "ep5-q4",  "question_asked": "What age should parents look at speech-sound milestones?",                            "answer_starts_at_seconds": 345, "answer_ends_at_seconds": 480, "answer_excerpt": "Age 3 for sound milestones. F-for-TH ('thank' → 'fank') is the LAST sound to develop — don't intervene before age 4. Stuttering has a strong genetic link — see early.",        "topic_ids": ["speech"], "weight": 4 },
+        { "id": "ep5-q6",  "question_asked": "What are the biggest misconceptions in your field?",                                  "answer_starts_at_seconds": 518, "answer_ends_at_seconds": 600, "answer_excerpt": "Stuttering on TV looks one way — there are many ways to stutter. People Google US sites without realising the Australian accent is different. Use Speech Pathology Australia.",      "topic_ids": ["speech"], "weight": 3 },
+        { "id": "ep5-q7",  "question_asked": "What strategies can parents try at home?",                                            "answer_starts_at_seconds": 600, "answer_ends_at_seconds": 700, "answer_excerpt": "Interaction is everything. The iPad doesn't talk back. Use OWL: Observe, Wait, Listen. If they're playing with a train, talk about the train. Follow their lead.",                       "topic_ids": ["speech"], "weight": 5 },
+        { "id": "ep5-q10", "question_asked": "Final advice for parents starting to navigate all this?",                             "answer_starts_at_seconds": 805, "answer_ends_at_seconds": 870, "answer_excerpt": "Communication should be FUN. Don't correct your child constantly — model. They say 'I go down the street', you say 'yes, you went down the street'. Read books, sing songs.",       "topic_ids": ["speech"], "weight": 4 }
       ],
       "quotes": [
-        { "id": "ep5-quote1", "text": "Communication breakdown — that's actually what we look at. Not just stutters and lisps.", "attribution": "Felicity Conlan · what speech paths really do", "starts_at_seconds": 178, "ends_at_seconds": 192, "topic_ids": ["speech-milestones"] },
-        { "id": "ep5-quote2", "text": "Observe, wait, and listen. The iPad doesn't talk back — interaction is the key to speech and language development.", "attribution": "Felicity Conlan · the OWL strategy", "starts_at_seconds": 612, "ends_at_seconds": 632, "topic_ids": ["language-strategies"] },
-        { "id": "ep5-quote3", "text": "Make sure it's not you correcting your child all the time. Model — they say 'I go down the street', you say 'yes, you went down the street'.", "attribution": "Felicity Conlan · final advice", "starts_at_seconds": 815, "ends_at_seconds": 835, "topic_ids": ["language-strategies"] }
+        { "id": "ep5-quote1", "text": "Communication breakdown — that's actually what we look at. Not just stutters and lisps.",                "attribution": "Felicity Conlan · what speech paths really do", "starts_at_seconds": 178, "ends_at_seconds": 192, "topic_ids": ["speech"] },
+        { "id": "ep5-quote2", "text": "Observe, wait, and listen. The iPad doesn't talk back — interaction is the key to speech and language development.", "attribution": "Felicity Conlan · the OWL strategy",            "starts_at_seconds": 612, "ends_at_seconds": 632, "topic_ids": ["speech"] },
+        { "id": "ep5-quote3", "text": "Make sure it's not you correcting your child all the time. Model — they say 'I go down the street', you say 'yes, you went down the street'.", "attribution": "Felicity Conlan · final advice",       "starts_at_seconds": 815, "ends_at_seconds": 835, "topic_ids": ["speech"] }
       ],
       "bts_images": [
-        "assets/bts/felicity/01.jpg",
-        "assets/bts/felicity/02.jpg",
-        "assets/bts/felicity/03.jpg",
-        "assets/bts/felicity/04.jpg",
-        "assets/bts/felicity/05.jpg",
-        "assets/bts/felicity/06.jpg",
-        "assets/bts/felicity/07.jpg",
-        "assets/bts/felicity/08.jpg"
+        "assets/bts/felicity/01.jpg","assets/bts/felicity/02.jpg","assets/bts/felicity/03.jpg",
+        "assets/bts/felicity/04.jpg","assets/bts/felicity/05.jpg","assets/bts/felicity/06.jpg"
       ]
     }
   ]
