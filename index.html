@@ -74,12 +74,15 @@ a:hover { text-decoration: underline; }
 .wordmark-text em { font-style: normal; font-weight: 400; opacity: 0.75; }
 .brand-tag {
   margin-top: 14px;
-  font-size: 11px;
+  display: inline-block;
+  font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--pink);
-  opacity: 0.75;
-  font-weight: 500;
+  color: white;
+  background: var(--pink);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 700;
 }
 
 /* ════ HERO ════ */
@@ -1006,7 +1009,8 @@ window.onYouTubeIframeAPIReady = () => { YT_READY = true; tryPendingSeek(); };
 fetch('./season-data.json?v=1').then(r => r.json()).then(data => {
   DATA = data;
   document.title = `${DATA.season.title} · by ${DATA.brand_understanding.client_name}`;
-  document.getElementById('heroSub').textContent = DATA.season.tagline;
+  // Hero sub uses Megan's actual intro promise — her voice, verbatim.
+  document.getElementById('heroSub').textContent = '"' + DATA.season.intro_promise.replace(/^Welcome to The Huddle, /, '').replace(/\.\s*I'm Megan from Help at Hand Education\.?$/, '."') ;
   document.getElementById('footerPromise').textContent = DATA.season.outro_promise.replace(/^Hey, /, '').replace(/Hey, /, '');
   buildStats();
   buildEpisodePills();
