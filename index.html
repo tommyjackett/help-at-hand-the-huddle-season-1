@@ -48,62 +48,53 @@ body {
 a { color: var(--pink); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ════ HEADER · the mini-promo ════ */
+/* ════ HEADER · clean cream, no arch ════ */
 .site-header {
-  background: var(--pink-soft);
-  padding: 56px 24px 80px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.site-header::before {
-  content: '';
-  position: absolute;
-  inset: -40px -10% auto -10%;
-  height: 80px;
   background: var(--cream);
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  padding: 40px 24px 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+@media (max-width: 600px) {
+  .site-header { padding: 28px 20px 22px; }
 }
 .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 28px;
-  position: relative;
-  z-index: 2;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 .wordmark img {
-  width: 70px; height: 70px;
+  width: 56px; height: 56px;
 }
+@media (max-width: 600px) { .wordmark img { width: 44px; height: 44px; } }
 .wordmark-text {
-  font-size: clamp(38px, 7vw, 60px);
+  font-size: clamp(30px, 6vw, 46px);
   font-weight: 700;
   color: var(--pink);
   letter-spacing: -0.02em;
   line-height: 0.95;
 }
 .pitch {
-  max-width: 580px;
+  max-width: 540px;
   margin: 0 auto;
-  font-size: clamp(15px, 2.2vw, 18px);
+  font-size: clamp(14px, 1.8vw, 16px);
   color: var(--ink);
   line-height: 1.55;
-  position: relative;
-  z-index: 2;
 }
-.pitch p { margin-bottom: 8px; }
+.pitch p { margin-bottom: 4px; }
 .pitch p:last-child { margin-bottom: 0; }
 .pitch strong { font-weight: 700; color: var(--pink-deep); }
 .pitch-leadin {
-  margin-top: 22px;
-  font-size: 13px;
+  margin-top: 16px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--pink-deep);
   font-weight: 700;
 }
 .pitch-leadin .arrow { display: inline-block; margin-left: 6px; animation: bounce 2.5s ease infinite; }
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
 
 /* ════ SECTION CHROME ════ */
 section { padding: 56px 24px; max-width: 1080px; margin: 0 auto; }
