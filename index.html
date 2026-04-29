@@ -47,6 +47,19 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
 }
+/* desktop: cream column floats on a soft ink stage (matches the design canvas) */
+@media (min-width: 600px) {
+  body {
+    background:
+      radial-gradient(120% 80% at 50% 0%, #3a2a3c 0%, #1a1119 60%, #0d080e 100%);
+    padding: 28px 0 40px;
+  }
+  .app {
+    border-radius: 28px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.04);
+    overflow: hidden;
+  }
+}
 button { font-family: inherit; cursor: pointer; border: 0; background: transparent; padding: 0; }
 button:focus { outline: none; }
 img { display: block; max-width: 100%; }
@@ -96,7 +109,8 @@ a:hover { text-decoration: underline; }
   padding-bottom: 4px;
 }
 .collage-stage {
-  position: relative; height: 380px; margin: 12px 0 6px;
+  position: relative; height: 380px; margin: 12px auto 6px;
+  max-width: 360px;
 }
 .polaroid {
   position: absolute;
@@ -183,6 +197,14 @@ a:hover { text-decoration: underline; }
   color: var(--ink-soft); max-width: 320px;
 }
 .section-pad { padding: 0 22px 14px; }
+
+/* chip rows — fade affordance on right edge */
+.chip-row-wrap { position: relative; }
+.chip-row-fade {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 36px;
+  background: linear-gradient(90deg, rgba(245,237,227,0) 0%, rgba(245,237,227,0.95) 100%);
+  pointer-events: none;
+}
 
 /* photo-tile chips */
 .chip {
@@ -426,7 +448,9 @@ a:hover { text-decoration: underline; }
 }
 .episode-thumb-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.10) 35%, rgba(0,0,0,0.10) 65%, rgba(0,0,0,0.55) 100%),
+    linear-gradient(135deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.30) 100%);
 }
 .episode-thumb-lane {
   position: absolute; top: 12px; left: 12px;
@@ -849,7 +873,7 @@ function renderHero() {
     { ep: eps[1], rot: -6, top: 8,   left: 18,  z: 3, w: 104 }, // Bianca
     { ep: eps[3], rot:  4, top: 18,  left: 134, z: 4, w: 118 }, // Olivia
     { ep: eps[0], rot: -3, top: 110, left: 60,  z: 5, w: 110 }, // Claire (front)
-    { ep: eps[2], rot:  6, top: 124, left: 188, z: 3, w: 100 }, // Isabelle
+    { ep: eps[2], rot:  6, top: 124, left: 204, z: 4, w: 100 }, // Isabelle (shifted right + lifted z so Claire stops eating the caption)
     { ep: eps[4], rot: -4, top: 218, left: 116, z: 4, w: 112 }, // Felicity
   ];
   const polaroidsHTML = polaroids.map(p => `
@@ -913,8 +937,14 @@ function renderCYOA() {
         <div class="section-eyebrow">Choose your own adventure</div>
         <h2 class="section-headline">Tap a few of the things on your mind.<br>We'll show you the moments.</h2>
       </div>
-      <div class="swipe-row" id="chipsRow1" style="padding-bottom:8px">${chipsRow1}</div>
-      <div class="swipe-row" id="chipsRow2" style="padding-bottom:18px">${chipsRow2}</div>
+      <div class="chip-row-wrap">
+        <div class="swipe-row" id="chipsRow1" style="padding-bottom:8px">${chipsRow1}</div>
+        <div class="chip-row-fade"></div>
+      </div>
+      <div class="chip-row-wrap">
+        <div class="swipe-row" id="chipsRow2" style="padding-bottom:18px">${chipsRow2}</div>
+        <div class="chip-row-fade"></div>
+      </div>
       <div id="cyoaBanner"></div>
       <div class="section-pad" style="padding-bottom:14px">
         <div class="player-frame" id="cyoaPlayerFrame">
