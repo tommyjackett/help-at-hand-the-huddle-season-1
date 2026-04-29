@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>The Huddle — Season 1 · by Help at Hand</title>
-<meta name="description" content="A scrapbook of Season 1 of The Huddle. Five experts. Five lanes. The gold from every conversation, made navigable.">
+<meta name="description" content="A resource for parents — five conversations with experts on what comes up day to day. Made findable.">
 <meta property="og:title" content="The Huddle — Season 1">
-<meta property="og:description" content="Five experts. Five lanes. The gold from every conversation, made navigable.">
+<meta property="og:description" content="A resource for parents — five conversations with experts on what comes up day to day.">
 <meta property="og:type" content="website">
 <style>
 @font-face { font-family: 'GT Walsheim'; font-weight: 400; font-style: normal; src: url('assets/fonts/GT-Walsheim-Regular.otf') format('opentype'); font-display: swap; }
 @font-face { font-family: 'GT Walsheim'; font-weight: 500; font-style: normal; src: url('assets/fonts/GT-WALSHEIM-MEDIUM.OTF') format('opentype'); font-display: swap; }
 @font-face { font-family: 'GT Walsheim'; font-weight: 700; font-style: normal; src: url('assets/fonts/GT-WALSHEIM-BOLD.OTF') format('opentype'); font-display: swap; }
+@font-face { font-family: 'GT Walsheim'; font-weight: 700; font-style: italic; src: url('assets/fonts/GT-Walsheim-Bold-Oblique.otf') format('opentype'); font-display: swap; }
 
 :root {
   --pink: #EA559E;
@@ -25,13 +26,13 @@
   --yellow: #D9B028;
   --ink: #2A1F2C;
   --ink-soft: #6E5F70;
+  --ink-faint: rgba(42,31,44,0.55);
   --cream: #FBF7F4;
   --cream-warm: #F5EDE3;
-  --line: rgba(42, 31, 44, 0.10);
-  --tape: #FCEAA4;
-  --shadow-sm: 0 2px 8px rgba(42,31,44,0.08);
-  --shadow:    0 6px 24px rgba(42,31,44,0.10);
-  --shadow-lg: 0 16px 48px rgba(42,31,44,0.16);
+  --line: rgba(42,31,44,0.08);
+  --shadow-sm: 0 2px 8px rgba(42,31,44,0.06);
+  --shadow:    0 8px 28px rgba(42,31,44,0.10);
+  --shadow-lg: 0 16px 48px rgba(42,31,44,0.14);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -47,419 +48,464 @@ body {
 a { color: var(--pink); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ════ HEADER (small wordmark) ════ */
-.site-header { padding: 28px 24px 12px; text-align: center; }
-.wordmark { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
-.wordmark img { width: 52px; height: 52px; display: block; }
-.wordmark-text { font-size: clamp(28px, 5vw, 38px); font-weight: 700; color: var(--pink); letter-spacing: -0.02em; line-height: 1; }
-.site-tag {
-  margin-top: 12px; display: inline-block;
-  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: white; background: var(--ink); padding: 5px 12px; border-radius: 999px; font-weight: 700;
-}
-
-/* ════ POLAROID STRIP (5 guests up top) ════ */
-.polaroid-strip-wrap {
-  margin: 24px auto 0; padding: 12px 16px 24px;
-  max-width: 1100px;
-  position: relative;
-}
-.polaroid-strip {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-  align-items: end;
-}
-@media (max-width: 720px) {
-  .polaroid-strip { display: flex; gap: 12px; overflow-x: auto; padding: 4px 4px 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .polaroid-strip::-webkit-scrollbar { display: none; }
-}
-.polaroid {
-  background: white; padding: 8px 8px 14px; border-radius: 4px;
-  box-shadow: var(--shadow); cursor: pointer;
-  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s;
-  position: relative;
-  scroll-snap-align: start;
-  flex-shrink: 0;
-}
-@media (max-width: 720px) { .polaroid { width: 150px; } }
-.polaroid:nth-child(1) { transform: rotate(-2.5deg); }
-.polaroid:nth-child(2) { transform: rotate(1.5deg); }
-.polaroid:nth-child(3) { transform: rotate(-1deg); }
-.polaroid:nth-child(4) { transform: rotate(2deg); }
-.polaroid:nth-child(5) { transform: rotate(-1.8deg); }
-.polaroid:hover { transform: rotate(0deg) translateY(-6px); box-shadow: var(--shadow-lg); z-index: 5; }
-.polaroid-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 25%; display: block; border-radius: 2px; background: var(--pink-soft); }
-.polaroid-name { font-size: 13px; font-weight: 700; color: var(--ink); text-align: center; margin-top: 8px; line-height: 1.1; }
-.polaroid-role { font-size: 10px; color: var(--ink-soft); text-align: center; margin-top: 3px; line-height: 1.2; }
-.polaroid-badge {
-  position: absolute; top: -8px; right: -8px;
-  background: var(--pink); color: white;
-  font-size: 9px; font-weight: 700; letter-spacing: 0.05em;
-  padding: 4px 8px; border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-  white-space: nowrap;
-}
-
-/* ════ HERO ════ */
-.hero {
-  max-width: 720px; margin: 32px auto 0; padding: 0 24px; text-align: center;
-}
-.hero-eyebrow {
-  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--pink); font-weight: 700; margin-bottom: 14px;
-}
-.hero-title {
-  font-size: clamp(28px, 4.5vw, 40px); font-weight: 700; line-height: 1.1;
-  letter-spacing: -0.02em; color: var(--ink); margin-bottom: 14px;
-}
-.hero-title em { font-style: normal; color: var(--pink); }
-.hero-sub {
-  font-size: clamp(15px, 1.8vw, 17px); color: var(--ink-soft);
-  max-width: 540px; margin: 0 auto 0; font-weight: 400;
-}
-.hero-stats { margin-top: 24px; font-size: 13px; color: var(--ink-soft); }
-.hero-stats strong { color: var(--ink); font-weight: 700; }
-
-/* ════ SEARCH ════ */
-.search-wrap { max-width: 720px; margin: 32px auto 0; padding: 0 24px; }
-.search-card {
-  background: white; border: 2px dashed var(--pink);
-  border-radius: 18px; padding: 18px 18px 14px;
-  box-shadow: var(--shadow);
-  position: relative;
-}
-.search-card::before {
-  content: '✦'; position: absolute; top: -14px; left: 16px;
-  background: var(--cream); color: var(--pink);
-  font-size: 16px; padding: 0 8px;
-}
-.search-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); font-weight: 700; margin-bottom: 8px; display: block; }
-.search-bar { display: flex; align-items: center; gap: 10px; }
-.search-icon { width: 22px; height: 22px; color: var(--pink); flex-shrink: 0; }
-.search-input { flex: 1; border: 0; background: transparent; font: 16px/1.4 inherit; color: var(--ink); outline: none; min-width: 0; padding: 6px 0; }
-.search-input::placeholder { color: var(--ink-soft); opacity: 0.6; }
-.search-clear { background: transparent; border: 0; color: var(--ink-soft); font-size: 22px; padding: 0 6px; cursor: pointer; display: none; line-height: 1; }
-.search-clear.visible { display: block; }
-.search-results {
-  margin-top: 12px; max-height: 0; overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-.search-results.visible { max-height: 480px; overflow-y: auto; padding-top: 12px; border-top: 1px dashed var(--line); }
-.result {
-  padding: 12px; border-radius: 10px; cursor: pointer;
-  transition: background 0.15s; margin-bottom: 4px;
-}
-.result:hover { background: var(--pink-pale); }
-.result-meta { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); font-weight: 700; margin-bottom: 4px; }
-.result-title { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 4px; }
-.result-excerpt { font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
-.result-empty { padding: 16px; text-align: center; color: var(--ink-soft); font-size: 13px; }
-
-/* ════ TIMELINE / JOURNEY ════ */
-.journey-section {
-  max-width: 1080px; margin: 56px auto 0; padding: 0 16px;
-  position: relative;
-}
-.journey-eyebrow {
-  text-align: center; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--pink); font-weight: 700; margin-bottom: 8px;
-}
-.journey-title {
-  text-align: center; font-size: clamp(24px, 3.5vw, 32px); font-weight: 700;
-  letter-spacing: -0.02em; color: var(--ink); margin-bottom: 36px;
-}
-
-/* Timeline rail */
-.timeline-rail {
-  position: absolute; left: 50%; top: 90px; bottom: 60px;
-  width: 3px; background: var(--pink-soft);
-  transform: translateX(-50%);
-  border-radius: 3px;
-  z-index: 1;
-}
-.timeline-fill {
-  position: absolute; left: 50%; top: 0; width: 3px; height: 0;
-  background: linear-gradient(to bottom, var(--pink), var(--pink-deep));
-  transform: translateX(-50%);
-  border-radius: 3px;
-  transition: height 0.4s ease-out;
-  z-index: 2;
-}
-@media (max-width: 880px) {
-  .timeline-rail, .timeline-fill { left: 24px; }
-}
-
-/* Episode stop */
-.episode-stop {
-  position: relative; margin-bottom: 64px; z-index: 3;
-}
-.episode-stop:last-child { margin-bottom: 0; }
-.timeline-dot {
-  position: absolute; left: 50%; top: 28px;
-  width: 18px; height: 18px;
-  border-radius: 50%; background: white;
-  border: 3px solid var(--pink-soft);
-  transform: translateX(-50%);
-  z-index: 4;
-  transition: all 0.4s ease;
-}
-.timeline-dot.lit { border-color: var(--pink); background: var(--pink); box-shadow: 0 0 0 6px rgba(234,85,158,0.18); }
-@media (max-width: 880px) { .timeline-dot { left: 24px; } }
-
-.stop-card {
-  width: calc(50% - 36px); background: white; border-radius: 18px;
-  padding: 0; box-shadow: var(--shadow);
-  position: relative; overflow: visible;
-  scroll-margin-top: 40px;
-}
-.episode-stop:nth-child(odd) .stop-card { margin-left: 0; }
-.episode-stop:nth-child(even) .stop-card { margin-left: calc(50% + 36px); }
-@media (max-width: 880px) {
-  .stop-card { width: calc(100% - 56px); margin-left: 56px !important; }
-}
-
-/* Stop hero — Slide 1 (Hook) */
-.stop-hero {
-  position: relative; border-radius: 18px 18px 0 0; overflow: hidden;
+/* ════ HEADER · the mini-promo ════ */
+.site-header {
   background: var(--pink-soft);
+  padding: 56px 24px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-.stop-hero-img {
-  width: 100%; aspect-ratio: 5/4; object-fit: cover;
-  object-position: center 22%; display: block;
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: -40px -10% auto -10%;
+  height: 80px;
+  background: var(--cream);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
-.stop-hero-gradient {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(42,31,44,0.55) 0%, rgba(42,31,44,0.10) 50%, transparent 70%);
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 2;
 }
-.tape-label {
-  position: absolute; top: -8px; left: -10px;
-  background: var(--ink); color: white;
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 6px 12px; border-radius: 4px;
+.wordmark img {
+  width: 70px; height: 70px;
+}
+.wordmark-text {
+  font-size: clamp(38px, 7vw, 60px);
   font-weight: 700;
-  transform: rotate(-2.5deg);
-  box-shadow: var(--shadow-sm);
+  color: var(--pink);
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+.pitch {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: clamp(15px, 2.2vw, 18px);
+  color: var(--ink);
+  line-height: 1.55;
+  position: relative;
   z-index: 2;
 }
-.tape-label .ep-num {
-  background: var(--pink); color: white; padding: 1px 6px; border-radius: 3px;
-  margin-right: 6px;
+.pitch p { margin-bottom: 8px; }
+.pitch p:last-child { margin-bottom: 0; }
+.pitch strong { font-weight: 700; color: var(--pink-deep); }
+.pitch-leadin {
+  margin-top: 22px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  font-weight: 700;
 }
-.stop-sticker {
-  position: absolute; top: 14px; right: 14px;
-  width: 56px; height: 56px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-  transform: rotate(8deg);
-  z-index: 2;
-}
-.stop-hero-name {
-  position: absolute; bottom: 16px; left: 18px; right: 18px;
-  color: white;
-}
-.stop-hero-name h2 {
-  font-size: clamp(22px, 3vw, 30px); font-weight: 700;
-  letter-spacing: -0.02em; line-height: 1.05;
-}
-.stop-hero-name .role { font-size: 12px; opacity: 0.9; margin-top: 3px; font-weight: 500; }
+.pitch-leadin .arrow { display: inline-block; margin-left: 6px; animation: bounce 2.5s ease infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 
-/* Lane chip */
-.lane-chip {
-  position: absolute; bottom: -12px; right: 18px;
-  background: white; color: var(--ink);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
-  padding: 6px 12px; border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-  display: inline-flex; align-items: center; gap: 6px;
-  z-index: 3;
+/* ════ SECTION CHROME ════ */
+section { padding: 56px 24px; max-width: 1080px; margin: 0 auto; }
+@media (max-width: 600px) { section { padding: 44px 18px; } }
+.section-eyebrow {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--pink-deep); font-weight: 700; margin-bottom: 8px;
 }
-.lane-chip img { width: 18px; height: 18px; }
-
-/* Journey arc — Slide 2 (Thread) */
-.journey-arc { padding: 32px 22px 22px; }
-.arc-step { margin-bottom: 16px; }
-.arc-step:last-child { margin-bottom: 0; }
-.arc-label {
-  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
-  font-weight: 700; margin-bottom: 4px;
+.section-title {
+  font-size: clamp(24px, 4vw, 32px); font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-bottom: 8px;
 }
-.arc-step.worry .arc-label { color: var(--ink-soft); }
-.arc-step.turn  .arc-label { color: var(--pink); }
-.arc-step.land  .arc-label { color: var(--emerald); }
-.arc-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
-.arc-text.italic { font-style: italic; }
-.arc-step.land .arc-text {
-  font-size: 16px; font-weight: 700; line-height: 1.35;
-  color: var(--ink); padding: 12px 14px; background: var(--cream-warm);
-  border-radius: 10px; border-left: 3px solid var(--emerald);
-}
-.arc-arrow {
-  width: 22px; height: 22px; margin: 4px auto 4px 12px;
-  color: var(--pink); opacity: 0.45;
+.section-sub {
+  font-size: clamp(14px, 1.8vw, 16px); color: var(--ink-soft);
+  max-width: 640px; line-height: 1.55; margin-bottom: 28px;
 }
 
-/* Story / rawness card */
-.story-card {
-  margin: 0 22px 22px; padding: 16px;
-  background: var(--pink-pale); border-radius: 12px;
-  font-size: 13px; line-height: 1.6; color: var(--ink);
+/* ════ DOOR 1 · CHOOSE YOUR OWN ADVENTURE ════ */
+.cyoa { background: var(--cream); }
+.cyoa-card {
+  background: white; border-radius: 22px;
+  padding: 28px 24px 32px; box-shadow: var(--shadow);
   position: relative;
 }
-.story-card .raw-tag {
-  display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--pink); margin-bottom: 6px;
+.cyoa-card::before {
+  content: '✦'; position: absolute; top: -12px; left: 22px;
+  background: var(--cream); color: var(--pink-deep);
+  padding: 0 10px; font-size: 18px; font-weight: 700;
 }
-.story-card .find-them { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
-.find-them a {
-  display: inline-block; background: white; color: var(--pink);
-  border: 1.5px solid var(--pink); border-radius: 999px;
-  padding: 4px 10px; font-size: 11px; font-weight: 600;
-  text-decoration: none;
+.cyoa-status {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+  font-size: 12px; color: var(--ink-soft);
 }
-.find-them a:hover { background: var(--pink); color: white; }
-
-/* Slide 3 — Snippet + quote (Payoff) */
-.payoff {
-  position: relative; margin: 0 22px 28px;
-}
-.snippet-frame {
-  width: 100%; max-width: 280px; margin: 0 auto;
-  position: relative; background: black; border-radius: 14px; overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.snippet-frame::before { content: ''; display: block; padding-top: 177.78%; }
-.snippet-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.payoff-quote {
-  position: relative; margin: -20px auto 0;
-  background: var(--pink); color: white;
-  border-radius: 12px; padding: 14px 16px;
-  max-width: 320px; box-shadow: var(--shadow);
-  transform: rotate(-1.5deg);
-  z-index: 2;
-}
-.payoff-quote::before {
-  content: '\201C';
-  position: absolute; top: -4px; left: 8px;
-  font-family: Georgia, serif; font-size: 38px;
-  color: rgba(255,255,255,0.4); line-height: 1;
-}
-.payoff-quote-text {
-  font-size: 13px; font-style: italic; font-weight: 500;
-  line-height: 1.4; padding-left: 22px;
-}
-.payoff-quote-attr {
-  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-  font-weight: 700; opacity: 0.85; margin-top: 8px; padding-left: 22px;
-}
-
-/* Reveal: full episode + questions + BTS */
-.reveal-toggle {
-  display: block; width: calc(100% - 44px);
-  margin: 0 22px 22px; padding: 14px;
-  background: transparent; border: 2px dashed var(--pink-soft);
-  border-radius: 12px; cursor: pointer; font-family: inherit;
-  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--pink); transition: all 0.2s;
-}
-.reveal-toggle:hover { background: var(--pink-pale); border-color: var(--pink); }
-.reveal-toggle .arrow { display: inline-block; transition: transform 0.3s; margin-left: 6px; }
-.reveal-toggle.open .arrow { transform: rotate(180deg); }
-
-.reveal-content {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-  padding: 0 22px;
-}
-.reveal-content.open { max-height: 4000px; padding-bottom: 22px; }
-
-.full-player-frame {
-  position: relative; background: black; border-radius: 12px; overflow: hidden;
-  box-shadow: var(--shadow); margin-bottom: 20px;
-}
-.full-player-frame::before { content: ''; display: block; padding-top: 56.25%; }
-.full-player-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.now-playing {
-  background: var(--pink-pale); border-radius: 8px;
-  padding: 10px 12px; margin-bottom: 16px; font-size: 12px;
+.cyoa-status .count { font-weight: 700; color: var(--pink-deep); }
+.cyoa-status .clear {
+  background: transparent; border: 0; color: var(--ink-soft);
+  font-size: 12px; cursor: pointer; font-family: inherit;
+  text-decoration: underline; padding: 0;
   display: none;
 }
+.cyoa-status .clear.visible { display: inline-block; }
+.cyoa-status .clear:hover { color: var(--pink-deep); }
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.chip {
+  background: var(--cream-warm);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.15s;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 64px;
+}
+.chip:hover { border-color: var(--pink); transform: translateY(-1px); }
+.chip.selected {
+  background: var(--pink); color: white;
+  border-color: var(--pink-deep);
+  box-shadow: var(--shadow-sm);
+}
+.chip-label { font-size: 14px; font-weight: 700; line-height: 1.2; }
+.chip-desc { font-size: 12px; opacity: 0.75; line-height: 1.4; }
+
+.cyoa-results {
+  margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--line);
+  display: none;
+}
+.cyoa-results.visible { display: block; }
+.cyoa-results-empty {
+  padding: 24px; text-align: center; color: var(--ink-soft); font-size: 13px;
+  background: var(--pink-pale); border-radius: 12px; line-height: 1.55;
+}
+.cyoa-results-header {
+  font-size: 13px; color: var(--ink-soft); margin-bottom: 14px;
+  font-weight: 500;
+}
+.cyoa-results-header strong { color: var(--pink-deep); font-weight: 700; }
+
+/* moment cards (used in CYOA + Stand-out) */
+.moments {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 720px) {
+  .moments { grid-template-columns: 1fr 1fr; }
+}
+.moment {
+  background: var(--cream-warm);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  border: 1.5px solid transparent;
+  transition: all 0.15s;
+}
+.moment:hover { border-color: var(--pink); }
+.moment.playing { border-color: var(--pink); background: var(--pink-pale); }
+
+.moment-meta {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--pink-deep); font-weight: 700;
+}
+.moment-text {
+  font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.45;
+}
+.moment-rationale {
+  font-size: 12px; color: var(--ink-soft); line-height: 1.45; font-style: italic;
+}
+.moment-rationale strong { color: var(--pink-deep); font-style: normal; font-weight: 700; }
+.moment-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.btn-watch, .btn-deep {
+  border: 0; border-radius: 999px; padding: 7px 14px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+  cursor: pointer; font-family: inherit;
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: all 0.15s;
+}
+.btn-watch { background: var(--pink); color: white; }
+.btn-watch:hover { background: var(--pink-deep); }
+.btn-deep { background: white; color: var(--ink); border: 1.5px solid var(--line); }
+.btn-deep:hover { border-color: var(--pink); color: var(--pink-deep); }
+
+/* ════ DOOR 2 · EPISODE DEEP DIVE ════ */
+.deep-dive { background: var(--cream); }
+.episode-tiles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 600px) { .episode-tiles { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .episode-tiles { grid-template-columns: repeat(5, 1fr); } }
+
+.episode-tile {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 0;
+  font-family: inherit;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.episode-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.episode-tile.active { box-shadow: 0 0 0 3px var(--pink); }
+
+.tile-img-wrap {
+  aspect-ratio: 5/4; overflow: hidden; position: relative;
+  background: var(--pink-soft);
+}
+.tile-img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 22%;
+  transition: transform 0.4s;
+}
+.episode-tile:hover .tile-img { transform: scale(1.05); }
+.tile-num {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--pink); color: white;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  padding: 3px 8px; border-radius: 999px;
+}
+.tile-duration {
+  position: absolute; bottom: 10px; right: 10px;
+  background: rgba(42,31,44,0.7); color: white;
+  font-size: 10px; font-weight: 700;
+  padding: 3px 7px; border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+.tile-info { padding: 12px 14px 14px; }
+.tile-name { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.tile-lane { font-size: 11px; color: var(--ink-soft); margin-top: 3px; line-height: 1.3; }
+
+/* drawer */
+.episode-drawer {
+  background: white;
+  border-radius: 16px;
+  margin-top: 20px;
+  overflow: hidden;
+  display: none;
+  box-shadow: var(--shadow);
+}
+.episode-drawer.open { display: block; animation: slideIn 0.35s ease; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.drawer-inner { padding: 22px; }
+@media (min-width: 720px) {
+  .drawer-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; align-items: start; }
+}
+
+.drawer-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 18px; gap: 12px;
+}
+.drawer-title h3 {
+  font-size: 22px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15;
+}
+.drawer-title .lane {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pink-deep); font-weight: 700; margin-bottom: 4px;
+}
+.drawer-close {
+  background: var(--cream-warm); border: 0; border-radius: 999px;
+  width: 32px; height: 32px; cursor: pointer; font-size: 18px;
+  color: var(--ink-soft); font-family: inherit; flex-shrink: 0;
+  line-height: 1;
+}
+.drawer-close:hover { background: var(--pink-pale); color: var(--pink-deep); }
+
+.player-frame {
+  position: relative; background: black; border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-sm); margin-bottom: 16px;
+}
+.player-frame::before { content: ''; display: block; padding-top: 56.25%; }
+.player-frame > div, .player-frame > iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+.now-playing {
+  background: var(--pink-pale); border-radius: 8px;
+  padding: 8px 12px; font-size: 12px; line-height: 1.4;
+  display: none; margin-bottom: 16px;
+}
 .now-playing.visible { display: block; }
-.now-playing .np-label { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 2px; }
+.now-playing .np-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--pink-deep);
+  margin-bottom: 2px;
+}
 
-.questions-block { margin-bottom: 20px; }
-.questions-block h4 {
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--pink); font-weight: 700; margin-bottom: 12px;
+.drawer-meta-row { font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
+.drawer-meta-row strong { color: var(--ink); font-weight: 700; }
+.drawer-bio {
+  background: var(--cream-warm); border-radius: 12px; padding: 14px;
+  font-size: 13px; line-height: 1.55; color: var(--ink);
+  margin-bottom: 16px;
 }
-.questions-cloud {
-  display: flex; flex-wrap: wrap; gap: 8px;
+.drawer-bio .raw {
+  margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(42,31,44,0.12);
+  font-style: italic; color: var(--ink-soft); font-size: 12px;
 }
-.q-bubble {
-  background: white; border: 1.5px solid var(--line);
-  border-radius: 999px; padding: 6px 14px;
-  font-size: 13px; font-weight: 500; color: var(--ink);
-  cursor: pointer; transition: all 0.18s; font-family: inherit;
-  display: inline-flex; align-items: center; gap: 6px;
-  text-align: left; line-height: 1.3;
+.drawer-find { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.drawer-find a {
+  display: inline-block; background: white; color: var(--pink-deep);
+  border: 1.5px solid var(--pink); border-radius: 999px;
+  padding: 4px 10px; font-size: 11px; font-weight: 700;
+  text-decoration: none;
 }
-.q-bubble[data-weight="2"] { font-size: 13px; }
-.q-bubble[data-weight="3"] { font-size: 14px; font-weight: 600; }
-.q-bubble[data-weight="4"] { font-size: 15px; font-weight: 700; background: var(--pink-pale); border-color: transparent; color: var(--pink-deep); }
-.q-bubble[data-weight="5"] { font-size: 16px; font-weight: 700; background: var(--pink); border-color: var(--pink); color: white; padding: 8px 16px; }
-.q-bubble:hover { border-color: var(--pink); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
-.q-bubble.playing { background: var(--ink); color: white; border-color: var(--ink); }
-.q-bubble .q-time { font-size: 10px; opacity: 0.7; font-weight: 700; }
+.drawer-find a:hover { background: var(--pink); color: white; }
 
-.bts-block h4 {
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--pink); font-weight: 700; margin-bottom: 12px;
+.drawer-section h4 {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pink-deep); font-weight: 700; margin-bottom: 10px;
 }
+.drawer-section { margin-bottom: 16px; }
+
+.journey-arc {
+  background: var(--cream-warm); border-radius: 12px; padding: 14px;
+  margin-bottom: 16px;
+}
+.arc-row { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
+.arc-row .arc-tag {
+  flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+  margin-top: 7px; background: var(--ink-faint);
+}
+.arc-row.turn .arc-tag { background: var(--pink); }
+.arc-row.land .arc-tag { background: var(--emerald); }
+.arc-row .arc-label {
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 700; color: var(--ink-soft); margin-bottom: 2px;
+}
+.arc-row.turn .arc-label { color: var(--pink-deep); }
+.arc-row.land .arc-label { color: var(--emerald); }
+.arc-row .arc-text { font-size: 13px; line-height: 1.45; color: var(--ink); }
+.arc-row.land .arc-text { font-weight: 700; }
+
+.q-list { display: flex; flex-direction: column; gap: 6px; }
+.q-row {
+  background: var(--cream-warm);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.4;
+  color: var(--ink);
+  transition: all 0.15s;
+}
+.q-row:hover { border-color: var(--pink); background: var(--pink-pale); }
+.q-row.playing { background: var(--pink); color: white; border-color: var(--pink-deep); }
+.q-row .q-time {
+  flex-shrink: 0; font-size: 10px; font-weight: 700;
+  background: white; color: var(--pink-deep);
+  padding: 2px 6px; border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.q-row.playing .q-time { background: rgba(255,255,255,0.25); color: white; }
+.q-row .q-text { flex: 1; }
+
 .bts-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
 }
 .bts-img {
   aspect-ratio: 1/1; border-radius: 8px; overflow: hidden;
   cursor: pointer; box-shadow: var(--shadow-sm);
-  background: var(--pink-soft); transition: transform 0.25s;
+  background: var(--pink-soft); transition: transform 0.2s;
 }
-.bts-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; transition: transform 0.4s; }
-.bts-img:hover img { transform: scale(1.08); }
+.bts-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.bts-img:hover { transform: scale(1.04); }
 
-/* Decorative scrapbook elements */
-.deco-arrow {
-  position: absolute; width: 40px; height: 40px;
-  color: var(--pink); opacity: 0.6;
-  pointer-events: none;
+/* ════ DOOR 3 · STAND-OUT MOMENTS ════ */
+.standout { background: var(--cream-warm); }
+.standout-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 720px) { .standout-cards { grid-template-columns: 1fr 1fr; } }
+.standout-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.standout-card::before {
+  content: ''; position: absolute; top: -6px; right: 18px;
+  width: 38px; height: 14px; background: var(--pink);
+  transform: rotate(2deg); border-radius: 2px;
+  opacity: 0.85;
+}
+.standout-title {
+  font-size: 18px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;
+  color: var(--ink); margin-bottom: 6px;
+}
+.standout-sub {
+  font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 14px;
+  font-style: italic;
+}
+.standout-moments {
+  display: flex; flex-direction: column; gap: 8px;
 }
 
-/* Footer */
+/* ════ FOOTER ════ */
 .page-footer {
-  margin-top: 80px; padding: 48px 24px 64px;
-  background: var(--pink-soft); text-align: center;
+  background: var(--pink-soft);
+  text-align: center; padding: 56px 24px 64px;
 }
 .footer-promise {
-  max-width: 520px; margin: 0 auto 24px;
-  font-size: 14px; font-style: italic; color: var(--ink); line-height: 1.6;
+  max-width: 520px; margin: 0 auto 22px;
+  font-size: 14px; color: var(--ink); line-height: 1.6; font-style: italic;
 }
-.footer-promise::before, .footer-promise::after { content: '"'; color: var(--pink-deep); font-weight: 700; font-style: normal; }
-.footer-lockup { width: 72px; height: auto; opacity: 0.9; }
+.footer-promise::before, .footer-promise::after {
+  content: '"'; color: var(--pink-deep); font-weight: 700; font-style: normal;
+}
+.footer-lockup { width: 70px; height: auto; opacity: 0.9; }
 .footer-credit {
-  margin-top: 18px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  margin-top: 16px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ink-soft); font-weight: 700;
 }
 .footer-credit a { color: var(--pink-deep); }
 
-/* Lightbox */
-.lightbox { position: fixed; inset: 0; background: rgba(42,31,44,0.92); display: none; align-items: center; justify-content: center; z-index: 1100; padding: 20px; cursor: zoom-out; }
+/* lightbox */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(42,31,44,0.92);
+  display: none; align-items: center; justify-content: center;
+  z-index: 1100; padding: 20px; cursor: zoom-out;
+}
 .lightbox.visible { display: flex; }
 .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 12px; }
 
-/* Loading */
-.loading { position: fixed; inset: 0; background: var(--cream); display: flex; align-items: center; justify-content: center; flex-direction: column; z-index: 9999; transition: opacity 0.4s ease; }
+/* loading */
+.loading {
+  position: fixed; inset: 0; background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; z-index: 9999; transition: opacity 0.4s;
+}
 .loading.hidden { opacity: 0; pointer-events: none; }
-.loading img { width: 64px; animation: pulse 1.5s ease infinite; }
-.loading-text { margin-top: 16px; font-size: 11px; color: var(--pink); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
-@keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.08); opacity: 1; } }
+.loading img { width: 60px; animation: pulse 1.5s ease infinite; }
+.loading-text {
+  margin-top: 14px; font-size: 11px; color: var(--pink-deep);
+  letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+}
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.08); opacity: 1; } }
 </style>
 </head>
 <body>
@@ -474,40 +520,45 @@ a:hover { text-decoration: underline; }
     <img src="assets/brand/symbol-pink.png" alt="">
     <span class="wordmark-text">The Huddle</span>
   </a>
-  <div><span class="site-tag">Season 1 · A Vidpod-built scrapbook for Megan</span></div>
+  <div class="pitch">
+    <p><strong>A resource for parents of little humans.</strong></p>
+    <p>Each episode, Megan sits down with one expert on the things that come up day to day. <strong>Sleep, kids' teeth, feeding, speech, body & recovery.</strong></p>
+    <p>Season 1: 5 conversations · 139 minutes · made findable.</p>
+  </div>
+  <div class="pitch-leadin">Find the moments that matter to you <span class="arrow">↓</span></div>
 </header>
 
-<section class="polaroid-strip-wrap">
-  <div class="polaroid-strip" id="polaroidStrip"></div>
-</section>
+<!-- ═══ DOOR 1 · CHOOSE YOUR OWN ADVENTURE ═══ -->
+<section class="cyoa" id="cyoa">
+  <div class="section-eyebrow">Choose your own adventure</div>
+  <h2 class="section-title">Tell us what's on your mind.</h2>
+  <p class="section-sub">Tap a few. We'll surface the moments from across Season 1 most likely to help — with the line of reasoning so you know why.</p>
 
-<section class="hero">
-  <div class="hero-eyebrow">For Megan · So you can see what's in here</div>
-  <h1 class="hero-title">Five experts. Five lanes. <em>Every line that landed.</em></h1>
-  <p class="hero-sub" id="heroSub"></p>
-  <div class="hero-stats" id="heroStats"></div>
-</section>
-
-<section class="search-wrap">
-  <div class="search-card">
-    <span class="search-label">Search across the season</span>
-    <div class="search-bar">
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16.5" y2="16.5"></line>
-      </svg>
-      <input type="text" class="search-input" id="searchInput" placeholder="choking · high chair · CPR · sleep · when to call 000 · fever…" />
-      <button class="search-clear" id="searchClear" aria-label="Clear">×</button>
+  <div class="cyoa-card">
+    <div class="cyoa-status">
+      <span><span class="count" id="cyoaCount">0</span> of 5 selected</span>
+      <button class="clear" id="cyoaClear" type="button">Clear</button>
     </div>
-    <div class="search-results" id="searchResults"></div>
+    <div class="chips" id="chips"></div>
+    <div class="cyoa-results" id="cyoaResults"></div>
   </div>
 </section>
 
-<section class="journey-section">
-  <div class="journey-eyebrow">The Season 1 journey</div>
-  <h2 class="journey-title">Each expert took Megan somewhere different.</h2>
-  <div class="timeline-rail"></div>
-  <div class="timeline-fill" id="timelineFill"></div>
-  <div id="episodeStops"></div>
+<!-- ═══ DOOR 2 · EPISODE DEEP DIVE ═══ -->
+<section class="deep-dive" id="deepdive">
+  <div class="section-eyebrow">Episode deep dive</div>
+  <h2 class="section-title">Five conversations. Pick an expert.</h2>
+  <p class="section-sub">Full episode, every question Megan asked timestamped, behind the scenes, plus where to find the expert online.</p>
+  <div class="episode-tiles" id="episodeTiles"></div>
+  <div id="episodeDrawer"></div>
+</section>
+
+<!-- ═══ DOOR 3 · STAND-OUT MOMENTS ═══ -->
+<section class="standout" id="standout">
+  <div class="section-eyebrow">Stand-out moments</div>
+  <h2 class="section-title">A few we've pulled together for you.</h2>
+  <p class="section-sub">Hand-picked groupings — emotional, practical, surprising. Drop in anywhere.</p>
+  <div class="standout-cards" id="standoutCards"></div>
 </section>
 
 <footer class="page-footer">
@@ -521,174 +572,320 @@ a:hover { text-decoration: underline; }
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 let DATA = null;
-const PLAYERS = {};
+const PLAYERS = {};       // YT players keyed by ep id
 let YT_READY = false;
-let PENDING = null;
-window.onYouTubeIframeAPIReady = () => { YT_READY = true; if (PENDING) { const p = PENDING; PENDING = null; setTimeout(() => playMoment(p.epId, p.start, p.end, p.label), 300); } };
+let PENDING = null;       // { epId, start, end, label } if API not ready
 
-fetch('./season-data.json?v=2').then(r => r.json()).then(data => {
+const SELECTED_PROMPTS = new Set();   // active CYOA chip ids
+
+window.onYouTubeIframeAPIReady = () => {
+  YT_READY = true;
+  if (PENDING) { const p = PENDING; PENDING = null; setTimeout(() => playMoment(p.epId, p.start, p.end, p.label), 300); }
+};
+
+fetch('./season-data.json?v=3').then(r => r.json()).then(data => {
   DATA = data;
   document.title = `${DATA.season.title} · by ${DATA.brand_understanding.client_name}`;
-  document.getElementById('heroSub').textContent = `Megan brought you five guests, one lane each. Click anyone above to land on their journey, or search for what you need.`;
-  buildHeroStats();
-  buildPolaroids();
-  buildEpisodeStops();
-  buildSearch();
   document.getElementById('footerPromise').textContent = DATA.season.outro_promise.replace(/^Hey, /, '');
+  buildChips();
+  buildEpisodeTiles();
+  buildStandoutCards();
+  attachClear();
   setTimeout(() => document.getElementById('loading').classList.add('hidden'), 200);
-  attachScrollFill();
 }).catch(err => {
   console.error(err);
-  document.getElementById('loading').innerHTML = '<div style="color:#EA559E;padding:20px">Could not load. Refresh.</div>';
+  document.getElementById('loading').innerHTML = '<div style="padding:20px;color:#EA559E">Could not load. Please refresh.</div>';
 });
 
-function buildHeroStats() {
-  const totalQs = DATA.episodes.reduce((s,e)=>s+e.questions.length,0);
-  const totalQuotes = DATA.episodes.reduce((s,e)=>s+e.quotes.length,0);
-  const mins = Math.round(DATA.season.total_duration_seconds / 60);
-  document.getElementById('heroStats').innerHTML =
-    `<strong>${DATA.episodes.length}</strong> episodes · <strong>${mins}</strong> minutes · <strong>${totalQs}</strong> questions · <strong>${totalQuotes}</strong> standout lines · <strong>${DATA.topics.length}</strong> topics covered.`;
-}
-
-function buildPolaroids() {
-  const wrap = document.getElementById('polaroidStrip');
+// ───── CYOA ─────────────────────────────────────────────────
+function buildChips() {
+  const wrap = document.getElementById('chips');
   wrap.innerHTML = '';
-  DATA.episodes.forEach(ep => {
-    const card = document.createElement('div');
-    card.className = 'polaroid';
-    card.innerHTML = `
-      <div class="polaroid-badge">EP ${ep.number} · ${formatDuration(ep.youtube.duration_seconds)}</div>
-      <img class="polaroid-img" src="${ep.guest.hero_image}" alt="${escapeHtml(ep.guest.name)}" loading="lazy">
-      <div class="polaroid-name">${escapeHtml(ep.guest.name)}</div>
-      <div class="polaroid-role">${escapeHtml(ep.lane)}</div>
+  DATA.audience_prompts.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.type = 'button';
+    btn.dataset.id = p.id;
+    btn.innerHTML = `
+      <span class="chip-label">${escapeHtml(p.label)}</span>
+      <span class="chip-desc">${escapeHtml(p.description)}</span>
     `;
-    card.addEventListener('click', () => {
-      const target = document.getElementById('stop-' + ep.id);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    wrap.appendChild(card);
+    btn.addEventListener('click', () => toggleChip(p.id));
+    wrap.appendChild(btn);
   });
 }
 
-function buildEpisodeStops() {
-  const stage = document.getElementById('episodeStops');
-  stage.innerHTML = '';
+function toggleChip(id) {
+  if (SELECTED_PROMPTS.has(id)) SELECTED_PROMPTS.delete(id);
+  else if (SELECTED_PROMPTS.size >= 5) return; // hard cap of 5
+  else SELECTED_PROMPTS.add(id);
+  // Update UI
+  document.querySelectorAll('.chip').forEach(c => {
+    c.classList.toggle('selected', SELECTED_PROMPTS.has(c.dataset.id));
+  });
+  document.getElementById('cyoaCount').textContent = SELECTED_PROMPTS.size;
+  document.getElementById('cyoaClear').classList.toggle('visible', SELECTED_PROMPTS.size > 0);
+  runCuration();
+}
+
+function attachClear() {
+  document.getElementById('cyoaClear').addEventListener('click', () => {
+    SELECTED_PROMPTS.clear();
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    document.getElementById('cyoaCount').textContent = '0';
+    document.getElementById('cyoaClear').classList.remove('visible');
+    runCuration();
+  });
+}
+
+// THE CYOA ENGINE — strict match, no padding
+function runCuration() {
+  const results = document.getElementById('cyoaResults');
+  if (SELECTED_PROMPTS.size === 0) {
+    results.classList.remove('visible');
+    results.innerHTML = '';
+    return;
+  }
+  // 1. Collect candidate moment_ids = union of mapped moment_ids from selected prompts
+  const candidateIds = new Set();
+  const promptsByMoment = {};   // momentId -> [prompt labels that hit]
+  let anyEmotional = false;
+  DATA.audience_prompts.forEach(p => {
+    if (!SELECTED_PROMPTS.has(p.id)) return;
+    if (p.emotional) anyEmotional = true;
+    p.moment_ids.forEach(mid => {
+      candidateIds.add(mid);
+      (promptsByMoment[mid] = promptsByMoment[mid] || []).push(p.label);
+    });
+  });
+  // 2. Resolve each id to the actual moment object, score it
+  const scored = [];
+  Array.from(candidateIds).forEach(mid => {
+    const m = findMoment(mid);
+    if (!m) return;
+    const matchCount = promptsByMoment[mid].length;
+    let score = matchCount * 10;
+    if (m.is_chosen_snippet) score += 8;
+    if (m.weight) score += m.weight;
+    if (anyEmotional && (m.relatability_tags || []).some(t => ['raw-share','vulnerable','real-talk'].includes(t))) score += 4;
+    scored.push({ moment: m, score, matched: promptsByMoment[mid] });
+  });
+  scored.sort((a, b) => b.score - a.score);
+  // 3. Render
+  if (scored.length === 0) {
+    results.innerHTML = `<div class="cyoa-results-empty">Nothing in Season 1 directly matches that combination. Try a different mix — or scroll down to <a href="#standout">stand-out moments</a> for a curated set.</div>`;
+    results.classList.add('visible');
+    return;
+  }
+  const header = `<div class="cyoa-results-header">Found <strong>${scored.length}</strong> moment${scored.length === 1 ? '' : 's'} matching your picks. Sorted by relevance.</div>`;
+  const cards = scored.map(({ moment, matched }) => renderMomentCard(moment, matched)).join('');
+  results.innerHTML = header + `<div class="moments">${cards}</div>`;
+  results.classList.add('visible');
+  attachMomentHandlers(results);
+}
+
+// Find a moment by id across all episodes (questions or quotes)
+function findMoment(id) {
+  for (const ep of DATA.episodes) {
+    for (const q of ep.questions) if (q.id === id) return { ...q, episode_id: ep.id, episode_number: ep.number, guest_name: ep.guest.name, kind: 'question' };
+    for (const qt of ep.quotes) if (qt.id === id) return { ...qt, episode_id: ep.id, episode_number: ep.number, guest_name: ep.guest.name, kind: 'quote' };
+  }
+  return null;
+}
+
+function renderMomentCard(m, matched) {
+  const isQuestion = m.kind === 'question';
+  const text = isQuestion ? m.question_asked : `"${m.text}"`;
+  const start = isQuestion ? m.answer_starts_at_seconds : m.starts_at_seconds;
+  const end = isQuestion ? m.answer_ends_at_seconds : m.ends_at_seconds;
+  const rationale = matched && matched.length
+    ? `<div class="moment-rationale">Why this for you: <strong>${escapeHtml(matched.join(' · '))}</strong></div>`
+    : '';
+  const dur = formatDuration(end - start);
+  return `
+    <div class="moment" data-mid="${m.id}">
+      <div class="moment-meta">EP ${m.episode_number} · ${escapeHtml(m.guest_name)} · ${m.kind === 'question' ? 'Question' : 'Quote'} · ${dur}</div>
+      <div class="moment-text">${escapeHtml(text)}</div>
+      ${rationale}
+      <div class="moment-actions">
+        <button class="btn-watch" data-action="watch" data-ep="${m.episode_id}" data-start="${start}" data-end="${end}" data-label="${escapeHtml(text.slice(0, 80))}">▶ Watch this moment</button>
+        <button class="btn-deep" data-action="deep" data-ep="${m.episode_id}" data-start="${start}" data-end="${end}" data-label="${escapeHtml(text.slice(0, 80))}">→ Deep dive into this episode</button>
+      </div>
+    </div>
+  `;
+}
+
+function attachMomentHandlers(container) {
+  container.querySelectorAll('.btn-watch').forEach(b => {
+    b.addEventListener('click', () => {
+      const epId = b.dataset.ep;
+      // Open the episode drawer + play
+      openEpisodeDrawer(epId);
+      setTimeout(() => playMoment(epId, +b.dataset.start, +b.dataset.end, b.dataset.label), 300);
+    });
+  });
+  container.querySelectorAll('.btn-deep').forEach(b => {
+    b.addEventListener('click', () => {
+      const epId = b.dataset.ep;
+      openEpisodeDrawer(epId);
+      // scroll to the drawer
+      setTimeout(() => {
+        const d = document.getElementById('drawer-' + epId);
+        if (d) d.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 250);
+    });
+  });
+}
+
+// ───── EPISODE DEEP DIVE ────────────────────────────────────
+function buildEpisodeTiles() {
+  const wrap = document.getElementById('episodeTiles');
+  wrap.innerHTML = '';
   DATA.episodes.forEach(ep => {
-    const topic = DATA.topics.find(t => t.id === ep.primary_topic_id);
-    const sticker = topic ? DATA.brand.stickers.find(s => s.id === topic.sticker_id) : null;
-    const stop = document.createElement('div');
-    stop.className = 'episode-stop';
-    stop.innerHTML = `
-      <div class="timeline-dot" data-ep-id="${ep.id}"></div>
-      <article class="stop-card" id="stop-${ep.id}">
-        <div class="stop-hero">
-          <img class="stop-hero-img" src="${ep.guest.hero_image}" alt="${escapeHtml(ep.guest.name)}" loading="lazy">
-          <div class="stop-hero-gradient"></div>
-          <div class="tape-label"><span class="ep-num">EP ${ep.number}</span>${escapeHtml(ep.lane)}</div>
-          ${sticker ? `<img class="stop-sticker" src="${sticker.src}" alt="">` : ''}
-          <div class="stop-hero-name">
-            <h2>${escapeHtml(ep.guest.name)}</h2>
-            <div class="role">${escapeHtml(ep.guest.expertise)} · ${escapeHtml(ep.guest.expertise_short)}</div>
-          </div>
-          ${topic ? `<div class="lane-chip" style="border-left: 3px solid ${topic.color}">${sticker ? `<img src="${sticker.src}" alt="">` : ''}${escapeHtml(topic.label)}</div>` : ''}
+    const btn = document.createElement('button');
+    btn.className = 'episode-tile';
+    btn.dataset.ep = ep.id;
+    btn.innerHTML = `
+      <div class="tile-img-wrap">
+        <span class="tile-num">EP ${ep.number}</span>
+        <img class="tile-img" src="${ep.guest.hero_image}" alt="${escapeHtml(ep.guest.name)}" loading="lazy">
+        <span class="tile-duration">${formatDuration(ep.youtube.duration_seconds)}</span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-name">${escapeHtml(ep.guest.name)}</div>
+        <div class="tile-lane">${escapeHtml(ep.lane)}</div>
+      </div>
+    `;
+    btn.addEventListener('click', () => openEpisodeDrawer(ep.id));
+    wrap.appendChild(btn);
+  });
+}
+
+function openEpisodeDrawer(epId) {
+  // mark active tile
+  document.querySelectorAll('.episode-tile').forEach(t => {
+    t.classList.toggle('active', t.dataset.ep === epId);
+  });
+  // ensure drawer exists or rebuild it for this ep
+  const wrap = document.getElementById('episodeDrawer');
+  // close all existing drawers
+  document.querySelectorAll('.episode-drawer').forEach(d => d.classList.remove('open'));
+  // If drawer for this ep already rendered, just open it
+  let drawer = document.getElementById('drawer-' + epId);
+  if (!drawer) {
+    drawer = renderEpisodeDrawer(epId);
+    wrap.appendChild(drawer);
+    attachDrawerHandlers(drawer, epId);
+  }
+  drawer.classList.add('open');
+  // Lazy-init player for this ep
+  ensurePlayer(epId);
+}
+
+function renderEpisodeDrawer(epId) {
+  const ep = DATA.episodes.find(e => e.id === epId);
+  if (!ep) return null;
+  const drawer = document.createElement('div');
+  drawer.className = 'episode-drawer';
+  drawer.id = 'drawer-' + epId;
+  drawer.innerHTML = `
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <div class="lane">EP ${ep.number} · ${escapeHtml(ep.lane)}</div>
+          <h3>${escapeHtml(ep.guest.name)}</h3>
         </div>
+        <button class="drawer-close" type="button" aria-label="Close">×</button>
+      </div>
 
-        <div class="journey-arc">
-          <div class="arc-step worry">
-            <div class="arc-label">Where Megan started</div>
-            <p class="arc-text italic">"${escapeHtml(ep.journey.opening_worry)}"</p>
-          </div>
-          <svg class="arc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-          <div class="arc-step turn">
-            <div class="arc-label">Where ${escapeHtml(ep.guest.name.split(' ')[0])} took her</div>
-            <p class="arc-text">${escapeHtml(ep.journey.the_turn)}</p>
-          </div>
-          <svg class="arc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-          <div class="arc-step land">
-            <div class="arc-label">What landed</div>
-            <p class="arc-text">${escapeHtml(ep.journey.what_landed)}</p>
-          </div>
-        </div>
-
-        <div class="story-card">
-          <div class="raw-tag">About ${escapeHtml(ep.guest.name.split(' ')[0])}</div>
-          <p>${escapeHtml(ep.guest.bio_paragraph)}</p>
-          ${ep.guest.rawness_note ? `<p style="margin-top:10px;font-style:italic;color:var(--ink-soft);font-size:12px">${escapeHtml(ep.guest.rawness_note)}</p>` : ''}
-          <div class="find-them">
-            ${ep.guest.find_them.map(f => `<a href="${f.url}" target="_blank" rel="noopener">${escapeHtml(f.label)} →</a>`).join('')}
-          </div>
-        </div>
-
-        <div class="payoff">
-          <div class="snippet-frame">
-            <iframe src="https://www.youtube.com/embed/${ep.youtube.snippet_id}?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="payoff-quote">
-            <p class="payoff-quote-text">${escapeHtml(ep.quotes[0].text)}</p>
-            <div class="payoff-quote-attr">${escapeHtml(ep.quotes[0].attribution)}</div>
-          </div>
-        </div>
-
-        <button class="reveal-toggle" data-ep="${ep.id}">Open the full episode + questions <span class="arrow">▾</span></button>
-
-        <div class="reveal-content" id="reveal-${ep.id}">
-          <div class="full-player-frame">
+      <div class="drawer-grid">
+        <div class="drawer-col-main">
+          <div class="player-frame">
             <div id="player-${ep.id}"></div>
           </div>
           <div class="now-playing" id="np-${ep.id}">
             <div class="np-label">Now playing</div>
             <div class="np-text" id="np-text-${ep.id}"></div>
           </div>
-          <div class="questions-block">
-            <h4>The questions Megan asked · click to play that moment</h4>
-            <div class="questions-cloud">
+          <div class="drawer-meta-row">
+            <strong>${escapeHtml(ep.guest.expertise)}</strong> · ${escapeHtml(ep.guest.expertise_short)} · ${formatDuration(ep.youtube.duration_seconds)}
+          </div>
+          <div class="drawer-bio">
+            ${escapeHtml(ep.guest.bio_paragraph)}
+            ${ep.guest.rawness_note ? `<div class="raw">${escapeHtml(ep.guest.rawness_note)}</div>` : ''}
+            <div class="drawer-find">
+              ${ep.guest.find_them.map(f => `<a href="${f.url}" target="_blank" rel="noopener">${escapeHtml(f.label)} →</a>`).join('')}
+            </div>
+          </div>
+          ${ep.journey ? `
+          <div class="drawer-section">
+            <h4>The journey of this episode</h4>
+            <div class="journey-arc">
+              <div class="arc-row worry">
+                <div class="arc-tag"></div>
+                <div>
+                  <div class="arc-label">Where Megan started</div>
+                  <div class="arc-text">"${escapeHtml(ep.journey.opening_worry)}"</div>
+                </div>
+              </div>
+              <div class="arc-row turn">
+                <div class="arc-tag"></div>
+                <div>
+                  <div class="arc-label">Where ${escapeHtml(ep.guest.name.split(' ')[0])} took her</div>
+                  <div class="arc-text">${escapeHtml(ep.journey.the_turn)}</div>
+                </div>
+              </div>
+              <div class="arc-row land">
+                <div class="arc-tag"></div>
+                <div>
+                  <div class="arc-label">What landed</div>
+                  <div class="arc-text">${escapeHtml(ep.journey.what_landed)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          ` : ''}
+        </div>
+
+        <div class="drawer-col-side">
+          <div class="drawer-section">
+            <h4>Megan's questions · click to play</h4>
+            <div class="q-list">
               ${ep.questions.map(q => `
-                <button class="q-bubble" data-weight="${q.weight||2}" data-start="${q.answer_starts_at_seconds}" data-end="${q.answer_ends_at_seconds}" data-ep="${ep.id}">
-                  <span class="q-text">${escapeHtml(q.question_asked)}</span>
+                <button class="q-row" data-action="watch" data-ep="${ep.id}" data-start="${q.answer_starts_at_seconds}" data-end="${q.answer_ends_at_seconds}" data-label="${escapeHtml(q.question_asked.slice(0,80))}">
                   <span class="q-time">${formatDuration(q.answer_starts_at_seconds)}</span>
+                  <span class="q-text">${escapeHtml(q.question_asked)}</span>
                 </button>
               `).join('')}
             </div>
           </div>
-          <div class="bts-block">
-            <h4>Behind the scenes with ${escapeHtml(ep.guest.name.split(' ')[0])}</h4>
+
+          <div class="drawer-section">
+            <h4>Behind the scenes</h4>
             <div class="bts-grid">
               ${ep.bts_images.map((src, i) => `<div class="bts-img" data-src="${src}"><img src="${src}" alt="BTS ${i+1}" loading="lazy"></div>`).join('')}
             </div>
           </div>
         </div>
-      </article>
-    `;
-    stage.appendChild(stop);
-  });
+      </div>
+    </div>
+  `;
+  return drawer;
+}
 
-  // Attach event handlers
-  document.querySelectorAll('.reveal-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const epId = btn.dataset.ep;
-      const content = document.getElementById('reveal-' + epId);
-      const isOpen = content.classList.toggle('open');
-      btn.classList.toggle('open', isOpen);
-      btn.firstChild.textContent = isOpen ? 'Close ' : 'Open the full episode + questions ';
-      if (isOpen) ensurePlayer(epId);
-    });
+function attachDrawerHandlers(drawer, epId) {
+  drawer.querySelector('.drawer-close').addEventListener('click', () => {
+    drawer.classList.remove('open');
+    document.querySelectorAll('.episode-tile').forEach(t => t.classList.remove('active'));
   });
-  document.querySelectorAll('.q-bubble').forEach(b => {
+  drawer.querySelectorAll('.q-row').forEach(b => {
     b.addEventListener('click', () => {
-      const epId = b.dataset.ep;
-      // Open the reveal if closed
-      const content = document.getElementById('reveal-' + epId);
-      const toggle = document.querySelector(`.reveal-toggle[data-ep="${epId}"]`);
-      if (!content.classList.contains('open')) {
-        content.classList.add('open'); toggle.classList.add('open');
-        toggle.firstChild.textContent = 'Close ';
-      }
-      document.querySelectorAll(`.q-bubble[data-ep="${epId}"]`).forEach(x => x.classList.remove('playing'));
+      drawer.querySelectorAll('.q-row').forEach(x => x.classList.remove('playing'));
       b.classList.add('playing');
-      playMoment(epId, +b.dataset.start, +b.dataset.end, b.querySelector('.q-text').textContent);
+      playMoment(epId, +b.dataset.start, +b.dataset.end, b.dataset.label);
     });
   });
-  document.querySelectorAll('.bts-img').forEach(el => {
+  drawer.querySelectorAll('.bts-img').forEach(el => {
     el.addEventListener('click', () => {
       document.getElementById('lightboxImg').src = el.dataset.src;
       document.getElementById('lightbox').classList.add('visible');
@@ -696,10 +893,34 @@ function buildEpisodeStops() {
   });
 }
 
+// ───── STAND-OUT MOMENTS ────────────────────────────────────
+function buildStandoutCards() {
+  const wrap = document.getElementById('standoutCards');
+  wrap.innerHTML = '';
+  DATA.stand_out_moments.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'standout-card';
+    const moments = s.moment_ids.map(id => findMoment(id)).filter(Boolean);
+    card.innerHTML = `
+      <div class="standout-title">${escapeHtml(s.title)}</div>
+      <div class="standout-sub">${escapeHtml(s.subtitle)}</div>
+      <div class="standout-moments">
+        ${moments.map(m => renderMomentCard(m, null)).join('')}
+      </div>
+    `;
+    wrap.appendChild(card);
+  });
+  attachMomentHandlers(wrap);
+}
+
+// ───── PLAYBACK ─────────────────────────────────────────────
 function ensurePlayer(epId) {
   if (PLAYERS[epId]) return;
   if (!YT_READY) return;
   const ep = DATA.episodes.find(e => e.id === epId);
+  if (!ep) return;
+  const playerEl = document.getElementById('player-' + epId);
+  if (!playerEl) return;
   PLAYERS[epId] = new YT.Player('player-' + epId, {
     videoId: ep.youtube.full_id,
     playerVars: { rel: 0, modestbranding: 1, playsinline: 1 }
@@ -707,8 +928,8 @@ function ensurePlayer(epId) {
 }
 
 function playMoment(epId, start, end, label) {
-  if (!YT_READY) { PENDING = { epId, start, end, label }; return; }
-  ensurePlayer(epId);
+  if (!YT_READY) { PENDING = { epId, start, end, label }; openEpisodeDrawer(epId); return; }
+  openEpisodeDrawer(epId);
   setTimeout(() => {
     if (!PLAYERS[epId] || typeof PLAYERS[epId].loadVideoById !== 'function') {
       PENDING = { epId, start, end, label };
@@ -721,110 +942,19 @@ function playMoment(epId, start, end, label) {
       np.querySelector('.np-text').textContent = label;
       np.classList.add('visible');
     }
-    document.getElementById('player-' + epId).scrollIntoView({ behavior: 'smooth', block: 'center' });
   }, 250);
 }
 
-function buildSearch() {
-  const input = document.getElementById('searchInput');
-  const clear = document.getElementById('searchClear');
-  const results = document.getElementById('searchResults');
-  let timer;
-  input.addEventListener('input', () => {
-    clearTimeout(timer);
-    clear.classList.toggle('visible', input.value.length > 0);
-    timer = setTimeout(() => runSearch(input.value), 150);
-  });
-  clear.addEventListener('click', () => { input.value=''; clear.classList.remove('visible'); runSearch(''); });
-}
-
-function runSearch(q) {
-  const results = document.getElementById('searchResults');
-  q = (q||'').trim().toLowerCase();
-  if (q.length < 2) { results.classList.remove('visible'); results.innerHTML=''; return; }
-  const hits = [];
-  DATA.episodes.forEach(ep => {
-    ep.questions.forEach(qq => {
-      const corpus = (qq.question_asked + ' ' + qq.answer_excerpt).toLowerCase();
-      if (corpus.includes(q)) {
-        hits.push({ score: qq.question_asked.toLowerCase().includes(q) ? 5 : 3, kind: 'Question', ep, label: qq.question_asked, excerpt: qq.answer_excerpt, start: qq.answer_starts_at_seconds, end: qq.answer_ends_at_seconds });
-      }
-    });
-    ep.quotes.forEach(qt => {
-      if (qt.text.toLowerCase().includes(q)) hits.push({ score: 4, kind: 'Quote', ep, label: `"${qt.text.slice(0,80)}"`, excerpt: qt.attribution, start: qt.starts_at_seconds, end: qt.ends_at_seconds });
-    });
-    if (ep.lane.toLowerCase().includes(q) || ep.journey.opening_worry.toLowerCase().includes(q) || ep.journey.the_turn.toLowerCase().includes(q) || ep.journey.what_landed.toLowerCase().includes(q)) {
-      hits.push({ score: 2, kind: 'Episode lane', ep, label: ep.guest.name + ' · ' + ep.lane, excerpt: ep.journey.what_landed, start: 0, end: 0 });
-    }
-  });
-  DATA.topics.forEach(t => {
-    if (t.label.toLowerCase().includes(q) || (t.blurb||'').toLowerCase().includes(q)) {
-      const eps = DATA.episodes.filter(e => e.topic_ids.includes(t.id));
-      eps.slice(0,2).forEach(e => hits.push({ score: 2, kind: 'Topic · ' + t.label, ep: e, label: t.label + ' (in ' + e.guest.name + "'s episode)", excerpt: t.blurb||'', start: 0, end: 0 }));
-    }
-  });
-  hits.sort((a,b)=>b.score-a.score);
-  const seen = new Set(); const dedup = [];
-  hits.forEach(h => { const k = h.ep.id+'|'+h.start+'|'+h.label; if (!seen.has(k)) { seen.add(k); dedup.push(h); } });
-  if (!dedup.length) {
-    results.innerHTML = `<div class="result-empty">Nothing matched "${escapeHtml(q)}". Try: choking, sleep, fever, CPR, high chair…</div>`;
-  } else {
-    results.innerHTML = dedup.slice(0,8).map(h => `
-      <div class="result" data-ep="${h.ep.id}" data-start="${h.start}" data-end="${h.end}" data-label="${escapeHtml(h.label.slice(0,80))}">
-        <div class="result-meta">EP ${h.ep.number} · ${escapeHtml(h.ep.guest.name)} · ${escapeHtml(h.kind)}</div>
-        <div class="result-title">${escapeHtml(h.label)}</div>
-        <div class="result-excerpt">${escapeHtml((h.excerpt||'').slice(0,140))}${(h.excerpt||'').length>140?'…':''}</div>
-      </div>
-    `).join('');
-    results.querySelectorAll('.result').forEach(el => {
-      el.addEventListener('click', () => {
-        const epId = el.dataset.ep;
-        const target = document.getElementById('stop-' + epId);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const start = +el.dataset.start, end = +el.dataset.end;
-        if (start || end) {
-          const content = document.getElementById('reveal-' + epId);
-          const toggle = document.querySelector(`.reveal-toggle[data-ep="${epId}"]`);
-          if (!content.classList.contains('open')) {
-            content.classList.add('open'); toggle.classList.add('open');
-            toggle.firstChild.textContent = 'Close ';
-          }
-          setTimeout(() => playMoment(epId, start, end, el.dataset.label), 600);
-        }
-        results.classList.remove('visible');
-      });
-    });
-  }
-  results.classList.add('visible');
-}
-
-function attachScrollFill() {
-  const rail = document.querySelector('.timeline-rail');
-  const fill = document.getElementById('timelineFill');
-  if (!rail || !fill) return;
-  const dots = document.querySelectorAll('.timeline-dot');
-  function onScroll() {
-    const r = rail.getBoundingClientRect();
-    const view = window.innerHeight;
-    const top = r.top, bot = r.bottom;
-    const total = bot - top;
-    const visible = Math.min(view * 0.6, view - top);
-    const pct = Math.max(0, Math.min(1, visible / total));
-    fill.style.height = (pct * 100) + '%';
-    dots.forEach(d => {
-      const dr = d.getBoundingClientRect();
-      d.classList.toggle('lit', dr.top < view * 0.6);
-    });
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
+// ───── HELPERS ──────────────────────────────────────────────
 document.getElementById('lightbox').addEventListener('click', () => document.getElementById('lightbox').classList.remove('visible'));
 document.getElementById('brandWordmark').addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-function formatDuration(secs) { const m=Math.floor(secs/60), s=Math.floor(secs%60); return m + ':' + String(s).padStart(2,'0'); }
+function formatDuration(secs) {
+  const s = Math.max(0, Math.floor(secs));
+  const m = Math.floor(s / 60), r = s % 60;
+  return m + ':' + String(r).padStart(2, '0');
+}
 </script>
 </body>
 </html>
