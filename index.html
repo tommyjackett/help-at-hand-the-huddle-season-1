@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>The Huddle — Season 1 · by Help at Hand</title>
-<meta name="description" content="A resource for parents — five conversations with experts on what comes up day to day. Made findable.">
+<title>The Huddle · Help At Hand · Season 1</title>
+<meta name="description" content="A resource for parents of little humans. Five real conversations with experts on what comes up day-to-day. Made findable.">
 <meta property="og:title" content="The Huddle — Season 1">
-<meta property="og:description" content="A resource for parents — five conversations with experts on what comes up day to day.">
+<meta property="og:description" content="A resource for parents of little humans. Made findable.">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 @font-face { font-family: 'GT Walsheim'; font-weight: 400; font-style: normal; src: url('assets/fonts/GT-Walsheim-Regular.otf') format('opentype'); font-display: swap; }
 @font-face { font-family: 'GT Walsheim'; font-weight: 500; font-style: normal; src: url('assets/fonts/GT-WALSHEIM-MEDIUM.OTF') format('opentype'); font-display: swap; }
@@ -18,485 +21,723 @@
   --pink: #EA559E;
   --pink-deep: #D03B85;
   --pink-soft: #E8D6E8;
-  --pink-pale: #F8E9F1;
-  --red: #E72731;
-  --emerald: #3FA590;
-  --lilac: #9D7FBE;
-  --orange: #E89241;
-  --yellow: #D9B028;
-  --ink: #2A1F2C;
-  --ink-soft: #6E5F70;
-  --ink-faint: rgba(42,31,44,0.55);
+  --pink-pale: #FAE0EE;
   --cream: #FBF7F4;
   --cream-warm: #F5EDE3;
+  --ink: #2A1F2C;
+  --ink-soft: #6E5F70;
+  --ink-deep: #1a1119;
   --line: rgba(42,31,44,0.08);
-  --shadow-sm: 0 2px 8px rgba(42,31,44,0.06);
-  --shadow:    0 8px 28px rgba(42,31,44,0.10);
-  --shadow-lg: 0 16px 48px rgba(42,31,44,0.14);
+  --display: 'GT Walsheim', 'Jost', 'Helvetica Neue', system-ui, sans-serif;
+  --body: 'Jost', 'Helvetica Neue', system-ui, sans-serif;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; }
 body {
-  font-family: 'GT Walsheim', 'Helvetica Neue', Arial, sans-serif;
-  background: var(--cream);
+  font-family: var(--body);
   color: var(--ink);
-  line-height: 1.55;
+  background: var(--cream);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  line-height: 1.5;
 }
-a { color: var(--pink); text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: transparent; padding: 0; }
+button:focus { outline: none; }
+img { display: block; max-width: 100%; }
+a { color: var(--pink-deep); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ════ HEADER · clean cream, no arch ════ */
-.site-header {
-  background: var(--cream);
-  padding: 40px 24px 28px;
-  text-align: center;
-  border-bottom: 1px solid var(--line);
+.display { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; line-height: 0.95; }
+
+/* layout container */
+.app { max-width: 540px; margin: 0 auto; background: var(--cream); position: relative; min-height: 100vh; }
+
+/* horizontal scroll snapping for swipe rows */
+.swipe-row {
+  display: flex; gap: 12px;
+  padding: 0 20px 14px 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-@media (max-width: 600px) {
-  .site-header { padding: 28px 20px 22px; }
+.swipe-row::-webkit-scrollbar { display: none; }
+.swipe-row > * { scroll-snap-align: start; flex-shrink: 0; }
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 22px 6px;
 }
 .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.wordmark img {
-  width: 56px; height: 56px;
-}
-@media (max-width: 600px) { .wordmark img { width: 44px; height: 44px; } }
-.wordmark-text {
-  font-size: clamp(30px, 6vw, 46px);
-  font-weight: 700;
-  color: var(--pink);
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-}
-.pitch {
-  max-width: 540px;
-  margin: 0 auto;
-  font-size: clamp(14px, 1.8vw, 16px);
-  color: var(--ink);
-  line-height: 1.55;
-}
-.pitch p { margin-bottom: 4px; }
-.pitch p:last-child { margin-bottom: 0; }
-.pitch strong { font-weight: 700; color: var(--pink-deep); }
-.pitch-leadin {
-  margin-top: 16px;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--pink-deep);
-  font-weight: 700;
-}
-.pitch-leadin .arrow { display: inline-block; margin-left: 6px; animation: bounce 2.5s ease infinite; }
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
-
-/* ════ SECTION CHROME ════ */
-section { padding: 56px 24px; max-width: 1080px; margin: 0 auto; }
-@media (max-width: 600px) { section { padding: 44px 18px; } }
-.section-eyebrow {
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--pink-deep); font-weight: 700; margin-bottom: 8px;
-}
-.section-title {
-  font-size: clamp(24px, 4vw, 32px); font-weight: 700;
-  letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-bottom: 8px;
-}
-.section-sub {
-  font-size: clamp(14px, 1.8vw, 16px); color: var(--ink-soft);
-  max-width: 640px; line-height: 1.55; margin-bottom: 28px;
-}
-
-/* ════ DOOR 1 · CHOOSE YOUR OWN ADVENTURE ════ */
-.cyoa { background: var(--cream); }
-.cyoa-card {
-  background: white; border-radius: 22px;
-  padding: 28px 24px 32px; box-shadow: var(--shadow);
-  position: relative;
-}
-.cyoa-card::before {
-  content: '✦'; position: absolute; top: -12px; left: 22px;
-  background: var(--cream); color: var(--pink-deep);
-  padding: 0 10px; font-size: 18px; font-weight: 700;
-}
-.cyoa-status {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 16px;
-  font-size: 12px; color: var(--ink-soft);
-}
-.cyoa-status .count { font-weight: 700; color: var(--pink-deep); }
-.cyoa-status .clear {
-  background: transparent; border: 0; color: var(--ink-soft);
-  font-size: 12px; cursor: pointer; font-family: inherit;
-  text-decoration: underline; padding: 0;
-  display: none;
-}
-.cyoa-status .clear.visible { display: inline-block; }
-.cyoa-status .clear:hover { color: var(--pink-deep); }
-
-.chips {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 10px;
-}
-.chip {
-  background: var(--cream-warm);
-  border: 2px solid transparent;
-  border-radius: 12px;
-  padding: 12px 14px;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  transition: all 0.15s;
-  color: var(--ink);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-height: 64px;
-}
-.chip:hover { border-color: var(--pink); transform: translateY(-1px); }
-.chip.selected {
-  background: var(--pink); color: white;
-  border-color: var(--pink-deep);
-  box-shadow: var(--shadow-sm);
-}
-.chip-label { font-size: 14px; font-weight: 700; line-height: 1.2; }
-.chip-desc { font-size: 12px; opacity: 0.75; line-height: 1.4; }
-
-.cyoa-results {
-  margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--line);
-  display: none;
-}
-.cyoa-results.visible { display: block; }
-.cyoa-results-empty {
-  padding: 24px; text-align: center; color: var(--ink-soft); font-size: 13px;
-  background: var(--pink-pale); border-radius: 12px; line-height: 1.55;
-}
-.cyoa-results-header {
-  font-size: 13px; color: var(--ink-soft); margin-bottom: 14px;
-  font-weight: 500;
-}
-.cyoa-results-header strong { color: var(--pink-deep); font-weight: 700; }
-
-/* moment cards (used in CYOA + Stand-out) */
-.moments {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-@media (min-width: 720px) {
-  .moments { grid-template-columns: 1fr 1fr; }
-}
-.moment {
-  background: var(--cream-warm);
-  border-radius: 14px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-  border: 1.5px solid transparent;
-  transition: all 0.15s;
-}
-.moment:hover { border-color: var(--pink); }
-.moment.playing { border-color: var(--pink); background: var(--pink-pale); }
-
-.moment-meta {
-  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--pink-deep); font-weight: 700;
-}
-.moment-text {
-  font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.45;
-}
-.moment-rationale {
-  font-size: 12px; color: var(--ink-soft); line-height: 1.45; font-style: italic;
-}
-.moment-rationale strong { color: var(--pink-deep); font-style: normal; font-weight: 700; }
-.moment-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
-.btn-watch, .btn-deep {
-  border: 0; border-radius: 999px; padding: 7px 14px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
-  cursor: pointer; font-family: inherit;
-  display: inline-flex; align-items: center; gap: 5px;
-  transition: all 0.15s;
-}
-.btn-watch { background: var(--pink); color: white; }
-.btn-watch:hover { background: var(--pink-deep); }
-.btn-deep { background: white; color: var(--ink); border: 1.5px solid var(--line); }
-.btn-deep:hover { border-color: var(--pink); color: var(--pink-deep); }
-
-/* ════ DOOR 2 · EPISODE DEEP DIVE ════ */
-.deep-dive { background: var(--cream); }
-.episode-tiles {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-@media (min-width: 600px) { .episode-tiles { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1000px) { .episode-tiles { grid-template-columns: repeat(5, 1fr); } }
-
-.episode-tile {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 0;
-  font-family: inherit;
-  text-align: left;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-.episode-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.episode-tile.active { box-shadow: 0 0 0 3px var(--pink); }
-
-.tile-img-wrap {
-  aspect-ratio: 5/4; overflow: hidden; position: relative;
-  background: var(--pink-soft);
-}
-.tile-img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 22%;
-  transition: transform 0.4s;
-}
-.episode-tile:hover .tile-img { transform: scale(1.05); }
-.tile-num {
-  position: absolute; top: 10px; left: 10px;
-  background: var(--pink); color: white;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 3px 8px; border-radius: 999px;
-}
-.tile-duration {
-  position: absolute; bottom: 10px; right: 10px;
-  background: rgba(42,31,44,0.7); color: white;
-  font-size: 10px; font-weight: 700;
-  padding: 3px 7px; border-radius: 4px;
-  backdrop-filter: blur(4px);
-}
-.tile-info { padding: 12px 14px 14px; }
-.tile-name { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.2; }
-.tile-lane { font-size: 11px; color: var(--ink-soft); margin-top: 3px; line-height: 1.3; }
-
-/* drawer */
-.episode-drawer {
-  background: white;
-  border-radius: 16px;
-  margin-top: 20px;
-  overflow: hidden;
-  display: none;
-  box-shadow: var(--shadow);
-}
-.episode-drawer.open { display: block; animation: slideIn 0.35s ease; }
-@keyframes slideIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-.drawer-inner { padding: 22px; }
-@media (min-width: 720px) {
-  .drawer-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; align-items: start; }
-}
-
-.drawer-header {
-  display: flex; align-items: flex-start; justify-content: space-between;
-  margin-bottom: 18px; gap: 12px;
-}
-.drawer-title h3 {
-  font-size: 22px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15;
-}
-.drawer-title .lane {
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--pink-deep); font-weight: 700; margin-bottom: 4px;
-}
-.drawer-close {
-  background: var(--cream-warm); border: 0; border-radius: 999px;
-  width: 32px; height: 32px; cursor: pointer; font-size: 18px;
-  color: var(--ink-soft); font-family: inherit; flex-shrink: 0;
-  line-height: 1;
-}
-.drawer-close:hover { background: var(--pink-pale); color: var(--pink-deep); }
-
-.player-frame {
-  position: relative; background: black; border-radius: 12px; overflow: hidden;
-  box-shadow: var(--shadow-sm); margin-bottom: 16px;
-}
-.player-frame::before { content: ''; display: block; padding-top: 56.25%; }
-.player-frame > div, .player-frame > iframe {
-  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-}
-.now-playing {
-  background: var(--pink-pale); border-radius: 8px;
-  padding: 8px 12px; font-size: 12px; line-height: 1.4;
-  display: none; margin-bottom: 16px;
-}
-.now-playing.visible { display: block; }
-.now-playing .np-label {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--pink-deep);
-  margin-bottom: 2px;
-}
-
-.drawer-meta-row { font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
-.drawer-meta-row strong { color: var(--ink); font-weight: 700; }
-.drawer-bio {
-  background: var(--cream-warm); border-radius: 12px; padding: 14px;
-  font-size: 13px; line-height: 1.55; color: var(--ink);
-  margin-bottom: 16px;
-}
-.drawer-bio .raw {
-  margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(42,31,44,0.12);
-  font-style: italic; color: var(--ink-soft); font-size: 12px;
-}
-.drawer-find { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.drawer-find a {
-  display: inline-block; background: white; color: var(--pink-deep);
-  border: 1.5px solid var(--pink); border-radius: 999px;
-  padding: 4px 10px; font-size: 11px; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 10px;
   text-decoration: none;
 }
-.drawer-find a:hover { background: var(--pink); color: white; }
+.wordmark img { width: 30px; height: 30px; object-fit: contain; }
+.wordmark-text {
+  font-family: var(--display); font-weight: 700;
+  font-size: 22px; color: var(--pink);
+  letter-spacing: -0.01em; line-height: 1;
+}
+.season-tag {
+  font-size: 11px; color: var(--ink-soft); font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
 
-.drawer-section h4 {
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--pink-deep); font-weight: 700; margin-bottom: 10px;
+/* ── HERO COLLAGE ───────────────────────────────────────── */
+.hero {
+  background: var(--cream); position: relative; overflow: hidden;
+  padding-bottom: 4px;
 }
-.drawer-section { margin-bottom: 16px; }
+.collage-stage {
+  position: relative; height: 380px; margin: 12px 0 6px;
+}
+.polaroid {
+  position: absolute;
+  background: white; padding: 6px 6px 22px;
+  box-shadow: 0 6px 18px rgba(42,31,44,0.18), 0 1px 0 rgba(0,0,0,0.04) inset;
+  border-radius: 2px;
+}
+.polaroid-photo {
+  width: 100%; aspect-ratio: 4/5;
+  object-fit: cover; object-position: center 22%;
+  background: var(--pink-soft);
+  border-radius: 1px; display: block;
+}
+.polaroid-caption {
+  margin-top: 6px; text-align: center;
+  font-family: var(--display); font-weight: 700;
+  font-size: 10px; color: var(--ink); letter-spacing: -0.005em;
+}
+.collage-sticker {
+  position: absolute; pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+}
+.hero-text {
+  padding: 18px 24px 24px; background: var(--cream);
+  position: relative; z-index: 2;
+}
+.hero-text .display {
+  font-size: 28px; color: var(--ink);
+  text-wrap: balance;
+}
+.hero-text p {
+  margin-top: 10px; font-size: 14px; line-height: 1.5;
+  color: var(--ink-soft); max-width: 320px;
+}
+.hero-cta {
+  margin-top: 18px; display: inline-flex; align-items: center; gap: 10px;
+  color: var(--pink); font-family: var(--display); font-weight: 700;
+  font-size: 14px;
+}
+.hero-cta .arrow { display: inline-block; animation: bounce-down 2.4s ease infinite; }
+@keyframes bounce-down { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
 
-.journey-arc {
-  background: var(--cream-warm); border-radius: 12px; padding: 14px;
-  margin-bottom: 16px;
+/* ── TAPE-MARK SECTION DIVIDERS ─────────────────────────── */
+.tape-mark {
+  background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  padding: 22px 0 6px; gap: 10px;
 }
-.arc-row { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
-.arc-row .arc-tag {
-  flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
-  margin-top: 7px; background: var(--ink-faint);
+.tape-mark .tape-inner {
+  display: flex; align-items: center; gap: 10px;
+  transform: rotate(-3deg);
 }
-.arc-row.turn .arc-tag { background: var(--pink); }
-.arc-row.land .arc-tag { background: var(--emerald); }
-.arc-row .arc-label {
-  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
-  font-weight: 700; color: var(--ink-soft); margin-bottom: 2px;
+.tape-mark img { width: 20px; height: 20px; }
+.tape-mark .tape-label {
+  font-family: var(--display); font-weight: 700;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--pink);
 }
-.arc-row.turn .arc-label { color: var(--pink-deep); }
-.arc-row.land .arc-label { color: var(--emerald); }
-.arc-row .arc-text { font-size: 13px; line-height: 1.45; color: var(--ink); }
-.arc-row.land .arc-text { font-weight: 700; }
 
-.q-list { display: flex; flex-direction: column; gap: 6px; }
-.q-row {
-  background: var(--cream-warm);
-  border: 1.5px solid transparent;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 13px;
-  font-family: inherit;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  line-height: 1.4;
-  color: var(--ink);
-  transition: all 0.15s;
-}
-.q-row:hover { border-color: var(--pink); background: var(--pink-pale); }
-.q-row.playing { background: var(--pink); color: white; border-color: var(--pink-deep); }
-.q-row .q-time {
-  flex-shrink: 0; font-size: 10px; font-weight: 700;
-  background: white; color: var(--pink-deep);
-  padding: 2px 6px; border-radius: 4px;
-  font-variant-numeric: tabular-nums;
-}
-.q-row.playing .q-time { background: rgba(255,255,255,0.25); color: white; }
-.q-row .q-text { flex: 1; }
-
-.bts-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
-}
-.bts-img {
-  aspect-ratio: 1/1; border-radius: 8px; overflow: hidden;
-  cursor: pointer; box-shadow: var(--shadow-sm);
-  background: var(--pink-soft); transition: transform 0.2s;
-}
-.bts-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.bts-img:hover { transform: scale(1.04); }
-
-/* ════ DOOR 3 · STAND-OUT MOMENTS ════ */
-.standout { background: var(--cream-warm); }
-.standout-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-@media (min-width: 720px) { .standout-cards { grid-template-columns: 1fr 1fr; } }
-.standout-card {
-  background: white;
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: var(--shadow-sm);
+/* ── CYOA SECTION ───────────────────────────────────────── */
+.section-cyoa {
+  background: var(--cream-warm); padding: 28px 0 30px;
   position: relative;
 }
-.standout-card::before {
-  content: ''; position: absolute; top: -6px; right: 18px;
-  width: 38px; height: 14px; background: var(--pink);
-  transform: rotate(2deg); border-radius: 2px;
-  opacity: 0.85;
+.section-cyoa .corner-sticker {
+  position: absolute; top: 8px; right: 22px;
+  transform: rotate(14deg); pointer-events: none;
 }
-.standout-title {
-  font-size: 18px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;
-  color: var(--ink); margin-bottom: 6px;
+.section-cyoa .corner-sticker img { width: 32px; height: 32px; }
+
+.section-eyebrow {
+  font-family: var(--display); font-weight: 700;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pink);
 }
-.standout-sub {
-  font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 14px;
-  font-style: italic;
+.section-headline {
+  font-family: var(--display); font-weight: 700;
+  font-size: 26px; color: var(--ink); line-height: 1.05;
+  letter-spacing: -0.015em; text-wrap: balance;
+  margin: 6px 0 0;
 }
-.standout-moments {
-  display: flex; flex-direction: column; gap: 8px;
+.section-blurb {
+  margin-top: 8px; font-size: 13px; line-height: 1.5;
+  color: var(--ink-soft); max-width: 320px;
+}
+.section-pad { padding: 0 22px 14px; }
+
+/* photo-tile chips */
+.chip {
+  position: relative; flex-shrink: 0;
+  padding: 0; border: 0; cursor: pointer;
+  border-radius: 14px; overflow: hidden;
+  width: 138px; aspect-ratio: 4/3;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04) inset;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.chip-tone {
+  position: absolute; inset: 0;
+}
+.chip-tone::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(110% 80% at 30% 20%, rgba(255,255,255,0.35), transparent 55%);
+}
+.chip-label {
+  position: absolute; left: 10px; right: 10px; bottom: 10px;
+  color: white;
+  font-family: var(--display); font-weight: 700;
+  font-size: 13px; line-height: 1.15; letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+  text-wrap: balance; text-align: left;
+}
+.chip-check {
+  position: absolute; top: 8px; right: 8px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--cream);
+  display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  font-size: 13px; font-weight: 800;
+}
+.chip.selected { transform: translateY(-2px) scale(1.01); }
+.chip.selected .chip-check { display: flex; }
+
+/* result banner */
+.cyoa-banner {
+  margin: 0 22px 14px; padding: 14px 16px;
+  background: var(--cream); border-radius: 14px;
+  border: 1.5px dashed rgba(234,85,158,0.45);
+  display: flex; align-items: center; gap: 12px;
+}
+.cyoa-banner.empty { padding: 14px 16px; }
+.cyoa-banner-arrow {
+  font-family: var(--display); font-weight: 700; font-size: 18px;
+  color: var(--pink);
+}
+.cyoa-banner-text {
+  flex: 1; font-family: var(--display); font-weight: 700;
+  font-size: 13px; color: var(--ink);
+  letter-spacing: -0.005em; line-height: 1.35;
+}
+.cyoa-banner-sub {
+  font-size: 11px; color: var(--ink-soft); margin-top: 1px;
+  font-family: var(--body); font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
+.cyoa-count-badge {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--pink); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-weight: 700; font-size: 13px;
+  flex-shrink: 0;
+}
+.cyoa-clear {
+  border: 0; background: transparent; color: var(--pink);
+  font-family: var(--body); font-weight: 600; font-size: 12px;
+  cursor: pointer; flex-shrink: 0;
 }
 
-/* ════ FOOTER ════ */
+/* ── PLAYER WINDOW (real YT IFrame, no audio visualizer) ── */
+.player-frame {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(42,31,44,0.18);
+  background: var(--ink-deep);
+}
+.player-frame::before { content: ''; display: block; padding-top: 56.25%; }
+.player-frame > .player-stage,
+.player-frame > iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border: 0;
+}
+.player-stage {
+  background: radial-gradient(120% 90% at 50% 30%, #2c1d27 0%, #15101a 80%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 14px; padding: 24px; text-align: center;
+  color: var(--cream);
+}
+.player-stage .ph-mark {
+  width: 48px; height: 48px; opacity: 0.85;
+  filter: brightness(0) invert(1) opacity(0.65);
+}
+.player-stage .ph-title {
+  font-family: var(--display); font-weight: 700;
+  font-size: 14px; max-width: 240px; line-height: 1.35;
+  letter-spacing: -0.005em; opacity: 0.9;
+}
+.player-stage .ph-sub {
+  font-size: 11px; opacity: 0.55;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  font-family: var(--display); font-weight: 700;
+}
+.player-meta {
+  background: var(--ink-deep); color: var(--cream);
+  padding: 14px 16px 16px;
+}
+.player-meta-headline {
+  font-family: var(--display); font-weight: 700;
+  font-size: 17px; line-height: 1.2; letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+.player-meta-sub {
+  margin-top: 6px; font-size: 12px; opacity: 0.7;
+}
+.player-meta-deep {
+  margin-top: 12px; display: inline-flex; align-items: center; gap: 6px;
+  background: transparent; color: var(--pink); border: 0;
+  font-family: var(--body); font-weight: 600; font-size: 13px;
+  letter-spacing: -0.005em; cursor: pointer;
+}
+
+/* swipe header (Up next · swipe →) */
+.swipe-head {
+  padding: 0 22px 8px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.swipe-head .label {
+  font-size: 11px; color: var(--ink-soft);
+  font-family: var(--display); font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.swipe-head .label .arrow { font-size: 14px; color: var(--pink); }
+.swipe-head .count {
+  font-size: 11px; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.swipe-fade {
+  position: absolute; right: 0; top: 30px; bottom: 14px; width: 36px;
+  pointer-events: none;
+}
+
+/* moment card */
+.moment-card {
+  flex-shrink: 0; width: 220px; padding: 0; border: 0;
+  text-align: left; background: transparent;
+  border-radius: 18px; cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.moment-card.active {
+  background: var(--cream);
+  box-shadow: 0 0 0 2.5px var(--pink), 0 8px 20px rgba(234,85,158,0.18);
+  transform: translateY(-2px);
+}
+.moment-card-inner { padding: 6px; }
+.moment-thumb {
+  position: relative; aspect-ratio: 16/10;
+  border-radius: 14px; overflow: hidden;
+}
+.moment-thumb-bg {
+  position: absolute; inset: 0;
+}
+.moment-thumb-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(120% 90% at 30% 20%, rgba(255,255,255,0.35), transparent 55%);
+}
+.moment-thumb-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 22%;
+}
+.moment-thumb-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
+}
+.moment-thumb-play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.moment-thumb-play svg { margin-left: 3px; }
+.moment-thumb-duration {
+  position: absolute; bottom: 8px; right: 8px;
+  background: rgba(0,0,0,0.7); color: white;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.02em;
+  padding: 2px 6px; border-radius: 4px;
+}
+.moment-card.active .moment-thumb-overlay,
+.moment-card.active .moment-thumb-play { display: none; }
+.moment-text {
+  padding: 10px 6px 8px;
+}
+.moment-headline {
+  font-family: var(--display); font-weight: 700;
+  font-size: 15px; line-height: 1.2; color: var(--ink);
+  letter-spacing: -0.01em;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.moment-meta {
+  margin-top: 6px; font-size: 11px; color: var(--ink-soft);
+  font-weight: 500; letter-spacing: -0.005em;
+}
+
+/* ── EPISODE BAND (ink-dark) ──────────────────────────── */
+.section-episodes {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+  color: var(--cream); padding: 36px 0 40px;
+  position: relative;
+}
+.section-episodes .corner-swoosh {
+  position: absolute; top: 16px; right: 16px;
+  transform: rotate(-8deg); opacity: 0.85; pointer-events: none;
+}
+.section-episodes .section-eyebrow { color: var(--pink); }
+.section-episodes .section-headline {
+  font-size: 32px; color: var(--cream); margin-top: 6px;
+}
+.section-episodes .section-blurb {
+  color: rgba(251,247,244,0.65); margin-top: 8px;
+}
+.section-episodes-pad { padding: 0 22px 20px; }
+.episode-tile {
+  width: 280px; padding: 0; border: 0;
+  background: transparent; text-align: left; cursor: pointer;
+}
+.episode-thumb {
+  position: relative; aspect-ratio: 16/10;
+  border-radius: var(--r-md); overflow: hidden;
+}
+.episode-thumb-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 25%;
+}
+.episode-thumb-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+}
+.episode-thumb-lane {
+  position: absolute; top: 12px; left: 12px;
+  font-family: var(--display); font-weight: 700;
+  color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  font-size: 16px; line-height: 0.95; letter-spacing: -0.01em;
+  text-transform: uppercase; max-width: 70%;
+}
+.episode-thumb-ep {
+  position: absolute; top: 10px; right: 10px;
+  background: var(--cream); color: var(--ink);
+  font-family: var(--display); font-weight: 700;
+  font-size: 10px; letter-spacing: 0.04em;
+  padding: 4px 7px; border-radius: 100px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.episode-thumb-host {
+  position: absolute; bottom: 10px; left: 10px;
+  color: white; font-family: var(--body);
+  font-size: 11px; font-weight: 500; letter-spacing: -0.005em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.episode-thumb-mark {
+  position: absolute; bottom: 10px; right: 10px;
+  background: var(--pink); color: white;
+  font-family: var(--display); font-weight: 700;
+  font-size: 9px; letter-spacing: 0.04em;
+  padding: 3px 6px; border-radius: 100px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.episode-tile-meta {
+  margin-top: 10px; color: var(--cream);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.episode-tile-meta .name {
+  font-family: var(--display); font-weight: 700; font-size: 16px;
+  letter-spacing: -0.01em;
+}
+.episode-tile-meta .dur {
+  font-size: 12px; opacity: 0.6; font-variant-numeric: tabular-nums;
+}
+.episode-index-row {
+  padding: 18px 22px 0; display: flex; gap: 18px;
+  color: rgba(251,247,244,0.4); font-size: 11px;
+  font-family: ui-monospace, "SF Mono", monospace;
+}
+
+/* ── STAND-OUT (single curated section) ──────────────── */
+.section-standout {
+  background: var(--pink-pale); padding: 32px 0 32px;
+  position: relative;
+}
+.section-standout .corner-sticker {
+  position: absolute; top: 10px; right: 18px;
+  transform: rotate(-8deg); pointer-events: none;
+}
+.section-standout .corner-sticker img { width: 36px; height: 36px; }
+
+/* ── FOOTER ──────────────────────────────────────────── */
 .page-footer {
   background: var(--pink-soft);
-  text-align: center; padding: 56px 24px 64px;
+  padding: 44px 22px 30px;
+  position: relative; text-align: center;
+  color: var(--ink);
+}
+.footer-pill {
+  position: absolute; top: -16px; left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  background: var(--pink); color: var(--cream);
+  padding: 6px 16px; border-radius: 100px;
+  font-family: var(--display); font-weight: 700;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(234,85,158,0.4);
+  white-space: nowrap;
 }
 .footer-promise {
-  max-width: 520px; margin: 0 auto 22px;
-  font-size: 14px; color: var(--ink); line-height: 1.6; font-style: italic;
+  margin: 8px 0 22px;
+  font-size: 16px; line-height: 1.5; color: var(--ink);
+  font-family: var(--display); font-weight: 700;
+  letter-spacing: -0.005em; text-wrap: pretty;
+  text-align: left;
 }
-.footer-promise::before, .footer-promise::after {
-  content: '"'; color: var(--pink-deep); font-weight: 700; font-style: normal;
+.footer-credit-row {
+  display: flex; align-items: center; gap: 14px;
+  text-align: left;
 }
-.footer-lockup { width: 70px; height: auto; opacity: 0.9; }
-.footer-credit {
-  margin-top: 16px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ink-soft); font-weight: 700;
+.footer-credit-row img.lockup { width: 56px; height: 56px; object-fit: contain; }
+.footer-credit-text { line-height: 1.2; }
+.footer-credit-text .made {
+  margin-top: 4px;
+  font-size: 10px; color: var(--ink-soft); font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase;
 }
-.footer-credit a { color: var(--pink-deep); }
 
-/* lightbox */
-.lightbox {
-  position: fixed; inset: 0; background: rgba(42,31,44,0.92);
-  display: none; align-items: center; justify-content: center;
-  z-index: 1100; padding: 20px; cursor: zoom-out;
+/* ── EPISODE PAGE ──────────────────────────────────── */
+.ep-page { background: var(--cream); min-height: 100vh; }
+.ep-topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(251,247,244,0.95); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 18px 12px;
+  display: flex; align-items: center; justify-content: space-between;
 }
-.lightbox.visible { display: flex; }
-.lightbox img { max-width: 100%; max-height: 90vh; border-radius: 12px; }
+.ep-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--ink); font-family: var(--body); font-weight: 500; font-size: 13px;
+  cursor: pointer;
+}
+.ep-hero {
+  padding: 20px 22px 22px;
+}
+.ep-hero-thumb {
+  position: relative; border-radius: var(--r-lg);
+  overflow: hidden; aspect-ratio: 4/3;
+}
+.ep-hero-thumb-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 25%;
+}
+.ep-hero-thumb-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%);
+}
+.ep-hero-thumb-lane {
+  position: absolute; top: 16px; left: 16px;
+  font-family: var(--display); font-weight: 700;
+  color: white; font-size: 30px; line-height: 0.95;
+  letter-spacing: -0.01em; text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  max-width: 70%;
+}
+.ep-hero-thumb-ep {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--cream); color: var(--ink);
+  font-family: var(--display); font-weight: 700;
+  font-size: 13px; letter-spacing: 0.04em;
+  padding: 6px 10px; border-radius: 100px;
+}
+.ep-hero-thumb-host {
+  position: absolute; bottom: 16px; left: 16px;
+  color: white; font-family: var(--body);
+  font-size: 14px; font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.ep-hero-thumb-mark {
+  position: absolute; bottom: 16px; right: 16px;
+  background: var(--pink); color: white;
+  font-family: var(--display); font-weight: 700;
+  font-size: 12px; letter-spacing: 0.04em;
+  padding: 5px 9px; border-radius: 100px;
+  text-transform: uppercase;
+}
+.ep-hero-sticker {
+  position: absolute; top: -10px; right: -8px;
+  transform: rotate(10deg); pointer-events: none;
+}
+.ep-hero-title {
+  margin: 20px 0 6px;
+  font-family: var(--display); font-weight: 700;
+  font-size: 30px; color: var(--ink);
+  letter-spacing: -0.015em; line-height: 1.05; text-wrap: balance;
+}
+.ep-hero-with {
+  font-size: 14px; color: var(--ink-soft); font-weight: 500;
+}
+.ep-hero-tags {
+  margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap;
+}
+.tag {
+  padding: 4px 10px; border-radius: 100px;
+  background: var(--cream-warm); color: var(--ink);
+  font-family: var(--display); font-weight: 700;
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.tag.lane { background: rgba(234,85,158,0.1); color: var(--pink-deep); }
 
-/* loading */
+.ep-player-section { padding: 0 22px 22px; }
+.ep-player-frame {
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: 0 12px 28px rgba(42,31,44,0.18);
+  background: var(--ink-deep);
+  position: relative;
+}
+.ep-player-frame::before { content: ''; display: block; padding-top: 56.25%; }
+.ep-player-frame > iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+
+.ep-topics-section {
+  background: var(--cream-warm); padding: 28px 22px 26px;
+  position: relative;
+}
+.ep-topics-section .corner-sticker {
+  position: absolute; top: 12px; right: 20px;
+  transform: rotate(8deg); pointer-events: none;
+}
+.ep-topics-section .corner-sticker img { width: 26px; height: 26px; }
+.ep-topics-list {
+  list-style: none; padding: 0; margin: 16px 0 0;
+}
+.ep-topics-list li button {
+  width: 100%; display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0;
+  border: 0; border-top: 1px solid rgba(42,31,44,0.08);
+  background: transparent; text-align: left; cursor: pointer;
+}
+.ep-topics-list .ts {
+  flex-shrink: 0;
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-size: 12px; font-weight: 600; padding-top: 2px;
+  min-width: 38px; font-variant-numeric: tabular-nums;
+}
+.ep-topics-list .q {
+  flex: 1; font-family: var(--body); font-size: 14px;
+  color: var(--ink); line-height: 1.4; text-wrap: pretty;
+}
+.ep-topics-list .arrow {
+  font-size: 14px; padding-top: 2px;
+}
+
+.ep-shownotes-section { padding: 32px 22px 24px; }
+.ep-shownotes-section h3 {
+  margin: 6px 0 12px;
+  font-family: var(--display); font-weight: 700;
+  font-size: 22px; color: var(--ink);
+}
+.ep-shownotes-section p {
+  margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink);
+  text-wrap: pretty;
+}
+.ep-shownotes-section p + p {
+  margin-top: 12px; font-size: 13px; color: var(--ink-soft);
+}
+
+.ep-bts-section { background: var(--cream); padding: 16px 0 24px; }
+.ep-bts-section .section-pad-top {
+  padding: 0 22px 12px;
+}
+.bts-card {
+  width: 200px;
+}
+.bts-card-photo {
+  aspect-ratio: 4/5; border-radius: 12px; overflow: hidden;
+  background: var(--pink-soft);
+}
+.bts-card-photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 35%;
+}
+.bts-card-caption {
+  margin-top: 8px; font-size: 11px; color: var(--ink-soft);
+  font-weight: 500; letter-spacing: 0.02em;
+}
+
+.ep-find-section {
+  background: var(--pink-soft); padding: 28px 22px 30px;
+}
+.ep-find-section h3 {
+  margin: 6px 0 16px;
+  font-family: var(--display); font-weight: 700;
+  font-size: 22px; color: var(--ink);
+}
+.find-link {
+  width: 100%; display: flex; align-items: center; gap: 14px;
+  padding: 12px 14px; border: 0; border-radius: 14px;
+  background: var(--cream); cursor: pointer; text-align: left;
+  text-decoration: none; color: var(--ink);
+}
+.find-link + .find-link { margin-top: 10px; }
+.find-link-icon {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--pink); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-weight: 700; font-size: 13px;
+  flex-shrink: 0;
+}
+.find-link-meta { flex: 1; min-width: 0; }
+.find-link-label {
+  font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--ink);
+}
+.find-link-detail {
+  font-size: 12px; color: var(--ink-soft); margin-top: 1px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.find-link-arrow { color: var(--pink); font-size: 16px; }
+
+/* ── ROUTING ─────────────────────────────────────────── */
+.route { display: none; }
+.route.active { display: block; }
+
+/* ── LOADING ─────────────────────────────────────────── */
 .loading {
   position: fixed; inset: 0; background: var(--cream);
   display: flex; align-items: center; justify-content: center;
   flex-direction: column; z-index: 9999; transition: opacity 0.4s;
 }
 .loading.hidden { opacity: 0; pointer-events: none; }
-.loading img { width: 60px; animation: pulse 1.5s ease infinite; }
+.loading img { width: 56px; animation: pulse 1.5s ease infinite; }
 .loading-text {
-  margin-top: 14px; font-size: 11px; color: var(--pink-deep);
+  margin-top: 14px; font-size: 11px; color: var(--pink);
   letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+  font-family: var(--display);
 }
 @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.08); opacity: 1; } }
+
+@media (min-width: 720px) {
+  .hero-text .display { font-size: 32px; }
+  .ep-hero-thumb-lane { font-size: 36px; }
+  .section-headline { font-size: 30px; }
+  .section-episodes .section-headline { font-size: 38px; }
+}
 </style>
 </head>
 <body>
@@ -506,445 +747,741 @@ section { padding: 56px 24px; max-width: 1080px; margin: 0 auto; }
   <div class="loading-text">Opening The Huddle…</div>
 </div>
 
-<header class="site-header">
-  <a href="#" class="wordmark" id="brandWordmark">
-    <img src="assets/brand/symbol-pink.png" alt="">
-    <span class="wordmark-text">The Huddle</span>
-  </a>
-  <div class="pitch">
-    <p><strong>A resource for parents of little humans.</strong></p>
-    <p>Each episode, Megan sits down with one expert on the things that come up day to day. <strong>Sleep, kids' teeth, feeding, speech, body & recovery.</strong></p>
-    <p>Season 1: 5 conversations · 139 minutes · made findable.</p>
-  </div>
-  <div class="pitch-leadin">Find the moments that matter to you <span class="arrow">↓</span></div>
-</header>
-
-<!-- ═══ DOOR 1 · CHOOSE YOUR OWN ADVENTURE ═══ -->
-<section class="cyoa" id="cyoa">
-  <div class="section-eyebrow">Choose your own adventure</div>
-  <h2 class="section-title">Tell us what's on your mind.</h2>
-  <p class="section-sub">Tap a few. We'll surface the moments from across Season 1 most likely to help — with the line of reasoning so you know why.</p>
-
-  <div class="cyoa-card">
-    <div class="cyoa-status">
-      <span><span class="count" id="cyoaCount">0</span> of 5 selected</span>
-      <button class="clear" id="cyoaClear" type="button">Clear</button>
-    </div>
-    <div class="chips" id="chips"></div>
-    <div class="cyoa-results" id="cyoaResults"></div>
-  </div>
-</section>
-
-<!-- ═══ DOOR 2 · EPISODE DEEP DIVE ═══ -->
-<section class="deep-dive" id="deepdive">
-  <div class="section-eyebrow">Episode deep dive</div>
-  <h2 class="section-title">Five conversations. Pick an expert.</h2>
-  <p class="section-sub">Full episode, every question Megan asked timestamped, behind the scenes, plus where to find the expert online.</p>
-  <div class="episode-tiles" id="episodeTiles"></div>
-  <div id="episodeDrawer"></div>
-</section>
-
-<!-- ═══ DOOR 3 · STAND-OUT MOMENTS ═══ -->
-<section class="standout" id="standout">
-  <div class="section-eyebrow">Stand-out moments</div>
-  <h2 class="section-title">A few we've pulled together for you.</h2>
-  <p class="section-sub">Hand-picked groupings — emotional, practical, surprising. Drop in anywhere.</p>
-  <div class="standout-cards" id="standoutCards"></div>
-</section>
-
-<footer class="page-footer">
-  <p class="footer-promise" id="footerPromise"></p>
-  <img class="footer-lockup" src="assets/brand/lockup-red.png" alt="Help at Hand">
-  <div class="footer-credit">Made by <a href="https://vidpod.com.au" target="_blank" rel="noopener">Vidpod</a> for Help at Hand · A scrapbook of Season 1, yours to use however you want.</div>
-</footer>
-
-<div class="lightbox" id="lightbox"><img id="lightboxImg" src="" alt=""></div>
+<div class="app">
+  <!-- HOME ROUTE -->
+  <div id="route-home" class="route active"></div>
+  <!-- EPISODE ROUTE -->
+  <div id="route-episode" class="route"></div>
+</div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 let DATA = null;
-const PLAYERS = {};       // YT players keyed by ep id
 let YT_READY = false;
-let PENDING = null;       // { epId, start, end, label } if API not ready
-
-const SELECTED_PROMPTS = new Set();   // active CYOA chip ids
-
-window.onYouTubeIframeAPIReady = () => {
-  YT_READY = true;
-  if (PENDING) { const p = PENDING; PENDING = null; setTimeout(() => playMoment(p.epId, p.start, p.end, p.label), 300); }
+let PLAYERS = {};   // { cyoa, standout, episode } — YT player instances
+let PENDING = null;
+const STATE = {
+  selectedChips: new Set(),
+  cyoaActiveMomentId: null,
+  standoutActiveMomentId: null,
+  route: 'home',
+  activeEpId: null,
 };
 
-fetch('./season-data.json?v=3').then(r => r.json()).then(data => {
+window.onYouTubeIframeAPIReady = () => { YT_READY = true; if (PENDING) { PENDING(); PENDING = null; } };
+
+// ── data load ──
+fetch('./season-data.json?v=4').then(r => r.json()).then(data => {
   DATA = data;
-  document.title = `${DATA.season.title} · by ${DATA.brand_understanding.client_name}`;
-  document.getElementById('footerPromise').textContent = DATA.season.outro_promise.replace(/^Hey, /, '');
-  buildChips();
-  buildEpisodeTiles();
-  buildStandoutCards();
-  attachClear();
+  // build flat moments list from episodes' questions + quotes
+  DATA.moments = [];
+  DATA.episodes.forEach(ep => {
+    ep.questions.forEach(q => {
+      DATA.moments.push({
+        id: q.id,
+        ep_id: ep.id,
+        ep,
+        kind: 'question',
+        headline: q.question_asked,
+        excerpt: q.answer_excerpt,
+        start: q.answer_starts_at_seconds,
+        end: q.answer_ends_at_seconds,
+        weight: q.weight || 2,
+        is_chosen_snippet: q.is_chosen_snippet || false,
+      });
+    });
+    ep.quotes.forEach(qt => {
+      DATA.moments.push({
+        id: qt.id,
+        ep_id: ep.id,
+        ep,
+        kind: 'quote',
+        headline: '"' + qt.text + '"',
+        excerpt: qt.attribution,
+        start: qt.starts_at_seconds,
+        end: qt.ends_at_seconds,
+        weight: 3,
+        is_chosen_snippet: false,
+      });
+    });
+  });
+  document.getElementById('route-home').innerHTML = renderHome();
+  attachHomeHandlers();
   setTimeout(() => document.getElementById('loading').classList.add('hidden'), 200);
 }).catch(err => {
   console.error(err);
-  document.getElementById('loading').innerHTML = '<div style="padding:20px;color:#EA559E">Could not load. Please refresh.</div>';
+  document.getElementById('loading').innerHTML = '<div style="padding:20px;color:#EA559E">Could not load. Refresh.</div>';
 });
 
-// ───── CYOA ─────────────────────────────────────────────────
-function buildChips() {
-  const wrap = document.getElementById('chips');
-  wrap.innerHTML = '';
-  DATA.audience_prompts.forEach(p => {
-    const btn = document.createElement('button');
-    btn.className = 'chip';
-    btn.type = 'button';
-    btn.dataset.id = p.id;
-    btn.innerHTML = `
-      <span class="chip-label">${escapeHtml(p.label)}</span>
-      <span class="chip-desc">${escapeHtml(p.description)}</span>
-    `;
-    btn.addEventListener('click', () => toggleChip(p.id));
-    wrap.appendChild(btn);
+// ── HOME render ──
+function renderHome() {
+  return `
+    ${renderHeader()}
+    ${renderHero()}
+    ${renderTapeMark('asterix-pink', 'Choose your moments', '#EA559E')}
+    ${renderCYOA()}
+    ${renderTapeMark('asterix-emerald', 'The catalogue', '#3FA590')}
+    ${renderEpisodeBand()}
+    ${renderTapeMark('heart-pink', 'Stand-out moments', '#EA559E')}
+    ${renderStandout()}
+    ${renderFooter()}
+  `;
+}
+
+// ── HEADER ──
+function renderHeader() {
+  return `
+    <header class="site-header">
+      <a href="#" class="wordmark" id="brandWordmark">
+        <img src="assets/brand/symbol-pink.png" alt="">
+        <span class="wordmark-text">The Huddle</span>
+      </a>
+      <span class="season-tag">Season 1</span>
+    </header>
+  `;
+}
+
+// ── HERO COLLAGE ──
+function renderHero() {
+  const eps = DATA.episodes;
+  // Polaroid arrangement (matches design's collage variant)
+  const polaroids = [
+    { ep: eps[1], rot: -6, top: 8,   left: 18,  z: 3, w: 104 }, // Bianca
+    { ep: eps[3], rot:  4, top: 18,  left: 134, z: 4, w: 118 }, // Olivia
+    { ep: eps[0], rot: -3, top: 110, left: 60,  z: 5, w: 110 }, // Claire (front)
+    { ep: eps[2], rot:  6, top: 124, left: 188, z: 3, w: 100 }, // Isabelle
+    { ep: eps[4], rot: -4, top: 218, left: 116, z: 4, w: 112 }, // Felicity
+  ];
+  const polaroidsHTML = polaroids.map(p => `
+    <div class="polaroid" style="top:${p.top}px; left:${p.left}px; width:${p.w}px; z-index:${p.z}; transform: rotate(${p.rot}deg);">
+      <img class="polaroid-photo" src="${p.ep.guest.hero_image}" alt="${esc(p.ep.guest.name)}" loading="eager">
+      <div class="polaroid-caption">${esc(p.ep.guest.name.split(' ')[0])}</div>
+    </div>
+  `).join('');
+
+  return `
+    <section class="hero">
+      <div class="collage-stage">
+        ${polaroidsHTML}
+        <div class="collage-sticker" style="top: 90px; right: 16px; transform: rotate(12deg);">
+          <img src="assets/stickers/asterix-yellow.png" alt="" style="width:36px;height:36px;">
+        </div>
+        <div class="collage-sticker" style="bottom: 26px; left: 18px; transform: rotate(-10deg);">
+          <img src="assets/stickers/heart-pink.png" alt="" style="width:32px;height:32px;">
+        </div>
+        <div class="collage-sticker" style="top: 200px; right: 28px; transform: rotate(-6deg);">
+          <img src="assets/stickers/asterix-emerald.png" alt="" style="width:26px;height:26px;">
+        </div>
+        <div class="collage-sticker" style="bottom: 80px; right: 60px; transform: rotate(8deg);">
+          <img src="assets/stickers/flower-pale-pink.png" alt="" style="width:30px;height:30px;">
+        </div>
+      </div>
+      <div class="hero-text">
+        <h1 class="display">A resource for parents of little humans.</h1>
+        <p>Five real conversations with experts on what comes up day-to-day. Sleep, teeth, feeding, speech, body & recovery. Made findable.</p>
+        <a href="#cyoa" class="hero-cta">
+          <span>Find the moments that matter to you</span>
+          <span class="arrow">↓</span>
+        </a>
+      </div>
+    </section>
+  `;
+}
+
+// ── TAPE-MARK DIVIDER ──
+function renderTapeMark(stickerId, label, color) {
+  return `
+    <div class="tape-mark">
+      <div class="tape-inner">
+        <img src="assets/stickers/${stickerId}.png" alt="">
+        <span class="tape-label" style="color:${color}">${esc(label)}</span>
+        <img src="assets/stickers/${stickerId}.png" alt="">
+      </div>
+    </div>
+  `;
+}
+
+// ── CYOA SECTION ──
+function renderCYOA() {
+  const chips = DATA.audience_prompts;
+  const chipsRow1 = chips.slice(0, 6).map(c => chipHTML(c)).join('');
+  const chipsRow2 = chips.slice(6).map(c => chipHTML(c)).join('');
+  return `
+    <section class="section-cyoa" id="cyoa">
+      <div class="corner-sticker"><img src="assets/stickers/asterix-pink.png" alt=""></div>
+      <div class="section-pad">
+        <div class="section-eyebrow">Choose your own adventure</div>
+        <h2 class="section-headline">Tap a few of the things on your mind.<br>We'll show you the moments.</h2>
+      </div>
+      <div class="swipe-row" id="chipsRow1" style="padding-bottom:8px">${chipsRow1}</div>
+      <div class="swipe-row" id="chipsRow2" style="padding-bottom:18px">${chipsRow2}</div>
+      <div id="cyoaBanner"></div>
+      <div class="section-pad" style="padding-bottom:14px">
+        <div class="player-frame" id="cyoaPlayerFrame">
+          ${emptyPlayerStage('Pick a topic above to load a moment')}
+        </div>
+        <div id="cyoaMeta"></div>
+      </div>
+      <div style="position:relative">
+        <div class="swipe-head" id="cyoaSwipeHead"></div>
+        <div class="swipe-row" id="cyoaQueue" style="padding-right:60px"></div>
+        <div class="swipe-fade" id="cyoaFade" style="background: linear-gradient(90deg, rgba(245,237,227,0) 0%, rgba(245,237,227,0.95) 100%); display:none"></div>
+      </div>
+    </section>
+  `;
+}
+
+function chipHTML(chip) {
+  const a = chip.tone[0], b = chip.tone[1];
+  return `
+    <button class="chip" data-chip-id="${esc(chip.id)}"
+      style="background: linear-gradient(135deg, ${a} 0%, ${b} 100%);">
+      <div class="chip-tone"></div>
+      <div class="chip-check" style="color:${chip.accent}">✓</div>
+      <div class="chip-label">${esc(chip.label)}</div>
+    </button>
+  `;
+}
+
+function emptyPlayerStage(label) {
+  return `
+    <div class="player-stage">
+      <img class="ph-mark" src="assets/brand/symbol-pink.png" alt="">
+      <div class="ph-title">${esc(label)}</div>
+      <div class="ph-sub">Player ready</div>
+    </div>
+  `;
+}
+
+function momentCardHTML(moment, active) {
+  const tone = moment.ep.photoTone || ['#F5C9D6','#D88BB0'];
+  const dur = formatDur(moment.end - moment.start);
+  return `
+    <button class="moment-card ${active ? 'active' : ''}" data-moment-id="${esc(moment.id)}">
+      <div class="moment-card-inner">
+        <div class="moment-thumb">
+          <div class="moment-thumb-bg" style="background: linear-gradient(135deg, ${tone[0]} 0%, ${tone[1]} 100%);"></div>
+          <img class="moment-thumb-photo" src="${moment.ep.guest.hero_image}" alt="" loading="lazy">
+          <div class="moment-thumb-overlay"></div>
+          ${!active ? `
+            <div class="moment-thumb-play">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 1.5 L13.5 8 L3 14.5 Z" fill="#2A1F2C" />
+              </svg>
+            </div>
+          ` : ''}
+          <div class="moment-thumb-duration">${dur}</div>
+        </div>
+        <div class="moment-text">
+          <div class="moment-headline">${esc(moment.headline)}</div>
+          <div class="moment-meta">${esc(moment.ep.guest.name)} · ${dur}</div>
+        </div>
+      </div>
+    </button>
+  `;
+}
+
+// ── EPISODE BAND ──
+function renderEpisodeBand() {
+  const tiles = DATA.episodes.map(ep => `
+    <button class="episode-tile" data-ep-id="${esc(ep.id)}">
+      <div class="episode-thumb">
+        <img class="episode-thumb-photo" src="${ep.guest.hero_image}" alt="${esc(ep.guest.name)}" loading="lazy">
+        <div class="episode-thumb-overlay"></div>
+        <div class="episode-thumb-lane">${esc(ep.epTitle || ep.lane)}</div>
+        <div class="episode-thumb-ep">EP ${String(ep.number).padStart(2, '0')}</div>
+        <div class="episode-thumb-host">${esc(ep.guest.name)}</div>
+        <div class="episode-thumb-mark">The Huddle</div>
+      </div>
+      <div class="episode-tile-meta">
+        <span class="name">${esc(ep.guest.name)}</span>
+        <span class="dur">${formatDur(ep.youtube.duration_seconds)}</span>
+      </div>
+    </button>
+  `).join('');
+  return `
+    <section class="section-episodes">
+      <div class="corner-swoosh">
+        <svg width="80" height="40" viewBox="0 0 120 60" fill="none">
+          <path d="M5 32 C 25 14, 60 8, 95 22" stroke="#EA559E" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M85 14 L 99 22 L 89 32" stroke="#EA559E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+      </div>
+      <div class="section-episodes-pad">
+        <div class="section-eyebrow">The catalogue</div>
+        <h2 class="section-headline">All five conversations.</h2>
+        <p class="section-blurb">Tap any episode for the full deep dive — show notes, behind the scenes, the lot.</p>
+      </div>
+      <div class="swipe-row" style="padding-bottom:6px">${tiles}</div>
+      <div class="episode-index-row">
+        ${DATA.episodes.map(ep => `<span>${String(ep.number).padStart(2, '0')}</span>`).join('')}
+      </div>
+    </section>
+  `;
+}
+
+// ── STAND-OUT (single curated section) ──
+function renderStandout() {
+  const cs = DATA.curated_standout;
+  return `
+    <section class="section-standout" id="standout">
+      <div class="corner-sticker"><img src="assets/stickers/${esc(cs.sticker)}.png" alt=""></div>
+      <div class="section-pad">
+        <div class="section-eyebrow" style="color:${esc(cs.accent)}">${esc(cs.eyebrow)}</div>
+        <h2 class="section-headline">${esc(cs.title)}</h2>
+        <p class="section-blurb">${esc(cs.blurb)}</p>
+      </div>
+      <div class="section-pad" style="padding-bottom:14px">
+        <div class="player-frame" id="standoutPlayerFrame">
+          ${emptyPlayerStage('Tap a card below to play')}
+        </div>
+        <div id="standoutMeta"></div>
+      </div>
+      <div style="position:relative">
+        <div class="swipe-head" id="standoutSwipeHead"></div>
+        <div class="swipe-row" id="standoutQueue" style="padding-right:60px"></div>
+        <div class="swipe-fade" id="standoutFade" style="background: linear-gradient(90deg, rgba(250,224,238,0) 0%, rgba(250,224,238,0.95) 100%);"></div>
+      </div>
+    </section>
+  `;
+}
+
+// ── FOOTER ──
+function renderFooter() {
+  const outro = DATA.season.outro_promise.replace(/^Hey, /, '');
+  return `
+    <footer class="page-footer">
+      <div class="footer-pill">End of season 1</div>
+      <p class="footer-promise">${esc(outro)}</p>
+      <div class="footer-credit-row">
+        <img class="lockup" src="assets/brand/lockup-red.png" alt="Help at Hand">
+        <div class="footer-credit-text">
+          <div style="display:inline-flex;align-items:center;gap:8px;">
+            <img src="assets/brand/symbol-pink.png" alt="" style="width:18px;height:18px;">
+            <span class="display" style="font-size:18px;color:var(--pink);">The Huddle</span>
+          </div>
+          <div class="made">Made with <a href="https://vidpod.com.au" target="_blank" rel="noopener">Vidpod</a></div>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
+// ── HOME interaction handlers ──
+function attachHomeHandlers() {
+  // Brand wordmark scroll-to-top
+  document.getElementById('brandWordmark').addEventListener('click', e => {
+    e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+  // chips
+  document.querySelectorAll('.chip[data-chip-id]').forEach(b => {
+    b.addEventListener('click', () => toggleChip(b.dataset.chipId));
+  });
+  // episode tiles
+  document.querySelectorAll('.episode-tile[data-ep-id]').forEach(b => {
+    b.addEventListener('click', () => openEpisode(b.dataset.epId));
+  });
+  renderCYOABanner();
+  renderCYOAQueue();
+  renderStandoutQueue(); // initial: first stand-out moment loaded
 }
 
 function toggleChip(id) {
-  if (SELECTED_PROMPTS.has(id)) SELECTED_PROMPTS.delete(id);
-  else if (SELECTED_PROMPTS.size >= 5) return; // hard cap of 5
-  else SELECTED_PROMPTS.add(id);
-  // Update UI
+  if (STATE.selectedChips.has(id)) STATE.selectedChips.delete(id);
+  else if (STATE.selectedChips.size >= 5) return;
+  else STATE.selectedChips.add(id);
   document.querySelectorAll('.chip').forEach(c => {
-    c.classList.toggle('selected', SELECTED_PROMPTS.has(c.dataset.id));
+    c.classList.toggle('selected', STATE.selectedChips.has(c.dataset.chipId));
   });
-  document.getElementById('cyoaCount').textContent = SELECTED_PROMPTS.size;
-  document.getElementById('cyoaClear').classList.toggle('visible', SELECTED_PROMPTS.size > 0);
-  runCuration();
+  renderCYOABanner();
+  renderCYOAQueue();
 }
 
-function attachClear() {
-  document.getElementById('cyoaClear').addEventListener('click', () => {
-    SELECTED_PROMPTS.clear();
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-    document.getElementById('cyoaCount').textContent = '0';
-    document.getElementById('cyoaClear').classList.remove('visible');
-    runCuration();
-  });
-}
-
-// THE CYOA ENGINE — strict match, no padding
-function runCuration() {
-  const results = document.getElementById('cyoaResults');
-  if (SELECTED_PROMPTS.size === 0) {
-    results.classList.remove('visible');
-    results.innerHTML = '';
-    return;
-  }
-  // 1. Collect candidate moment_ids = union of mapped moment_ids from selected prompts
-  const candidateIds = new Set();
-  const promptsByMoment = {};   // momentId -> [prompt labels that hit]
-  let anyEmotional = false;
+function getCYOAFiltered() {
+  if (STATE.selectedChips.size === 0) return [];
+  const targetIds = new Set();
   DATA.audience_prompts.forEach(p => {
-    if (!SELECTED_PROMPTS.has(p.id)) return;
-    if (p.emotional) anyEmotional = true;
-    p.moment_ids.forEach(mid => {
-      candidateIds.add(mid);
-      (promptsByMoment[mid] = promptsByMoment[mid] || []).push(p.label);
+    if (STATE.selectedChips.has(p.id)) {
+      p.moment_ids.forEach(mid => targetIds.add(mid));
+    }
+  });
+  // resolve moments preserving popularity
+  const out = [];
+  DATA.moments.forEach(m => {
+    if (targetIds.has(m.id)) out.push(m);
+  });
+  // sort: chosen snippet first, then weight desc
+  out.sort((a, b) => {
+    if (a.is_chosen_snippet !== b.is_chosen_snippet) return a.is_chosen_snippet ? -1 : 1;
+    return b.weight - a.weight;
+  });
+  return out;
+}
+
+function renderCYOABanner() {
+  const filtered = getCYOAFiltered();
+  const wrap = document.getElementById('cyoaBanner');
+  if (STATE.selectedChips.size === 0) {
+    wrap.innerHTML = `
+      <div class="cyoa-banner empty">
+        <div class="cyoa-banner-arrow">↑</div>
+        <div class="cyoa-banner-text">Pick a topic above. Your moments will show up below.</div>
+      </div>
+    `;
+  } else {
+    wrap.innerHTML = `
+      <div class="cyoa-banner">
+        <div class="cyoa-count-badge">${filtered.length}</div>
+        <div style="flex:1;min-width:0">
+          <div class="cyoa-banner-text">${filtered.length} moment${filtered.length === 1 ? '' : 's'} match your picks</div>
+          <div class="cyoa-banner-sub">
+            <span>Tap a card below to play</span>
+            <span style="color:var(--pink);font-size:13px;line-height:1">↓</span>
+          </div>
+        </div>
+        <button class="cyoa-clear" id="cyoaClearBtn">Clear</button>
+      </div>
+    `;
+    document.getElementById('cyoaClearBtn').addEventListener('click', () => {
+      STATE.selectedChips.clear();
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      renderCYOABanner(); renderCYOAQueue();
     });
+  }
+}
+
+function renderCYOAQueue() {
+  const filtered = getCYOAFiltered();
+  // ensure activeMoment is part of filtered, else reset
+  if (filtered.length === 0) STATE.cyoaActiveMomentId = null;
+  else if (!filtered.find(m => m.id === STATE.cyoaActiveMomentId)) STATE.cyoaActiveMomentId = filtered[0].id;
+  // queue cards
+  const qWrap = document.getElementById('cyoaQueue');
+  qWrap.innerHTML = filtered.map(m => momentCardHTML(m, m.id === STATE.cyoaActiveMomentId)).join('');
+  qWrap.querySelectorAll('.moment-card[data-moment-id]').forEach(b => {
+    b.addEventListener('click', () => playCYOAMoment(b.dataset.momentId));
   });
-  // 2. Resolve each id to the actual moment object, score it
-  const scored = [];
-  Array.from(candidateIds).forEach(mid => {
-    const m = findMoment(mid);
-    if (!m) return;
-    const matchCount = promptsByMoment[mid].length;
-    let score = matchCount * 10;
-    if (m.is_chosen_snippet) score += 8;
-    if (m.weight) score += m.weight;
-    if (anyEmotional && (m.relatability_tags || []).some(t => ['raw-share','vulnerable','real-talk'].includes(t))) score += 4;
-    scored.push({ moment: m, score, matched: promptsByMoment[mid] });
+  // swipe head
+  const head = document.getElementById('cyoaSwipeHead');
+  head.innerHTML = filtered.length > 0 ? `
+    <div class="label"><span>Up next · swipe</span><span class="arrow">→</span></div>
+    <div class="count">${filtered.findIndex(m => m.id === STATE.cyoaActiveMomentId) + 1} / ${filtered.length}</div>
+  ` : '';
+  document.getElementById('cyoaFade').style.display = filtered.length > 1 ? 'block' : 'none';
+  // player
+  if (STATE.cyoaActiveMomentId) playCYOAMoment(STATE.cyoaActiveMomentId, /* keepLoaded */ true);
+  else resetPlayer('cyoa');
+}
+
+function playCYOAMoment(momentId, keepLoaded = false) {
+  STATE.cyoaActiveMomentId = momentId;
+  document.querySelectorAll('#cyoaQueue .moment-card').forEach(b => {
+    b.classList.toggle('active', b.dataset.momentId === momentId);
   });
-  scored.sort((a, b) => b.score - a.score);
-  // 3. Render
-  if (scored.length === 0) {
-    results.innerHTML = `<div class="cyoa-results-empty">Nothing in Season 1 directly matches that combination. Try a different mix — or scroll down to <a href="#standout">stand-out moments</a> for a curated set.</div>`;
-    results.classList.add('visible');
+  // active card poster img re-render quickly
+  const moment = DATA.moments.find(m => m.id === momentId);
+  if (!moment) return;
+  // load YT IFrame
+  if (!keepLoaded) loadPlayer('cyoa', moment);
+  else if (!PLAYERS.cyoa) loadPlayer('cyoa', moment, /* autoplay */ false);
+  // render meta strip
+  document.getElementById('cyoaMeta').innerHTML = `
+    <div class="player-meta">
+      <div class="player-meta-headline">${esc(moment.headline)}</div>
+      <div class="player-meta-sub">${esc(moment.ep.guest.name)} · ${esc(moment.ep.lane)} · ${formatDur(moment.end - moment.start)}</div>
+      <button class="player-meta-deep" data-deep-ep="${esc(moment.ep_id)}">
+        <span>Deep dive into this episode</span>
+        <span style="font-size:14px;line-height:1">→</span>
+      </button>
+    </div>
+  `;
+  document.querySelectorAll('[data-deep-ep]').forEach(b => {
+    b.addEventListener('click', () => openEpisode(b.dataset.deepEp));
+  });
+  // update swipe count
+  const filtered = getCYOAFiltered();
+  const head = document.getElementById('cyoaSwipeHead');
+  if (head && filtered.length > 0) {
+    head.innerHTML = `
+      <div class="label"><span>Up next · swipe</span><span class="arrow">→</span></div>
+      <div class="count">${filtered.findIndex(m => m.id === momentId) + 1} / ${filtered.length}</div>
+    `;
+  }
+}
+
+function renderStandoutQueue() {
+  const cs = DATA.curated_standout;
+  const moments = cs.moment_ids.map(id => DATA.moments.find(m => m.id === id)).filter(Boolean);
+  if (!STATE.standoutActiveMomentId && moments.length) STATE.standoutActiveMomentId = moments[0].id;
+  const qWrap = document.getElementById('standoutQueue');
+  qWrap.innerHTML = moments.map(m => momentCardHTML(m, m.id === STATE.standoutActiveMomentId)).join('');
+  qWrap.querySelectorAll('.moment-card[data-moment-id]').forEach(b => {
+    b.addEventListener('click', () => playStandoutMoment(b.dataset.momentId));
+  });
+  const head = document.getElementById('standoutSwipeHead');
+  head.innerHTML = `
+    <div class="label"><span>Up next · swipe</span><span class="arrow">→</span></div>
+    <div class="count">${moments.findIndex(m => m.id === STATE.standoutActiveMomentId) + 1} / ${moments.length}</div>
+  `;
+  if (STATE.standoutActiveMomentId) {
+    const m = DATA.moments.find(mm => mm.id === STATE.standoutActiveMomentId);
+    if (m) renderStandoutMeta(m);
+  }
+}
+
+function playStandoutMoment(momentId) {
+  STATE.standoutActiveMomentId = momentId;
+  document.querySelectorAll('#standoutQueue .moment-card').forEach(b => {
+    b.classList.toggle('active', b.dataset.momentId === momentId);
+  });
+  const moment = DATA.moments.find(m => m.id === momentId);
+  if (!moment) return;
+  loadPlayer('standout', moment);
+  renderStandoutMeta(moment);
+  // count update
+  const cs = DATA.curated_standout;
+  const moments = cs.moment_ids.map(id => DATA.moments.find(m => m.id === id)).filter(Boolean);
+  document.getElementById('standoutSwipeHead').innerHTML = `
+    <div class="label"><span>Up next · swipe</span><span class="arrow">→</span></div>
+    <div class="count">${moments.findIndex(m => m.id === momentId) + 1} / ${moments.length}</div>
+  `;
+}
+
+function renderStandoutMeta(moment) {
+  document.getElementById('standoutMeta').innerHTML = `
+    <div class="player-meta">
+      <div class="player-meta-headline">${esc(moment.headline)}</div>
+      <div class="player-meta-sub">${esc(moment.ep.guest.name)} · ${esc(moment.ep.lane)} · ${formatDur(moment.end - moment.start)}</div>
+      <button class="player-meta-deep" data-deep-ep="${esc(moment.ep_id)}">
+        <span>Deep dive into this episode</span>
+        <span style="font-size:14px;line-height:1">→</span>
+      </button>
+    </div>
+  `;
+  document.querySelectorAll('[data-deep-ep]').forEach(b => {
+    b.addEventListener('click', () => openEpisode(b.dataset.deepEp));
+  });
+}
+
+function loadPlayer(slot, moment, autoplay = true) {
+  const containerId = slot === 'cyoa' ? 'cyoaPlayerFrame' : 'standoutPlayerFrame';
+  const frame = document.getElementById(containerId);
+  // create a div placeholder for the YT player
+  frame.innerHTML = `<div id="ytPlayer-${slot}"></div>`;
+  if (!YT_READY) {
+    PENDING = () => loadPlayer(slot, moment, autoplay);
     return;
   }
-  const header = `<div class="cyoa-results-header">Found <strong>${scored.length}</strong> moment${scored.length === 1 ? '' : 's'} matching your picks. Sorted by relevance.</div>`;
-  const cards = scored.map(({ moment, matched }) => renderMomentCard(moment, matched)).join('');
-  results.innerHTML = header + `<div class="moments">${cards}</div>`;
-  results.classList.add('visible');
-  attachMomentHandlers(results);
+  if (PLAYERS[slot]) { try { PLAYERS[slot].destroy(); } catch (e) {} PLAYERS[slot] = null; }
+  PLAYERS[slot] = new YT.Player(`ytPlayer-${slot}`, {
+    videoId: moment.ep.youtube.full_id,
+    playerVars: {
+      rel: 0, modestbranding: 1, playsinline: 1,
+      start: moment.start, end: moment.end,
+      autoplay: autoplay ? 1 : 0,
+    },
+  });
 }
 
-// Find a moment by id across all episodes (questions or quotes)
-function findMoment(id) {
-  for (const ep of DATA.episodes) {
-    for (const q of ep.questions) if (q.id === id) return { ...q, episode_id: ep.id, episode_number: ep.number, guest_name: ep.guest.name, kind: 'question' };
-    for (const qt of ep.quotes) if (qt.id === id) return { ...qt, episode_id: ep.id, episode_number: ep.number, guest_name: ep.guest.name, kind: 'quote' };
-  }
-  return null;
+function resetPlayer(slot) {
+  const containerId = slot === 'cyoa' ? 'cyoaPlayerFrame' : 'standoutPlayerFrame';
+  const frame = document.getElementById(containerId);
+  frame.innerHTML = emptyPlayerStage(
+    slot === 'cyoa' ? 'Pick a topic above to load a moment' : 'Tap a card below to play'
+  );
+  if (PLAYERS[slot]) { try { PLAYERS[slot].destroy(); } catch (e) {} PLAYERS[slot] = null; }
+  document.getElementById(slot + 'Meta').innerHTML = '';
 }
 
-function renderMomentCard(m, matched) {
-  const isQuestion = m.kind === 'question';
-  const text = isQuestion ? m.question_asked : `"${m.text}"`;
-  const start = isQuestion ? m.answer_starts_at_seconds : m.starts_at_seconds;
-  const end = isQuestion ? m.answer_ends_at_seconds : m.ends_at_seconds;
-  const rationale = matched && matched.length
-    ? `<div class="moment-rationale">Why this for you: <strong>${escapeHtml(matched.join(' · '))}</strong></div>`
-    : '';
-  const dur = formatDuration(end - start);
+// ── EPISODE PAGE ──
+function openEpisode(epId) {
+  STATE.activeEpId = epId;
+  STATE.route = 'episode';
+  document.getElementById('route-home').classList.remove('active');
+  const epWrap = document.getElementById('route-episode');
+  epWrap.classList.add('active');
+  epWrap.innerHTML = renderEpisodePage(epId);
+  attachEpisodeHandlers();
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+function goHome() {
+  STATE.route = 'home';
+  document.getElementById('route-home').classList.add('active');
+  document.getElementById('route-episode').classList.remove('active');
+  if (PLAYERS.episode) { try { PLAYERS.episode.destroy(); } catch (e) {} PLAYERS.episode = null; }
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+function renderEpisodePage(epId) {
+  const ep = DATA.episodes.find(e => e.id === epId);
+  if (!ep) return '<div style="padding:40px">Not found.</div>';
+  const lane = ep.epTitle || ep.lane;
+  const laneColor = ep.laneColor || '#EA559E';
+  const tone = ep.photoTone || ['#F5C9D6', '#D88BB0'];
+  const expertiseShort = ep.guest.expertise_short || '';
+  const findThem = ep.guest.find_them || [];
+
+  // Sort questions by start time
+  const questions = (ep.questions || []).slice().sort((a, b) => a.answer_starts_at_seconds - b.answer_starts_at_seconds);
+  const showNotesPrimary = ep.guest.bio_paragraph || '';
+  const showNotesSecondary = ep.journey ? ep.journey.what_landed : '';
+
+  const btsCount = (ep.bts_images || []).length;
+
   return `
-    <div class="moment" data-mid="${m.id}">
-      <div class="moment-meta">EP ${m.episode_number} · ${escapeHtml(m.guest_name)} · ${m.kind === 'question' ? 'Question' : 'Quote'} · ${dur}</div>
-      <div class="moment-text">${escapeHtml(text)}</div>
-      ${rationale}
-      <div class="moment-actions">
-        <button class="btn-watch" data-action="watch" data-ep="${m.episode_id}" data-start="${start}" data-end="${end}" data-label="${escapeHtml(text.slice(0, 80))}">▶ Watch this moment</button>
-        <button class="btn-deep" data-action="deep" data-ep="${m.episode_id}" data-start="${start}" data-end="${end}" data-label="${escapeHtml(text.slice(0, 80))}">→ Deep dive into this episode</button>
+    <div class="ep-page">
+      <div class="ep-topbar">
+        <button class="ep-back" id="epBack">
+          <span>←</span><span>Back</span>
+        </button>
+        <a href="#" class="wordmark" style="text-decoration:none">
+          <img src="assets/brand/symbol-pink.png" alt="" style="width:22px;height:22px">
+          <span class="wordmark-text" style="font-size:16px">The Huddle</span>
+        </a>
       </div>
+
+      <section class="ep-hero">
+        <div style="position:relative">
+          <div class="ep-hero-thumb" style="background: linear-gradient(135deg, ${tone[0]} 0%, ${tone[1]} 100%);">
+            <img class="ep-hero-thumb-photo" src="${ep.guest.hero_image}" alt="${esc(ep.guest.name)}">
+            <div class="ep-hero-thumb-overlay"></div>
+            <div class="ep-hero-thumb-lane">${esc(lane)}</div>
+            <div class="ep-hero-thumb-ep">EP ${String(ep.number).padStart(2, '0')}</div>
+            <div class="ep-hero-thumb-host">${esc(ep.guest.name)}</div>
+            <div class="ep-hero-thumb-mark">The Huddle</div>
+          </div>
+          <div class="ep-hero-sticker">
+            <img src="assets/stickers/asterix-${laneStickerColor(laneColor)}.png" alt="" style="width:36px;height:36px">
+          </div>
+        </div>
+        <h1 class="ep-hero-title">${esc(lane)}</h1>
+        <div class="ep-hero-with">With ${esc(ep.guest.name)}, ${esc(ep.guest.expertise)}</div>
+        <div class="ep-hero-tags">
+          <span class="tag">EP ${String(ep.number).padStart(2, '0')}</span>
+          <span class="tag">${formatDur(ep.youtube.duration_seconds)}</span>
+          <span class="tag lane" style="background:${hexAlpha(laneColor, 0.12)};color:${laneColor}">${esc(lane)}</span>
+        </div>
+      </section>
+
+      <section class="ep-player-section">
+        <div class="ep-player-frame">
+          <div id="ytPlayer-episode"></div>
+        </div>
+      </section>
+
+      <section class="ep-topics-section">
+        <div class="corner-sticker">
+          <img src="assets/stickers/asterix-${laneStickerColor(laneColor)}.png" alt="">
+        </div>
+        <div class="section-eyebrow" style="color:${laneColor}">Topics discussed</div>
+        <h3 class="display" style="margin:6px 0 4px;font-size:22px;color:var(--ink)">What they covered, in order.</h3>
+        <ol class="ep-topics-list">
+          ${questions.map(q => `
+            <li>
+              <button data-seek="${q.answer_starts_at_seconds}">
+                <span class="ts" style="color:${laneColor}">${formatDur(q.answer_starts_at_seconds)}</span>
+                <span class="q">${esc(q.question_asked)}</span>
+                <span class="arrow" style="color:${laneColor}">↗</span>
+              </button>
+            </li>
+          `).join('')}
+        </ol>
+      </section>
+
+      <section class="ep-shownotes-section">
+        <div class="section-eyebrow">Show notes</div>
+        <h3>What this one is about.</h3>
+        <p>${esc(showNotesPrimary)}</p>
+        ${showNotesSecondary ? `<p><strong style="color:var(--ink)">What landed:</strong> ${esc(showNotesSecondary)}</p>` : ''}
+      </section>
+
+      <section class="ep-bts-section">
+        <div class="section-pad-top">
+          <div class="section-eyebrow" style="color:${laneColor}">Behind the scenes</div>
+        </div>
+        <div class="swipe-row">
+          ${(ep.bts_images || []).map((src, i) => `
+            <div class="bts-card">
+              <div class="bts-card-photo"><img src="${src}" alt="BTS ${i+1}" loading="lazy"></div>
+              <div class="bts-card-caption">${['Mic check', 'Mid-laugh', 'The reframe moment', 'Off-camera', 'Wrap', 'Set'][i % 6]}</div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+
+      ${findThem.length ? `
+      <section class="ep-find-section">
+        <div class="section-eyebrow" style="color:var(--pink-deep)">Find ${esc(ep.guest.name.split(' ')[0])} online</div>
+        <h3>Keep the conversation going.</h3>
+        ${findThem.map(f => `
+          <a class="find-link" href="${esc(f.url)}" target="_blank" rel="noopener">
+            <div class="find-link-icon">↗</div>
+            <div class="find-link-meta">
+              <div class="find-link-label">${esc(f.label)}</div>
+              <div class="find-link-detail">${esc(f.url.replace(/^https?:\/\//, '').replace(/\/$/, ''))}</div>
+            </div>
+          </a>
+        `).join('')}
+      </section>
+      ` : ''}
+
+      ${renderFooter()}
     </div>
   `;
 }
 
-function attachMomentHandlers(container) {
-  container.querySelectorAll('.btn-watch').forEach(b => {
-    b.addEventListener('click', () => {
-      const epId = b.dataset.ep;
-      // Open the episode drawer + play
-      openEpisodeDrawer(epId);
-      setTimeout(() => playMoment(epId, +b.dataset.start, +b.dataset.end, b.dataset.label), 300);
-    });
-  });
-  container.querySelectorAll('.btn-deep').forEach(b => {
-    b.addEventListener('click', () => {
-      const epId = b.dataset.ep;
-      openEpisodeDrawer(epId);
-      // scroll to the drawer
-      setTimeout(() => {
-        const d = document.getElementById('drawer-' + epId);
-        if (d) d.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 250);
-    });
-  });
-}
-
-// ───── EPISODE DEEP DIVE ────────────────────────────────────
-function buildEpisodeTiles() {
-  const wrap = document.getElementById('episodeTiles');
-  wrap.innerHTML = '';
-  DATA.episodes.forEach(ep => {
-    const btn = document.createElement('button');
-    btn.className = 'episode-tile';
-    btn.dataset.ep = ep.id;
-    btn.innerHTML = `
-      <div class="tile-img-wrap">
-        <span class="tile-num">EP ${ep.number}</span>
-        <img class="tile-img" src="${ep.guest.hero_image}" alt="${escapeHtml(ep.guest.name)}" loading="lazy">
-        <span class="tile-duration">${formatDuration(ep.youtube.duration_seconds)}</span>
-      </div>
-      <div class="tile-info">
-        <div class="tile-name">${escapeHtml(ep.guest.name)}</div>
-        <div class="tile-lane">${escapeHtml(ep.lane)}</div>
-      </div>
-    `;
-    btn.addEventListener('click', () => openEpisodeDrawer(ep.id));
-    wrap.appendChild(btn);
-  });
-}
-
-function openEpisodeDrawer(epId) {
-  // mark active tile
-  document.querySelectorAll('.episode-tile').forEach(t => {
-    t.classList.toggle('active', t.dataset.ep === epId);
-  });
-  // ensure drawer exists or rebuild it for this ep
-  const wrap = document.getElementById('episodeDrawer');
-  // close all existing drawers
-  document.querySelectorAll('.episode-drawer').forEach(d => d.classList.remove('open'));
-  // If drawer for this ep already rendered, just open it
-  let drawer = document.getElementById('drawer-' + epId);
-  if (!drawer) {
-    drawer = renderEpisodeDrawer(epId);
-    wrap.appendChild(drawer);
-    attachDrawerHandlers(drawer, epId);
-  }
-  drawer.classList.add('open');
-  // Lazy-init player for this ep
-  ensurePlayer(epId);
-}
-
-function renderEpisodeDrawer(epId) {
-  const ep = DATA.episodes.find(e => e.id === epId);
-  if (!ep) return null;
-  const drawer = document.createElement('div');
-  drawer.className = 'episode-drawer';
-  drawer.id = 'drawer-' + epId;
-  drawer.innerHTML = `
-    <div class="drawer-inner">
-      <div class="drawer-header">
-        <div class="drawer-title">
-          <div class="lane">EP ${ep.number} · ${escapeHtml(ep.lane)}</div>
-          <h3>${escapeHtml(ep.guest.name)}</h3>
-        </div>
-        <button class="drawer-close" type="button" aria-label="Close">×</button>
-      </div>
-
-      <div class="drawer-grid">
-        <div class="drawer-col-main">
-          <div class="player-frame">
-            <div id="player-${ep.id}"></div>
-          </div>
-          <div class="now-playing" id="np-${ep.id}">
-            <div class="np-label">Now playing</div>
-            <div class="np-text" id="np-text-${ep.id}"></div>
-          </div>
-          <div class="drawer-meta-row">
-            <strong>${escapeHtml(ep.guest.expertise)}</strong> · ${escapeHtml(ep.guest.expertise_short)} · ${formatDuration(ep.youtube.duration_seconds)}
-          </div>
-          <div class="drawer-bio">
-            ${escapeHtml(ep.guest.bio_paragraph)}
-            ${ep.guest.rawness_note ? `<div class="raw">${escapeHtml(ep.guest.rawness_note)}</div>` : ''}
-            <div class="drawer-find">
-              ${ep.guest.find_them.map(f => `<a href="${f.url}" target="_blank" rel="noopener">${escapeHtml(f.label)} →</a>`).join('')}
-            </div>
-          </div>
-          ${ep.journey ? `
-          <div class="drawer-section">
-            <h4>The journey of this episode</h4>
-            <div class="journey-arc">
-              <div class="arc-row worry">
-                <div class="arc-tag"></div>
-                <div>
-                  <div class="arc-label">Where Megan started</div>
-                  <div class="arc-text">"${escapeHtml(ep.journey.opening_worry)}"</div>
-                </div>
-              </div>
-              <div class="arc-row turn">
-                <div class="arc-tag"></div>
-                <div>
-                  <div class="arc-label">Where ${escapeHtml(ep.guest.name.split(' ')[0])} took her</div>
-                  <div class="arc-text">${escapeHtml(ep.journey.the_turn)}</div>
-                </div>
-              </div>
-              <div class="arc-row land">
-                <div class="arc-tag"></div>
-                <div>
-                  <div class="arc-label">What landed</div>
-                  <div class="arc-text">${escapeHtml(ep.journey.what_landed)}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          ` : ''}
-        </div>
-
-        <div class="drawer-col-side">
-          <div class="drawer-section">
-            <h4>Megan's questions · click to play</h4>
-            <div class="q-list">
-              ${ep.questions.map(q => `
-                <button class="q-row" data-action="watch" data-ep="${ep.id}" data-start="${q.answer_starts_at_seconds}" data-end="${q.answer_ends_at_seconds}" data-label="${escapeHtml(q.question_asked.slice(0,80))}">
-                  <span class="q-time">${formatDuration(q.answer_starts_at_seconds)}</span>
-                  <span class="q-text">${escapeHtml(q.question_asked)}</span>
-                </button>
-              `).join('')}
-            </div>
-          </div>
-
-          <div class="drawer-section">
-            <h4>Behind the scenes</h4>
-            <div class="bts-grid">
-              ${ep.bts_images.map((src, i) => `<div class="bts-img" data-src="${src}"><img src="${src}" alt="BTS ${i+1}" loading="lazy"></div>`).join('')}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-  return drawer;
-}
-
-function attachDrawerHandlers(drawer, epId) {
-  drawer.querySelector('.drawer-close').addEventListener('click', () => {
-    drawer.classList.remove('open');
-    document.querySelectorAll('.episode-tile').forEach(t => t.classList.remove('active'));
-  });
-  drawer.querySelectorAll('.q-row').forEach(b => {
-    b.addEventListener('click', () => {
-      drawer.querySelectorAll('.q-row').forEach(x => x.classList.remove('playing'));
-      b.classList.add('playing');
-      playMoment(epId, +b.dataset.start, +b.dataset.end, b.dataset.label);
-    });
-  });
-  drawer.querySelectorAll('.bts-img').forEach(el => {
-    el.addEventListener('click', () => {
-      document.getElementById('lightboxImg').src = el.dataset.src;
-      document.getElementById('lightbox').classList.add('visible');
-    });
-  });
-}
-
-// ───── STAND-OUT MOMENTS ────────────────────────────────────
-function buildStandoutCards() {
-  const wrap = document.getElementById('standoutCards');
-  wrap.innerHTML = '';
-  DATA.stand_out_moments.forEach(s => {
-    const card = document.createElement('div');
-    card.className = 'standout-card';
-    const moments = s.moment_ids.map(id => findMoment(id)).filter(Boolean);
-    card.innerHTML = `
-      <div class="standout-title">${escapeHtml(s.title)}</div>
-      <div class="standout-sub">${escapeHtml(s.subtitle)}</div>
-      <div class="standout-moments">
-        ${moments.map(m => renderMomentCard(m, null)).join('')}
-      </div>
-    `;
-    wrap.appendChild(card);
-  });
-  attachMomentHandlers(wrap);
-}
-
-// ───── PLAYBACK ─────────────────────────────────────────────
-function ensurePlayer(epId) {
-  if (PLAYERS[epId]) return;
-  if (!YT_READY) return;
-  const ep = DATA.episodes.find(e => e.id === epId);
+function attachEpisodeHandlers() {
+  document.getElementById('epBack').addEventListener('click', goHome);
+  // load YT player for full episode
+  const ep = DATA.episodes.find(e => e.id === STATE.activeEpId);
   if (!ep) return;
-  const playerEl = document.getElementById('player-' + epId);
-  if (!playerEl) return;
-  PLAYERS[epId] = new YT.Player('player-' + epId, {
-    videoId: ep.youtube.full_id,
-    playerVars: { rel: 0, modestbranding: 1, playsinline: 1 }
+  const init = () => {
+    if (PLAYERS.episode) { try { PLAYERS.episode.destroy(); } catch (e) {} }
+    PLAYERS.episode = new YT.Player('ytPlayer-episode', {
+      videoId: ep.youtube.full_id,
+      playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
+    });
+  };
+  if (YT_READY) init();
+  else PENDING = init;
+  // wire timestamp seek
+  document.querySelectorAll('[data-seek]').forEach(b => {
+    b.addEventListener('click', () => {
+      const s = parseInt(b.dataset.seek, 10);
+      if (PLAYERS.episode && typeof PLAYERS.episode.seekTo === 'function') {
+        PLAYERS.episode.seekTo(s, true);
+        PLAYERS.episode.playVideo && PLAYERS.episode.playVideo();
+        // scroll player into view
+        document.querySelector('.ep-player-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 }
 
-function playMoment(epId, start, end, label) {
-  if (!YT_READY) { PENDING = { epId, start, end, label }; openEpisodeDrawer(epId); return; }
-  openEpisodeDrawer(epId);
-  setTimeout(() => {
-    if (!PLAYERS[epId] || typeof PLAYERS[epId].loadVideoById !== 'function') {
-      PENDING = { epId, start, end, label };
-      return;
-    }
-    const ep = DATA.episodes.find(e => e.id === epId);
-    PLAYERS[epId].loadVideoById({ videoId: ep.youtube.full_id, startSeconds: start, endSeconds: end });
-    const np = document.getElementById('np-' + epId);
-    if (np) {
-      np.querySelector('.np-text').textContent = label;
-      np.classList.add('visible');
-    }
-  }, 250);
-}
-
-// ───── HELPERS ──────────────────────────────────────────────
-document.getElementById('lightbox').addEventListener('click', () => document.getElementById('lightbox').classList.remove('visible'));
-document.getElementById('brandWordmark').addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-function formatDuration(secs) {
-  const s = Math.max(0, Math.floor(secs));
+// ── helpers ──
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function formatDur(secs) {
+  const s = Math.max(0, Math.floor(secs || 0));
   const m = Math.floor(s / 60), r = s % 60;
   return m + ':' + String(r).padStart(2, '0');
+}
+function laneStickerColor(hex) {
+  // map laneColor hex to sticker filename suffix
+  const map = {
+    '#EA559E': 'pink', '#D03B85': 'pink',
+    '#9D7FBE': 'lilac',
+    '#3FA590': 'emerald',
+    '#E89241': 'orange',
+    '#D9B028': 'yellow',
+    '#E72731': 'pink',
+  };
+  return map[hex] || 'pink';
+}
+function hexAlpha(hex, a) {
+  const m = hex.replace('#','');
+  const r = parseInt(m.slice(0,2),16), g = parseInt(m.slice(2,4),16), b = parseInt(m.slice(4,6),16);
+  return `rgba(${r},${g},${b},${a})`;
 }
 </script>
 </body>

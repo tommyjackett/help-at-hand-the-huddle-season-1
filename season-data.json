@@ -368,7 +368,13 @@
         "assets/bts/claire/04.jpg",
         "assets/bts/claire/05.jpg",
         "assets/bts/claire/06.jpg"
-      ]
+      ],
+      "photoTone": [
+        "#F5C9D6",
+        "#D88BB0"
+      ],
+      "laneColor": "#EA559E",
+      "epTitle": "Body & Recovery"
     },
     {
       "id": "ep2-bianca",
@@ -540,7 +546,13 @@
         "assets/bts/bianca/04.jpg",
         "assets/bts/bianca/05.jpg",
         "assets/bts/bianca/06.jpg"
-      ]
+      ],
+      "photoTone": [
+        "#C7B6DD",
+        "#7A5BA0"
+      ],
+      "laneColor": "#9D7FBE",
+      "epTitle": "Sleep & Self-Settling"
     },
     {
       "id": "ep3-isabelle",
@@ -710,7 +722,13 @@
         "assets/bts/isabelle/04.jpg",
         "assets/bts/isabelle/05.jpg",
         "assets/bts/isabelle/06.jpg"
-      ]
+      ],
+      "photoTone": [
+        "#A8D9CD",
+        "#2D8270"
+      ],
+      "laneColor": "#3FA590",
+      "epTitle": "Kids' Teeth"
     },
     {
       "id": "ep4-olivia",
@@ -868,7 +886,13 @@
         "assets/bts/olivia/04.jpg",
         "assets/bts/olivia/05.jpg",
         "assets/bts/olivia/06.jpg"
-      ]
+      ],
+      "photoTone": [
+        "#F4C896",
+        "#C16B1F"
+      ],
+      "laneColor": "#E89241",
+      "epTitle": "Feeding Little Humans"
     },
     {
       "id": "ep5-felicity",
@@ -1018,7 +1042,13 @@
         "assets/bts/felicity/04.jpg",
         "assets/bts/felicity/05.jpg",
         "assets/bts/felicity/06.jpg"
-      ]
+      ],
+      "photoTone": [
+        "#F0DC91",
+        "#A88112"
+      ],
+      "laneColor": "#D9B028",
+      "epTitle": "Speech & Communication"
     }
   ],
   "audience_prompts": [
@@ -1031,6 +1061,11 @@
         "ep2-q5",
         "ep2-q9",
         "ep2-quote1"
+      ],
+      "accent": "#9D7FBE",
+      "tone": [
+        "#C7B6DD",
+        "#7A5BA0"
       ]
     },
     {
@@ -1042,6 +1077,11 @@
         "ep3-q10",
         "ep3-quote1",
         "ep3-quote2"
+      ],
+      "accent": "#3FA590",
+      "tone": [
+        "#A8D9CD",
+        "#2D8270"
       ]
     },
     {
@@ -1052,6 +1092,11 @@
         "ep4-q5",
         "ep4-q6",
         "ep4-quote2"
+      ],
+      "accent": "#E72731",
+      "tone": [
+        "#F0B5B8",
+        "#B2202A"
       ]
     },
     {
@@ -1064,6 +1109,11 @@
         "ep4-q8",
         "ep4-quote1",
         "ep4-quote3"
+      ],
+      "accent": "#E89241",
+      "tone": [
+        "#F4C896",
+        "#C16B1F"
       ]
     },
     {
@@ -1073,6 +1123,11 @@
       "moment_ids": [
         "ep3-q7",
         "ep4-q6"
+      ],
+      "accent": "#E72731",
+      "tone": [
+        "#F4C0C2",
+        "#9E1B23"
       ]
     },
     {
@@ -1086,6 +1141,11 @@
         "ep1-q8",
         "ep1-quote1",
         "ep1-quote3"
+      ],
+      "accent": "#EA559E",
+      "tone": [
+        "#F5C9D6",
+        "#D88BB0"
       ]
     },
     {
@@ -1099,6 +1159,11 @@
         "ep5-q7",
         "ep5-quote1",
         "ep5-quote2"
+      ],
+      "accent": "#D9B028",
+      "tone": [
+        "#F0DC91",
+        "#A88112"
       ]
     },
     {
@@ -1109,7 +1174,12 @@
         "ep1-q10",
         "ep1-quote2"
       ],
-      "emotional": true
+      "emotional": true,
+      "accent": "#EA559E",
+      "tone": [
+        "#F2BFD8",
+        "#B33A7E"
+      ]
     },
     {
       "id": "thumb-sucking",
@@ -1117,6 +1187,11 @@
       "description": "When to address it. How to stop without trauma.",
       "moment_ids": [
         "ep3-q6"
+      ],
+      "accent": "#3FA590",
+      "tone": [
+        "#BFE0D5",
+        "#3F8C7A"
       ]
     },
     {
@@ -1126,6 +1201,11 @@
       "moment_ids": [
         "ep4-q3",
         "ep4-q9"
+      ],
+      "accent": "#E89241",
+      "tone": [
+        "#F1C99A",
+        "#A95E1C"
       ]
     },
     {
@@ -1137,7 +1217,12 @@
         "ep2-q11",
         "ep2-quote2"
       ],
-      "emotional": true
+      "emotional": true,
+      "accent": "#9D7FBE",
+      "tone": [
+        "#B7A1D2",
+        "#5E3F8C"
+      ]
     }
   ],
   "stand_out_moments": [
@@ -1181,5 +1266,27 @@
         "ep1-q10"
       ]
     }
-  ]
+  ],
+  "curated_standout": {
+    "id": "curated",
+    "eyebrow": "Curated by Megan",
+    "title": "Stand-out moments",
+    "blurb": "The bits that stuck with us \u2014 across sleep, feeding, body, speech, teeth. One handful, no filler.",
+    "accent": "#EA559E",
+    "tint": "#FAE0EE",
+    "sticker": "heart-pink",
+    "moment_ids": [
+      "ep2-q8",
+      "ep2-quote2",
+      "ep3-q7",
+      "ep4-q6",
+      "ep1-q10",
+      "ep2-q11",
+      "ep3-q11",
+      "ep4-quote1",
+      "ep5-q10",
+      "ep1-q2",
+      "ep4-q2"
+    ]
+  }
 }
