@@ -47,11 +47,17 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
 }
-/* desktop: cream column floats on a soft ink stage (matches the design canvas) */
-@media (min-width: 600px) {
+
+/* base layout container — must live BEFORE @media blocks so they can override */
+.app { max-width: 540px; margin: 0 auto; background: var(--cream); position: relative; min-height: 100vh; }
+
+/* base: hide desktop-only chip grid by default; @media (min-width: 1024px) re-enables it */
+.chip-grid-desktop { display: none; }
+
+/* tablet (600-1023px): cream "phone-like" column on dark canvas — current mobile design centered */
+@media (min-width: 600px) and (max-width: 1023px) {
   body {
-    background:
-      radial-gradient(120% 80% at 50% 0%, #3a2a3c 0%, #1a1119 60%, #0d080e 100%);
+    background: radial-gradient(120% 80% at 50% 0%, #3a2a3c 0%, #1a1119 60%, #0d080e 100%);
     padding: 28px 0 40px;
   }
   .app {
@@ -60,6 +66,183 @@ body {
     overflow: hidden;
   }
 }
+
+/* desktop (≥1024px): full web layout — wide container, multi-col grids, real estate used */
+@media (min-width: 1024px) {
+  body {
+    background: var(--cream);
+    padding: 0;
+  }
+  .app {
+    max-width: 1200px;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  /* HEADER — wider, more breathing room */
+  .site-header { padding: 28px 48px 12px; }
+  .wordmark img { width: 38px; height: 38px; }
+  .wordmark-text { font-size: 28px; }
+  .season-tag { font-size: 12px; }
+
+  /* HERO — polaroid stage left, text right (1.1fr text-leaning) */
+  .hero { padding: 0 48px 32px; }
+  .hero-inner-desktop {
+    display: grid; grid-template-columns: 380px 1fr; gap: 64px;
+    align-items: center; padding-top: 32px;
+  }
+  .hero-inner-desktop .collage-stage {
+    margin: 0; width: 360px; max-width: none; height: 380px;
+  }
+  .hero-text { padding: 0; }
+  .hero-text .display { font-size: 48px; line-height: 1.05; max-width: 560px; }
+  .hero-text p { font-size: 17px; max-width: 520px; margin-top: 16px; line-height: 1.55; }
+  .hero-cta { margin-top: 26px; font-size: 16px; }
+
+  /* TAPE-MARK divider — bigger label */
+  .tape-mark { padding: 36px 0 12px; }
+  .tape-mark .tape-label { font-size: 12px; letter-spacing: 0.16em; }
+
+  /* CYOA — chips render as a wrap-grid (no horizontal scroll) */
+  .section-cyoa { padding: 44px 0 48px; }
+  .section-pad, .section-episodes-pad { padding: 0 48px 16px; }
+  .section-headline { font-size: 36px; }
+  .section-blurb { font-size: 15px; max-width: 580px; }
+  .section-cyoa .corner-sticker { right: 48px; }
+  .section-cyoa .corner-sticker img { width: 44px; height: 44px; }
+
+  /* chip rows: hide the two mobile swipe rows, show the unified desktop grid */
+  .chip-row-wrap--mobile { display: none; }
+  .chip-grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0 48px 18px 48px;
+  }
+  .chip-grid-desktop .chip { width: auto; aspect-ratio: 5/3; }
+  .chip-grid-desktop .chip-label { font-size: 15px; line-height: 1.2; }
+
+  /* CYOA banner */
+  .cyoa-banner { margin: 0 48px 16px; padding: 16px 20px; }
+  .cyoa-banner-text { font-size: 15px; }
+  .cyoa-banner-sub { font-size: 12px; }
+
+  /* CYOA player + queue: side-by-side at desktop */
+  .cyoa-watch-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px;
+    padding: 0 48px 16px;
+    align-items: start;
+  }
+  .cyoa-watch-grid .player-frame { margin: 0; }
+  .cyoa-watch-grid .player-meta { font-size: 14px; }
+  .cyoa-queue-col { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .cyoa-queue-col .swipe-head { padding: 0 0 8px 0; }
+  .cyoa-queue-col .swipe-row {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 14px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 420px;
+    scroll-snap-type: none;
+  }
+  .cyoa-queue-col .moment-card { width: 100%; }
+  .cyoa-queue-col .swipe-fade { display: none; }
+
+  /* EPISODE BAND — bleed full-width, tiles as a 5-up static row */
+  .section-episodes {
+    padding: 56px 0 60px;
+    margin: 0 -48px;
+    border-radius: 0;
+  }
+  .section-episodes-pad { padding: 0 96px 24px; }
+  .section-episodes .section-headline { font-size: 48px; }
+  .section-episodes .section-blurb { font-size: 16px; max-width: 460px; }
+  .section-episodes .corner-swoosh { top: 24px; right: 48px; }
+  .section-episodes .corner-swoosh svg { width: 120px; height: 60px; }
+  .section-episodes .swipe-row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 96px 14px 96px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .episode-tile { width: auto; min-width: 0; }
+  .episode-thumb-lane { font-size: 13px; line-height: 1.2; letter-spacing: 0.02em; }
+  .episode-tile-meta .name { font-size: 15px; }
+  .episode-tile-meta .role { font-size: 12px; }
+  .episode-index-row { padding: 22px 96px 0; gap: 24px; font-size: 12px; }
+
+  /* STANDOUT — player + queue side-by-side, like CYOA */
+  .section-standout { padding: 48px 0 48px; }
+  .section-standout .corner-sticker { right: 48px; }
+  .section-standout .corner-sticker img { width: 48px; height: 48px; }
+  .standout-watch-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px;
+    padding: 0 48px 14px;
+    align-items: start;
+  }
+  .standout-watch-grid .player-frame { margin: 0; }
+  .standout-queue-col { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .standout-queue-col .swipe-head { padding: 0 0 8px 0; }
+  .standout-queue-col .swipe-row {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 14px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 480px;
+    scroll-snap-type: none;
+  }
+  .standout-queue-col .moment-card { width: 100%; }
+  .standout-queue-col .swipe-fade { display: none; }
+
+  /* FOOTER — horizontal layout */
+  .page-footer {
+    padding: 60px 96px 48px;
+    text-align: left;
+  }
+  .footer-pill { left: 96px; transform: rotate(-3deg); }
+  .footer-promise {
+    margin-bottom: 0; font-size: 18px; max-width: 580px;
+    display: inline-block; padding-right: 40px;
+    vertical-align: middle;
+  }
+  .footer-credit-row { display: inline-flex; vertical-align: middle; }
+
+  /* EPISODE PAGE — wider hero, side-by-side player + topics */
+  .ep-topbar { padding: 22px 48px 16px; }
+  .ep-hero { padding: 28px 48px 28px; }
+  .ep-hero-thumb { aspect-ratio: 21/9; }
+  .ep-hero-thumb-lane { font-size: 44px; }
+  .ep-hero-title { font-size: 40px; max-width: 700px; }
+  .ep-hero-with { font-size: 16px; }
+  .ep-player-section { padding: 0 48px 28px; }
+
+  .ep-watch-grid {
+    display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px;
+    padding: 0 48px 28px; align-items: start;
+  }
+  .ep-watch-grid .ep-player-frame { margin: 0; }
+  .ep-topics-section { padding: 32px 48px 30px; }
+  .ep-topics-section h3 { font-size: 26px; }
+  .ep-shownotes-section { padding: 40px 48px 28px; }
+  .ep-shownotes-section h3 { font-size: 26px; }
+  .ep-shownotes-section p { font-size: 16px; max-width: 720px; }
+  .ep-bts-section { padding: 24px 0 32px; }
+  .ep-bts-section .section-pad-top { padding: 0 48px 14px; }
+  .ep-bts-section .swipe-row { padding-left: 48px; padding-right: 48px; }
+  .ep-find-section { padding: 36px 48px 40px; }
+  .ep-find-section h3 { font-size: 26px; }
+  .ep-find-section .find-link { max-width: 600px; }
+}
+
+/* very wide (≥1440px): just give the chrome a bit more air */
+@media (min-width: 1440px) {
+  .app { max-width: 1320px; }
+}
 button { font-family: inherit; cursor: pointer; border: 0; background: transparent; padding: 0; }
 button:focus { outline: none; }
 img { display: block; max-width: 100%; }
@@ -67,9 +250,6 @@ a { color: var(--pink-deep); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .display { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; line-height: 0.95; }
-
-/* layout container */
-.app { max-width: 540px; margin: 0 auto; background: var(--cream); position: relative; min-height: 100vh; }
 
 /* horizontal scroll snapping for swipe rows */
 .swipe-row {
@@ -885,28 +1065,30 @@ function renderHero() {
 
   return `
     <section class="hero">
-      <div class="collage-stage">
-        ${polaroidsHTML}
-        <div class="collage-sticker" style="top: 90px; right: 16px; transform: rotate(12deg);">
-          <img src="assets/stickers/asterix-yellow.png" alt="" style="width:36px;height:36px;">
+      <div class="hero-inner-desktop">
+        <div class="collage-stage">
+          ${polaroidsHTML}
+          <div class="collage-sticker" style="top: 90px; right: 16px; transform: rotate(12deg);">
+            <img src="assets/stickers/asterix-yellow.png" alt="" style="width:36px;height:36px;">
+          </div>
+          <div class="collage-sticker" style="bottom: 26px; left: 18px; transform: rotate(-10deg);">
+            <img src="assets/stickers/heart-pink.png" alt="" style="width:32px;height:32px;">
+          </div>
+          <div class="collage-sticker" style="top: 200px; right: 28px; transform: rotate(-6deg);">
+            <img src="assets/stickers/asterix-emerald.png" alt="" style="width:26px;height:26px;">
+          </div>
+          <div class="collage-sticker" style="bottom: 80px; right: 60px; transform: rotate(8deg);">
+            <img src="assets/stickers/flower-pale-pink.png" alt="" style="width:30px;height:30px;">
+          </div>
         </div>
-        <div class="collage-sticker" style="bottom: 26px; left: 18px; transform: rotate(-10deg);">
-          <img src="assets/stickers/heart-pink.png" alt="" style="width:32px;height:32px;">
+        <div class="hero-text">
+          <h1 class="display">A resource for parents of little humans.</h1>
+          <p>Five real conversations with experts on what comes up day-to-day. Sleep, teeth, feeding, speech, body & recovery. Made findable.</p>
+          <a href="#cyoa" class="hero-cta">
+            <span>Find the moments that matter to you</span>
+            <span class="arrow">↓</span>
+          </a>
         </div>
-        <div class="collage-sticker" style="top: 200px; right: 28px; transform: rotate(-6deg);">
-          <img src="assets/stickers/asterix-emerald.png" alt="" style="width:26px;height:26px;">
-        </div>
-        <div class="collage-sticker" style="bottom: 80px; right: 60px; transform: rotate(8deg);">
-          <img src="assets/stickers/flower-pale-pink.png" alt="" style="width:30px;height:30px;">
-        </div>
-      </div>
-      <div class="hero-text">
-        <h1 class="display">A resource for parents of little humans.</h1>
-        <p>Five real conversations with experts on what comes up day-to-day. Sleep, teeth, feeding, speech, body & recovery. Made findable.</p>
-        <a href="#cyoa" class="hero-cta">
-          <span>Find the moments that matter to you</span>
-          <span class="arrow">↓</span>
-        </a>
       </div>
     </section>
   `;
@@ -937,25 +1119,30 @@ function renderCYOA() {
         <div class="section-eyebrow">Choose your own adventure</div>
         <h2 class="section-headline">Tap a few of the things on your mind.<br>We'll show you the moments.</h2>
       </div>
-      <div class="chip-row-wrap">
+      <div class="chip-row-wrap chip-row-wrap--mobile">
         <div class="swipe-row" id="chipsRow1" style="padding-bottom:8px">${chipsRow1}</div>
         <div class="chip-row-fade"></div>
       </div>
-      <div class="chip-row-wrap">
+      <div class="chip-row-wrap chip-row-wrap--mobile">
         <div class="swipe-row" id="chipsRow2" style="padding-bottom:18px">${chipsRow2}</div>
         <div class="chip-row-fade"></div>
       </div>
+      <div class="chip-grid-desktop" id="chipsGridDesktop">${chipsRow1}${chipsRow2}</div>
       <div id="cyoaBanner"></div>
-      <div class="section-pad" style="padding-bottom:14px">
-        <div class="player-frame" id="cyoaPlayerFrame">
-          ${emptyPlayerStage('Pick a topic above to load a moment')}
+      <div class="cyoa-watch-grid">
+        <div class="cyoa-player-col">
+          <div class="section-pad" style="padding:0 22px 14px">
+            <div class="player-frame" id="cyoaPlayerFrame">
+              ${emptyPlayerStage('Pick a topic above to load a moment')}
+            </div>
+            <div id="cyoaMeta"></div>
+          </div>
         </div>
-        <div id="cyoaMeta"></div>
-      </div>
-      <div style="position:relative">
-        <div class="swipe-head" id="cyoaSwipeHead"></div>
-        <div class="swipe-row" id="cyoaQueue" style="padding-right:60px"></div>
-        <div class="swipe-fade" id="cyoaFade" style="background: linear-gradient(90deg, rgba(245,237,227,0) 0%, rgba(245,237,227,0.95) 100%); display:none"></div>
+        <div class="cyoa-queue-col" style="position:relative">
+          <div class="swipe-head" id="cyoaSwipeHead"></div>
+          <div class="swipe-row" id="cyoaQueue" style="padding-right:60px"></div>
+          <div class="swipe-fade" id="cyoaFade" style="background: linear-gradient(90deg, rgba(245,237,227,0) 0%, rgba(245,237,227,0.95) 100%); display:none"></div>
+        </div>
       </div>
     </section>
   `;
@@ -1061,16 +1248,20 @@ function renderStandout() {
         <h2 class="section-headline">${esc(cs.title)}</h2>
         <p class="section-blurb">${esc(cs.blurb)}</p>
       </div>
-      <div class="section-pad" style="padding-bottom:14px">
-        <div class="player-frame" id="standoutPlayerFrame">
-          ${emptyPlayerStage('Tap a card below to play')}
+      <div class="standout-watch-grid">
+        <div class="standout-player-col">
+          <div class="section-pad" style="padding:0 22px 14px">
+            <div class="player-frame" id="standoutPlayerFrame">
+              ${emptyPlayerStage('Tap a card below to play')}
+            </div>
+            <div id="standoutMeta"></div>
+          </div>
         </div>
-        <div id="standoutMeta"></div>
-      </div>
-      <div style="position:relative">
-        <div class="swipe-head" id="standoutSwipeHead"></div>
-        <div class="swipe-row" id="standoutQueue" style="padding-right:60px"></div>
-        <div class="swipe-fade" id="standoutFade" style="background: linear-gradient(90deg, rgba(250,224,238,0) 0%, rgba(250,224,238,0.95) 100%);"></div>
+        <div class="standout-queue-col" style="position:relative">
+          <div class="swipe-head" id="standoutSwipeHead"></div>
+          <div class="swipe-row" id="standoutQueue" style="padding-right:60px"></div>
+          <div class="swipe-fade" id="standoutFade" style="background: linear-gradient(90deg, rgba(250,224,238,0) 0%, rgba(250,224,238,0.95) 100%);"></div>
+        </div>
       </div>
     </section>
   `;
